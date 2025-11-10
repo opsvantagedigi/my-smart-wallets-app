@@ -53,6 +53,11 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>Marz Smart Wallets</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self';" />
+      </head>
       <body className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
         <Providers initialState={initialState}>
           {children}
