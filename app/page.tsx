@@ -6,6 +6,7 @@ import NftMintCard from "./components/nft-mint-card";
 import LoginCard from "./components/login-card";
 import Header from "./components/header";
 import LearnMore from "./components/learn-more";
+import { SmartWalletCard } from "./components/smart-wallet-card";
 
 export default function Home() {
   const signerStatus = useSignerStatus();
@@ -19,6 +20,7 @@ export default function Home() {
             <div className="grid gap-8 md:grid-cols-[1fr_2fr]">
               <div className="flex flex-col gap-8">
                 <UserInfoCard />
+                <SmartWalletCard />
                 <LearnMore />
               </div>
               <NftMintCard />
