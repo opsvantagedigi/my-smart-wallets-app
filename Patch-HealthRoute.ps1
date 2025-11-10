@@ -28,11 +28,18 @@ if (-not (Test-Path (Split-Path $healthRoutePath -Parent))) {
 Set-Content -Path $healthRoutePath -Value $healthContent -Force
 Write-Host "Ensured health route at /app/api/health/route.ts" -ForegroundColor Green
 
-# 2) Install production deps and build
-Write-Host "Installing production dependencies and building..." -ForegroundColor Cyan
-if (Test-Path "node_modules") { Remove-Item -Recurse -Force "node_modules" }
-# Use npm ci --omit=dev for reproducible installs
-npm ci --omit=dev
+# 2) Install dependencies and build
+Write-Host "Installing dependencies and building..." -ForegroundColor Cyan
+# Try to remove node_modules if present, ignore errors on Windows long paths
+if (Test-Path "node_modules") {
+    try {
+        Remove-Item -Recurse -Force "node_modules" -ErrorAction Stop
+    } catch {
+        Write-Host "Warning: could not fully remove node_modules (long paths or locks). Continuing." -ForegroundColor Yellow
+    }
+}
+# Install all dependencies (dev deps required for build e.g. Tailwind PostCSS)
+npm ci
 $buildResult = npm run build
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Build failed. Aborting deployment." -ForegroundColor Red
