@@ -1,12 +1,12 @@
 import { ExternalLink, Book } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../../components/ui/card";
 import Link from "next/link";
 
 export default function LearnMore() {

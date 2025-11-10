@@ -3,7 +3,7 @@
  * Copy and adapt these examples to your use case
  */
 
-import { MarzNetwork, ensureSmartWallet, type SmartWallet } from '@/lib/marzNetwork';
+import { MarzNetwork, ensureSmartWallet, type SmartWallet } from './marzNetwork.js';
 
 // ============================================
 // Example 1: Simple wallet creation

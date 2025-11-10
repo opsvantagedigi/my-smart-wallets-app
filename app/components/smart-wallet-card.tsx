@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { useSmartWallet } from '@/app/hooks/useSmartWallet';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card.js';
+import { Button } from '../../components/ui/button.js';
+import { Badge } from '../../components/ui/badge.js';
+import { useSmartWallet } from '../hooks/useSmartWallet.js';
 import { useUser } from '@account-kit/react';
 
 export function SmartWalletCard() {

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useSignerStatus } from '@account-kit/react';
-import LoginCard from './login-card';
+import LoginCard from './login-card.js';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

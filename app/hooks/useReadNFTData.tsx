@@ -1,7 +1,7 @@
 import { useSmartAccountClient } from "@account-kit/react";
 import { useQuery } from "@tanstack/react-query";
 import { type Address } from "viem";
-import { NFT_MINTABLE_ABI_PARSED } from "@/lib/constants";
+import { NFT_MINTABLE_ABI_PARSED } from "../../lib/constants.js";
 
 interface UseReadNFTUriParams {
   contractAddress?: Address;

@@ -1,13 +1,13 @@
 import React from "react";
-import { config } from "@/config";
+import { config } from "../config.js";
 // import { cookieToInitialState } from "@account-kit/core";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
-import { Providers } from "./providers";
-import Footer from "./components/footer";
-import { ClientLayout } from "./ClientLayout";
+import { Providers } from "./providers.js";
+import Footer from "./components/footer.js";
+import { ClientLayout } from "./ClientLayout.js";
 
 const inter = Inter({ 
   subsets: ["latin"],

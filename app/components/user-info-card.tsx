@@ -1,21 +1,16 @@
 import { useState } from "react";
 import { ExternalLink, Copy } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button.js";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { formatAddress } from "@/lib/utils";
+} from "../../components/ui/card.js";
+import { Badge } from "../../components/ui/badge.js";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../components/ui/tooltip.js";
+import { formatAddress } from "../../lib/utils.js";
 import { useUser, useSmartAccountClient } from "@account-kit/react";
 
 export default function UserInfo() {

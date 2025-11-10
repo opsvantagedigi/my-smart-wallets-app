@@ -4,7 +4,7 @@ import {
   createConfig,
 } from "@account-kit/react";
 import { QueryClient } from "@tanstack/react-query";
-import { chainNFTMintContractData } from "@/lib/chains";
+import { chainNFTMintContractData } from "./lib/chains.js";
 import { alchemy } from "@account-kit/infra";
 
 const API_KEY = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;

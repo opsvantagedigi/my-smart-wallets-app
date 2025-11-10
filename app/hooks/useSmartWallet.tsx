@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import { useUser } from '@account-kit/react';
-import { MarzNetwork, type SmartWallet } from '@/lib/marzNetwork';
+import { MarzNetwork, type SmartWallet } from '../../lib/marzNetwork.js';
 
 interface UseSmartWalletReturn {
   wallet: SmartWallet | null;

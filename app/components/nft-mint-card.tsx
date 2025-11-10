@@ -6,22 +6,22 @@ import {
   ImageIcon,
   CheckCircle,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+} from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
+import { cn } from "../../lib/utils.js";
 import Image from "next/image";
 import Link from "next/link";
-import { useReadNFTData } from "@/app/hooks/useReadNFTData";
-import { useMint } from "@/app/hooks/useMintNFT";
+import { useReadNFTData } from "../hooks/useReadNFTData.js";
+import { useMint } from "../hooks/useMintNFT.js";
 import { useSmartAccountClient } from "@account-kit/react";
-import { useNftContractAddress } from "@/app/hooks/useNftContractAddress";
+import { useNftContractAddress } from "../hooks/useNftContractAddress.js";
 
 export default function NftMintCard() {
   const [isImageLoading, setIsImageLoading] = useState(true);

@@ -1,6 +1,6 @@
 import { useSmartAccountClient } from "@account-kit/react";
 import { arbitrumSepolia } from "@account-kit/infra";
-import { ChainData, chainNFTMintContractData } from "@/lib/chains";
+import { ChainData, chainNFTMintContractData } from "../../lib/chains.js";
 
 export const useNftContractAddress = (): ChainData['nftContractAddress'] | undefined => {
     const { client } = useSmartAccountClient({});
