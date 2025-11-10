@@ -6,7 +6,7 @@
 $projectRoot = "C:\Users\AjaySidal\my-smart-wallets-app"
 $documentPath = "$projectRoot\app\_document.tsx"
 $zipPath = "$projectRoot\smart-wallets-deploy.zip"
-$webAppName = "my-smart-wallets-app"
+$webAppName = "sanctuary-portal"
 $resourceGroup = "opsvantage-production"
 
 Write-Host "🧠 Starting accessibility patch ritual..." -ForegroundColor Cyan
