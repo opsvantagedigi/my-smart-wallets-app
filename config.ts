@@ -24,10 +24,9 @@ if (!chain) {
 }
 
 const uiConfig: AlchemyAccountsUIConfig = {
-  illustrationStyle: "outline",
+  illustrationStyle: "flat",
   auth: {
     header: "/assets/brand-logo.png",
-    hideSignInText: false,
     sections: [
       [{ type: "email" }],
       [
@@ -67,8 +66,9 @@ const uiConfig: AlchemyAccountsUIConfig = {
         },
       ],
     ],
-    addPasskeyOnSignup: false,
+    addPasskeyOnSignup: true,
   },
+  supportUrl: "support@opsvantagedigital.online",
 };
 
 export const config = createConfig(
