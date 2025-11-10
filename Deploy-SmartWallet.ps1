@@ -5,8 +5,8 @@
 # Step 1: Set variables
 $projectRoot = "C:\Users\AjaySidal\my-smart-wallets-app"
 $zipPath = "$projectRoot\smart-wallets-deploy.zip"
-$webAppName = "my-smart-wallets-app"
-$resourceGroup = "my-smart-wallets-rg"
+$webAppName = "sanctuary-portal"
+$resourceGroup = "DefaultResourceGroup-EAU"
 
 Write-Host "Starting Smart Wallet deployment ritual..." -ForegroundColor Cyan
 
