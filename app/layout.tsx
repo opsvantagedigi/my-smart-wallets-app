@@ -5,6 +5,7 @@ import { Inter, Orbitron } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
 import { Providers } from "./providers";
+import Footer from "./components/footer";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
         <Providers initialState={initialState}>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );

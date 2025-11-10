@@ -157,12 +157,7 @@ export default function NftMintCard() {
               >
                 {showSuccess ? (
                   <>
-                    <div
-                      className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 opacity-10"
-                      style={{
-                        animation: "sweep 1.5s ease-out",
-                      }}
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 opacity-10 animate-sweep" />
                     <span className="relative z-10">Successful mint!</span>
                     <CheckCircle className="h-4 w-4 relative z-10" />
                     <style jsx>{`
@@ -178,6 +173,9 @@ export default function NftMintCard() {
                           transform: translateX(100%);
                           opacity: 0;
                         }
+                      }
+                      .animate-sweep {
+                        animation: sweep 1.5s ease-out;
                       }
                     `}</style>
                   </>
