@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface StepProps {
   step: number;
@@ -17,7 +18,7 @@ const Step: React.FC<StepProps> = ({ step, title, description, imageUrl, imageFi
     </div>
     <div className="relative">
       <div className="aspect-w-16 aspect-h-9">
-        <img src={imageUrl} alt={title} className="rounded-xl shadow-2xl object-cover" />
+  <Image src={imageUrl} alt={title} className="rounded-xl shadow-2xl object-cover" width={800} height={450} />
       </div>
        <div className="absolute -inset-2 bg-white/10 rounded-2xl -z-10 transform rotate-2"></div>
     </div>
