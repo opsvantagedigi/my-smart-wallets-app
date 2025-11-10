@@ -6,7 +6,7 @@
 $projectRoot = "C:\Users\AjaySidal\my-smart-wallets-app"
 $zipPath = "$projectRoot\smart-wallets-deploy.zip"
 $webAppName = "sanctuary-portal"
-$resourceGroup = "DefaultResourceGroup-EAU"
+$resourceGroup = "opsvantage-production"
 
 Write-Host "Starting Smart Wallet deployment ritual..." -ForegroundColor Cyan
 
@@ -19,14 +19,20 @@ if (Test-Path $zipPath) {
     Write-Host "Previous zip removed." -ForegroundColor Yellow
 }
 
-# Step 4: Build the app
-Write-Host "Running build..." -ForegroundColor Cyan
-npm install
+# Step 4: Install production dependencies and build the app
+# Install only production dependencies so the runtime 'next' binary is available
+Write-Host "Installing production dependencies and building..." -ForegroundColor Cyan
+# clean any existing node_modules to ensure a consistent package install
+if (Test-Path "node_modules") { Remove-Item -Recurse -Force "node_modules" }
+# install only production dependencies (includes next since it's in dependencies)
+npm ci --omit=dev
 npm run build
 
-# Step 5: Create deployment zip
-Write-Host "Creating deployment zip..." -ForegroundColor Cyan
-Compress-Archive -Path ".next","public","package.json","package-lock.json" -DestinationPath $zipPath
+# Step 5: Create deployment zip (include node_modules so the runtime has 'next')
+Write-Host "Creating deployment zip (including node_modules)..." -ForegroundColor Cyan
+# Ensure package-lock.json exists for reproducible deployments
+if (-not (Test-Path "package-lock.json")) { npm i --package-lock-only }
+Compress-Archive -Path ".next","public","package.json","package-lock.json","node_modules" -DestinationPath $zipPath -Force
 
 # Step 6: Deploy to Azure
 Write-Host "Deploying to Azure Web App..." -ForegroundColor Cyan
