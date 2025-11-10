@@ -11,8 +11,8 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-orbitron text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6">
-            <div className="mb-4">Take control of your crypto.</div>
-            <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text">Secure. Smart. Scam-proof.</div>
+            <div className="mb-4 whitespace-nowrap">Take control of your crypto.</div>
+            <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text whitespace-nowrap">Secure. Smart. Scam-proof.</div>
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
             Enterprise-grade security for every user. Manage your digital assets with confidence and clarity.
