@@ -84,6 +84,24 @@
       transform: rotate(-1deg);
     }
   }
+  
+  @keyframes sweep {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  .animate-sweep {
+    animation: sweep 1.5s ease-out;
+  }
 }
 
 

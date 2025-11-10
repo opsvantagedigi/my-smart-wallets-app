@@ -8,6 +8,9 @@ import Header from "./components/header";
 import LearnMore from "./components/learn-more";
 import { SmartWalletCard } from "./components/smart-wallet-card";
 import Hero from "./components/Hero";
+import Benefits from "./components/Benefits";
+import Features from "./components/Features";
+import HowItWorks from "./components/HowItWorks";
 
 export default function Home() {
   const signerStatus = useSignerStatus();
@@ -17,6 +20,9 @@ export default function Home() {
       <Header />
       <div className="pt-20">
         {!signerStatus.isConnected && <Hero />}
+        {!signerStatus.isConnected && <Benefits />}
+        {!signerStatus.isConnected && <Features />}
+        {!signerStatus.isConnected && <HowItWorks />}
         <main className="container mx-auto px-4 py-8 min-h-screen">
           {signerStatus.isConnected ? (
             <div className="grid gap-8 md:grid-cols-[1fr_2fr]">

@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
             <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-[#ffe600]/30 rounded-full blur-3xl animate-pulse animation-delay-3000"></div>
         </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto">
           <h1 className="font-orbitron text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6">
             <div className="mb-4 whitespace-nowrap">Take control of your crypto.</div>
             <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text whitespace-nowrap">Secure. Smart. Scam-proof.</div>
