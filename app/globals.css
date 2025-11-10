@@ -58,6 +58,10 @@
     animation: tilt 10s infinite linear;
   }
   
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+  
   @keyframes fadeInUp {
     from {
       opacity: 0;

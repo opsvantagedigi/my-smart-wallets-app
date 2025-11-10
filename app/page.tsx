@@ -7,6 +7,7 @@ import LoginCard from "./components/login-card";
 import Header from "./components/header";
 import LearnMore from "./components/learn-more";
 import { SmartWalletCard } from "./components/smart-wallet-card";
+import Hero from "./components/Hero";
 
 export default function Home() {
   const signerStatus = useSignerStatus();
@@ -15,6 +16,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <Header />
       <div className="pt-20">
+        {!signerStatus.isConnected && <Hero />}
         <main className="container mx-auto px-4 py-8 min-h-screen">
           {signerStatus.isConnected ? (
             <div className="grid gap-8 md:grid-cols-[1fr_2fr]">
