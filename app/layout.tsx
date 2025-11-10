@@ -1,5 +1,5 @@
 import { config } from "@/config";
-import { cookieToInitialState } from "@account-kit/core";
+// import { cookieToInitialState } from "@account-kit/core";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import { headers } from "next/headers";
@@ -45,11 +45,11 @@ export default async function RootLayout({
 }>) {
   // Persist state across pages
   // https://www.alchemy.com/docs/wallets/react/ssr#persisting-the-account-state
-  const headersList = await headers();
-  const initialState = cookieToInitialState(
-    config,
-    headersList.get("cookie") ?? undefined
-  );
+  // const headersList = await headers();
+  // const initialState = cookieToInitialState(
+  //   config,
+  //   headersList.get("cookie") ?? undefined
+  // );
 
   return (
     <html lang="en">
@@ -59,7 +59,7 @@ export default async function RootLayout({
         <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self';" />
       </head>
       <body className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
-        <Providers initialState={initialState}>
+  <Providers>
           {children}
           <ClientLayout />
         </Providers>

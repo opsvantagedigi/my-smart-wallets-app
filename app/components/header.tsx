@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { useSignerStatus } from '@account-kit/react';
 import LoginCard from './login-card';

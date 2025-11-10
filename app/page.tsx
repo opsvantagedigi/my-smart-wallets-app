@@ -1,45 +1,7 @@
-"use client";
-
-import { useSignerStatus } from "@account-kit/react";
-import UserInfoCard from "./components/user-info-card";
-import NftMintCard from "./components/nft-mint-card";
-import LoginCard from "./components/login-card";
-import Header from "./components/header";
-import LearnMore from "./components/learn-more";
-import { SmartWalletCard } from "./components/smart-wallet-card";
-import Hero from "./components/Hero";
-import Benefits from "./components/Benefits";
-import Features from "./components/Features";
-import HowItWorks from "./components/HowItWorks";
-
 export default function Home() {
-  const signerStatus = useSignerStatus();
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-      <Header />
-      <div className="pt-20">
-        {!signerStatus.isConnected && <Hero />}
-        {!signerStatus.isConnected && <Benefits />}
-        {!signerStatus.isConnected && <Features />}
-        {!signerStatus.isConnected && <HowItWorks />}
-        <main className="container mx-auto px-4 py-8 min-h-screen">
-          {signerStatus.isConnected ? (
-            <div className="grid gap-8 md:grid-cols-[1fr_2fr]">
-              <div className="flex flex-col gap-8">
-                <UserInfoCard />
-                <SmartWalletCard />
-                <LearnMore />
-              </div>
-              <NftMintCard />
-            </div>
-          ) : (
-            <div className="flex justify-center items-center min-h-[80vh]">
-              <LoginCard />
-            </div>
-          )}
-        </main>
-      </div>
-    </div>
+    <main className="flex min-h-screen items-center justify-center bg-black text-white font-orbitron">
+      <h1 className="text-4xl">Smart Wallet App is Running — Legacy Begins Here</h1>
+    </main>
   );
 }
