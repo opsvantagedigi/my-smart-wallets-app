@@ -12,10 +12,10 @@ export default function Home() {
   const signerStatus = useSignerStatus();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <Header />
-      <div className="h-[calc(100vh-4rem)]">
-        <main className="container mx-auto px-4 py-8 h-full">
+      <div className="pt-20">
+        <main className="container mx-auto px-4 py-8 min-h-screen">
           {signerStatus.isConnected ? (
             <div className="grid gap-8 md:grid-cols-[1fr_2fr]">
               <div className="flex flex-col gap-8">
@@ -26,7 +26,7 @@ export default function Home() {
               <NftMintCard />
             </div>
           ) : (
-            <div className="flex justify-center items-center h-full pb-[4rem]">
+            <div className="flex justify-center items-center min-h-[80vh]">
               <LoginCard />
             </div>
           )}
