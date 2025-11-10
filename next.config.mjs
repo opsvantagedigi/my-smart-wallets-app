@@ -12,6 +12,8 @@ const nextConfig = {
   },
   turbopack: {
     resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
+    // Explicitly set root to avoid workspace root inference warnings due to multiple lockfiles
+    root: process.cwd(),
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
