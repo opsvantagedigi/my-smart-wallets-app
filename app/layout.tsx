@@ -52,9 +52,13 @@ export default async function RootLayout({
   // );
 
   return (
-    <html lang="en">
-      <head />
-      <body>
+      <html lang="en">
+        <head>
+          {/* Explicit viewport and title to satisfy accessibility and browser requirements */}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>{typeof metadata.title === 'string' ? metadata.title : 'Marz Smart Wallets'}</title>
+        </head>
+        <body>
         <Providers>
           <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
             {children}
