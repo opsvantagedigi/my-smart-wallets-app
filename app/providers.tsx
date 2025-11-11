@@ -5,7 +5,7 @@ import { config, queryClient } from "../config.js";
 // import { QueryClientProvider } from "@tanstack/react-query";
 import { PropsWithChildren } from "react";
 
-export const Providers = (props: any) => {
+export const Providers = (props: PropsWithChildren<{}>) => {
   // Minimal provider for deployment
   return <>{props.children}</>;
 };
