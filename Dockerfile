@@ -3,8 +3,8 @@
 # Use a Node image with build tools for native dependencies
 FROM node:20-alpine as builder
 
-# Install Python, build tools, linux-headers, and libudev-dev for node-gyp and native modules
-RUN apk add --no-cache python3 make g++ linux-headers libudev-dev
+# Install Python, build tools, linux-headers, and eudev-dev for node-gyp and native modules
+RUN apk add --no-cache python3 make g++ linux-headers eudev-dev
 
 # Set working directory
 WORKDIR /app
@@ -24,8 +24,8 @@ RUN npm run build
 # Use a Node image with build tools for native dependencies
 FROM node:20-alpine as runner
 
-# Install Python, build tools, linux-headers, and libudev-dev for node-gyp and native modules
-RUN apk add --no-cache python3 make g++ linux-headers libudev-dev
+# Install Python, build tools, linux-headers, and eudev-dev for node-gyp and native modules
+RUN apk add --no-cache python3 make g++ linux-headers eudev-dev
 WORKDIR /app
 
 ENV NODE_ENV=production
