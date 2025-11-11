@@ -1,5 +1,10 @@
 # Use official Node.js image as the base
+
+# Use a Node image with build tools for native dependencies
 FROM node:20-alpine as builder
+
+# Install Python and build tools for node-gyp
+RUN apk add --no-cache python3 make g++
 
 # Set working directory
 WORKDIR /app
@@ -15,7 +20,12 @@ COPY . .
 RUN npm run build
 
 # Production image, copy only necessary files
+
+# Use a Node image with build tools for native dependencies
 FROM node:20-alpine as runner
+
+# Install Python and build tools for node-gyp
+RUN apk add --no-cache python3 make g++
 WORKDIR /app
 
 ENV NODE_ENV=production
