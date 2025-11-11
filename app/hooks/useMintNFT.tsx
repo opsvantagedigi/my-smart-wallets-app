@@ -60,7 +60,7 @@ export const useMint = ({ onSuccess }: UseMintNFTParams): UseMintReturn => {
 
     // Resolve the current wallet address (client.getAddress may be async)
   // Provide a minimal arg to satisfy the SDK's type signature and cast the result
-  const recipientAddress = await (client.getAddress?.({ account: client.account } as any) as Promise<`0x${string}`> | `0x${string}`);
+  const recipientAddress = await (client.getAddress?.() as Promise<`0x${string}`> | `0x${string}`);
 
     sendUserOperation({
       account: client.account as any,

@@ -18,8 +18,9 @@
     "types": [
       "node"
     ],
-    "strict": false,
-    "incremental": true,
+  "strict": true,
+  "forceConsistentCasingInFileNames": true,
+  "incremental": true,
     "plugins": [
       {
         "name": "next"

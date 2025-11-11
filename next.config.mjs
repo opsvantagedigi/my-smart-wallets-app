@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+let nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -24,5 +24,16 @@ const nextConfig = {
     return config;
   },
 };
+
+// If Sentry is installed, wrap config to enable Sentry's webpack plugin
+try {
+  const { withSentryConfig } = await import("@sentry/nextjs");
+  const sentryWebpackPluginOptions = {
+    silent: true,
+  };
+  nextConfig = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+} catch (e) {
+  // Sentry not installed or optional - fall back to plain config
+}
 
 export default nextConfig;
