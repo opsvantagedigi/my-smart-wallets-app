@@ -25,7 +25,8 @@ const AIAvatar: React.FC = () => {
             </div>
              <div className="flex">
               <div className="bg-blue-500/20 text-gray-200 p-3 rounded-lg max-w-xs">
-                Great question! OpsVantage uses a real-time intelligence engine to analyze transactions and dApp interactions, warning you of potential phishing attempts or malicious smart contracts before you approve them.
+                Great question! OpsVantage uses a real-time intelligence engine to analyze transactions and dApp interactions,
+                warning you of potential phishing attempts or malicious smart contracts before you approve them.
               </div>
             </div>
           </div>

@@ -3,11 +3,10 @@ import { config } from "../config.js";
 // import { cookieToInitialState } from "@account-kit/core";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
-import { headers } from "next/headers";
 import "./globals.css";
-import { Providers } from "./providers.js";
-import Footer from "./components/footer.js";
-import { ClientLayout } from "./ClientLayout.js";
+import { Providers } from "./providers";
+import Footer from "./components/footer";
+import { ClientLayout } from "./ClientLayout";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -53,14 +52,21 @@ export default async function RootLayout({
   // );
 
   return (
-    <>
-      <Providers>
-        <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
-          {children}
-          <ClientLayout />
-        </div>
-      </Providers>
-      <Footer />
-    </>
+      <html lang="en">
+        <head>
+          {/* Explicit viewport and title to satisfy accessibility and browser requirements */}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>{typeof metadata.title === 'string' ? metadata.title : 'Marz Smart Wallets'}</title>
+        </head>
+        <body>
+        <Providers>
+          <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
+            {children}
+            <ClientLayout />
+          </div>
+        </Providers>
+        <Footer />
+      </body>
+    </html>
   );
 }

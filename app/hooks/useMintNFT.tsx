@@ -37,7 +37,7 @@ export const useMint = ({ onSuccess }: UseMintNFTParams): UseMintReturn => {
   };
 
   const { sendUserOperationResult, sendUserOperation } = useSendUserOperation({
-    client,
+    client: client as any,
     waitForTxn: true,
     onError: handleError,
     onSuccess: handleSuccess,
@@ -58,13 +58,18 @@ export const useMint = ({ onSuccess }: UseMintNFTParams): UseMintReturn => {
         return;
     }
 
+    // Resolve the current wallet address (client.getAddress may be async)
+  // Provide a minimal arg to satisfy the SDK's type signature and cast the result
+  const recipientAddress = await (client.getAddress?.() as Promise<`0x${string}`> | `0x${string}`);
+
     sendUserOperation({
+      account: client.account as any,
       uo: {
         target: nftContractAddress,
         data: encodeFunctionData({
           abi: NFT_MINTABLE_ABI_PARSED,
           functionName: "mintTo",
-          args: [client.getAddress()],
+          args: [recipientAddress as `0x${string}`],
         }),
       },
     });

@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+let nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -9,11 +9,6 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-  },
-  turbopack: {
-    resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
-    // Explicitly set root to avoid workspace root inference warnings due to multiple lockfiles
-    root: process.cwd(),
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -29,5 +24,16 @@ const nextConfig = {
     return config;
   },
 };
+
+// If Sentry is installed, wrap config to enable Sentry's webpack plugin
+try {
+  const { withSentryConfig } = await import("@sentry/nextjs");
+  const sentryWebpackPluginOptions = {
+    silent: true,
+  };
+  nextConfig = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+} catch (e) {
+  // Sentry not installed or optional - fall back to plain config
+}
 
 export default nextConfig;
