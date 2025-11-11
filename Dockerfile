@@ -1,7 +1,7 @@
 # Use official Node.js image as the base
 
 # Use a Node image with build tools for native dependencies
-FROM node:20-alpine as builder
+FROM node:20-alpine AS builder
 
 # Install Python, build tools, linux-headers, and eudev-dev for node-gyp and native modules
 RUN apk add --no-cache python3 make g++ linux-headers eudev-dev
@@ -22,7 +22,7 @@ RUN npm run build
 # Production image, copy only necessary files
 
 # Use a Node image with build tools for native dependencies
-FROM node:20-alpine as runner
+FROM node:20-alpine AS runner
 
 # Install Python, build tools, linux-headers, and eudev-dev for node-gyp and native modules
 RUN apk add --no-cache python3 make g++ linux-headers eudev-dev
