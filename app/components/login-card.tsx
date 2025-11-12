@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { Button } from "../../components/ui/button.jsx";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
-} from "../../components/ui/card.jsx";
-import { cn } from "../../lib/utils.js";
+} from "../../components/ui/card";
+import { cn } from "../../lib/utils";
 import { useAuthModal } from "@account-kit/react";
 export default function LoginPage() {
   const { openAuthModal } = useAuthModal();

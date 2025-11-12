@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import { useSignerStatus } from '@account-kit/react';
 import LoginCard from './login-card';
 import { fetchHeroContent } from '@/lib/sanity';
-import { ShieldCheckIcon } from './icons/ShieldCheckIcon.js';
-import { CoinsIcon } from './icons/CoinsIcon.js';
-import { Web3Icon } from './icons/Web3Icon.js';
-import { NoCustodyIcon } from './icons/NoCustodyIcon.js';
-import { MultiChainIcon } from './icons/MultiChainIcon.js';
-import { AlertsIcon } from './icons/AlertsIcon.js';
-import { DashboardIcon } from './icons/DashboardIcon.js';
-import { HardwareIcon } from './icons/HardwareIcon.js';
+import { ShieldCheckIcon } from './icons/ShieldCheckIcon';
+import { CoinsIcon } from './icons/CoinsIcon';
+import { Web3Icon } from './icons/Web3Icon';
+import { NoCustodyIcon } from './icons/NoCustodyIcon';
+import { MultiChainIcon } from './icons/MultiChainIcon';
+import { AlertsIcon } from './icons/AlertsIcon';
+import { DashboardIcon } from './icons/DashboardIcon';
+import { HardwareIcon } from './icons/HardwareIcon';
 import Image from 'next/image';
 
 export async function getStaticProps() {
