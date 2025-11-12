@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {},
+  output: 'export',
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "static.alchemyapi.io",
-        port: "",
-        pathname: "/**",
+        protocol: 'https',
+        hostname: 'static.alchemyapi.io',
+        port: '',
+        pathname: '/**',
       },
     ],
   },
