@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import {
@@ -12,9 +12,21 @@ import {
 } from "../../components/ui/card";
 import { cn } from "../../lib/utils";
 import { useAuthModal } from "@account-kit/react";
-export default function LoginPage() {
+export default function LoginPage({ onClose }: { onClose?: () => void }) {
   const { openAuthModal } = useAuthModal();
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+
+  const handleClose = () => {
+    if (onClose) onClose();
+  };
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') handleClose();
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
 
   return (
     <Card
@@ -24,7 +36,15 @@ export default function LoginPage() {
         "hover:shadow-2xl transition-all duration-300"
       )}
     >
-      <CardHeader className={cn("text-center space-y-4 pb-8")}>
+      {/* Close Button */}
+      <button
+        onClick={handleClose}
+        className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 dark:hover:text-white text-xl font-bold focus:outline-none"
+        aria-label="Close login modal"
+      >
+        ×
+      </button>
+      <CardHeader className={cn("text-center space-y-4 pb-8")}>...
         <CardTitle
           className={cn(
             "text-3xl font-bold tracking-tight bg-gradient-to-r from-gray-900 to-gray-600",

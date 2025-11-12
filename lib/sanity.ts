@@ -1,4 +1,16 @@
 
+export type HeroContent = {
+  headline: string;
+  subtext: string;
+  ctaLabel: string;
+  ctaLink: string;
+  backgroundImage?: {
+    asset?: {
+      url: string;
+    };
+  };
+};
+
 import { createClient } from '@sanity/client';
 
 export const sanityClient = createClient({
@@ -8,7 +20,7 @@ export const sanityClient = createClient({
   useCdn: true,
 });
 
-export const fetchHeroContent = async () => {
+export const fetchHeroContent = async (): Promise<HeroContent | null> => {
   const query = `*[_type == "heroContent" && visible == true][0]{
     headline,
     subtext,

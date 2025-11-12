@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useSignerStatus } from '@account-kit/react';
 import LoginCard from './login-card';
-import { fetchHeroContent } from '@/lib/sanity';
+import { fetchHeroContent, HeroContent } from '@/lib/sanity';
 import { ShieldCheckIcon } from './icons/ShieldCheckIcon';
 import { CoinsIcon } from './icons/CoinsIcon';
 import { Web3Icon } from './icons/Web3Icon';
@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 
 
-const Landing: React.FC<{ hero: any }> = ({ hero }) => {
+const Landing: React.FC<{ hero: HeroContent | null }> = ({ hero }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isConnected } = useSignerStatus();
   const [showLogin, setShowLogin] = useState(false);
@@ -264,7 +264,7 @@ const Landing: React.FC<{ hero: any }> = ({ hero }) => {
       {/* Login Modal */}
           {showLogin && !isConnected && (
             <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-              <LoginCard />
+              <LoginCard onClose={() => setShowLogin(false)} />
             </div>
           )}
         </>
