@@ -16,6 +16,7 @@
     "@account-kit/react": "^4.35.1",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.7",
+    "@sanity/assist": "^5.0.2",
     "@sanity/client": "^7.12.1",
     "@sanity/icons": "^3.7.4",
     "@sanity/image-url": "^1.2.0",
