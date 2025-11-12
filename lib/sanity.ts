@@ -1,18 +1,24 @@
-import { createClient } from 'next-sanity'
+
+import { createClient } from '@sanity/client';
 
 export const sanityClient = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
   apiVersion: '2023-01-01',
-  useCdn: process.env.NODE_ENV === 'production',
-})
+  useCdn: true,
+});
 
-// Example GROQ fetcher for hero content
-export async function fetchHeroContent() {
-  return sanityClient.fetch(`*[_type == "heroContent"][0]{
-    title,
-    subtitle,
-    "backgroundImage": backgroundImage.asset->url,
-    ctas[]
-  }`)
-}
+export const fetchHeroContent = async () => {
+  const query = `*[_type == "heroContent" && visible == true][0]{
+    headline,
+    subtext,
+    ctaLabel,
+    ctaLink,
+    backgroundImage {
+      asset-> {
+        url
+      }
+    }
+  }`;
+  return await sanityClient.fetch(query);
+};
