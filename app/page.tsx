@@ -1,7 +1,7 @@
 import Landing from './components/landing';
+import { fetchHeroContent } from '../lib/sanity';
 
-export default function HomePage() {
-  // Provide a value for the required 'hero' prop
-  const hero = {}; // Replace with actual hero data as needed
+export default async function HomePage() {
+  const hero = await fetchHeroContent();
   return <Landing hero={hero} />;
 }

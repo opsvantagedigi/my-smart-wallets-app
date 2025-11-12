@@ -13,10 +13,7 @@ import { DashboardIcon } from './icons/DashboardIcon';
 import { HardwareIcon } from './icons/HardwareIcon';
 import Image from 'next/image';
 
-export async function getStaticProps() {
-  const hero = await fetchHeroContent();
-  return { props: { hero } };
-}
+
 
 const Landing: React.FC<{ hero: any }> = ({ hero }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
