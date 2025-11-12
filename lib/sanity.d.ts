@@ -1,3 +1,1 @@
-declare module '../lib/sanity' {
-  export * from '../lib/sanity';
-}
+declare module '@sanity/client';
