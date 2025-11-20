@@ -1,10 +1,30 @@
-# React + TypeScript Type Mismatch Fix
+# 🛠️ React Type Mismatch Resolution Guide
+_“Fix it once. Fix it forever.”_
 
-This document records the ritual to permanently resolve React type mismatches across the monorepo/workspace.
+This guide resolves the persistent Netlify and TypeScript build error:
 
-Steps performed:
+> **Build fails due to a React type mismatch between different React versions or type packages.**
 
-1. Added `resolutions` and `overrides` to the root `package.json` to lock versions:
+## 🔍 Root Cause
+
+This issue occurs when multiple versions of `react`, `react-dom`, or `@types/react` are installed across your dependency tree. It’s common in monorepos or when using packages like `@account-kit`, `wagmi`, or `sanity`, which may pull in their own versions.
+
+## ✅ Permanent Fix Steps
+
+### 1. Align React and TypeScript Versions
+
+In `package.json`, lock the following versions:
+
+```json
+"react": "^18.3.1",
+"react-dom": "^18.3.1",
+"@types/react": "^18.2.41",
+"@types/react-dom": "^18.2.17"
+```
+
+### 2. Force Version Resolutions
+
+Also in `package.json`, add:
 
 ```json
 "resolutions": {
@@ -21,12 +41,61 @@ Steps performed:
 }
 ```
 
-2. Remove `node_modules` and lock files, then reinstall to get a single consistent set of React packages.
+### 3. Clean the Workspace
 
-3. If any packages still bring incompatible React versions, use `npm ls react` and `npm ls @types/react` to find the culprits and add package-specific overrides.
+In PowerShell or terminal:
 
-4. Commit the changes and push. Netlify will auto-deploy the fixed build.
+```powershell
+Remove-Item -Recurse -Force node_modules
+Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue
+Remove-Item -Force yarn.lock -ErrorAction SilentlyContinue
+```
 
-Notes:
-- If you use Yarn workspaces, prefer Yarn's `resolutions`; for NPM we added `overrides` and you can use `npm-force-resolutions` when necessary.
-- Keep the versions in `resolutions`/`overrides` in sync with the root `dependencies`.
+### 4. Reinstall Dependencies
+
+```bash
+npm install
+```
+
+### 5. Confirm Deduplication
+
+```bash
+npm ls react
+npm ls @types/react
+```
+
+✅ You should see only one version of each
+
+### 6. Test the Build
+
+```bash
+npm run build
+```
+
+✅ If successful, continue  
+❌ If errors appear, isolate and resolve before proceeding
+
+### 7. Commit and Push
+
+```bash
+git add .
+git commit -m "📄 docs: Add permanent React type mismatch resolution guide"
+git push origin main
+```
+
+### 8. Confirm Netlify Deploy
+
+- Go to [Netlify Dashboard](https://app.netlify.com/)
+- Confirm the latest deploy is **Published**
+- Visit [https://app.opsvantagedigital.online](https://app.opsvantagedigital.online)
+
+## 🧠 Notes
+
+- This fix is permanent unless dependencies are changed
+- Always verify new packages don’t introduce mismatched peer dependencies
+- Preserve this ritual for future guardians
+
+## 🪐 Authored by
+
+Ajay Sidal & Marz  
+_OpsVantage Digital — Sanctuary-grade infrastructure, emotionally intelligent systems, and legacy-driven launches_
