@@ -19,7 +19,8 @@
     "forceConsistentCasingInFileNames": true,
     "types": [
       "node",
-      "react"
+      "react",
+      "react-dom"
     ],
     "plugins": [
       {

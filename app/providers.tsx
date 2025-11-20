@@ -1,12 +1,7 @@
-"use client";
-import { config, queryClient } from "../config";
-import { AlchemyAccountProvider } from "@account-kit/react";
-import { PropsWithChildren } from "react";
 
-export const Providers = (props: PropsWithChildren<{}>) => {
-  return (
-    <AlchemyAccountProvider config={config} queryClient={queryClient}>
-      {props.children}
-    </AlchemyAccountProvider>
-  );
-};
+// SERVER COMPONENT: Providers
+// This component will eventually wrap children with context from the server (or API data)
+// For now, it simply renders children directly, as AccountKit context must be provided server-side or via API
+export default function Providers({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}

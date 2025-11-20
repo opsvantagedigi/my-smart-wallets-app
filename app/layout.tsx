@@ -4,7 +4,7 @@ import { config } from "../config.js";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
+import Providers from "./providers";
 import Footer from "./components/footer";
 import { ClientLayout } from "./ClientLayout";
 
