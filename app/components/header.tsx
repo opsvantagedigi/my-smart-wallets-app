@@ -19,9 +19,10 @@ const Header: React.FC = () => {
               </span>
             </a>
           </div>
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            <span className="text-gray-300">Navigation (Unavailable)</span>
-          </div>
+          <nav className="hidden md:flex md:items-center md:space-x-8">
+            <a href="/" className="text-gray-200 hover:text-white font-medium transition">Home</a>
+            <a href="/contact" className="text-gray-200 hover:text-white font-medium transition">Contact Us</a>
+          </nav>
           <div className="hidden md:block">
             <span className="px-5 py-2.5 text-sm font-medium text-black bg-[#ffe600] rounded-md opacity-50 cursor-not-allowed whitespace-nowrap">
               Sign Up (Unavailable)
