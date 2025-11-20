@@ -1,8 +1,7 @@
 
-import Landing from './components/landing';
-import { fetchHeroContent, HeroContent } from '../lib/sanity';
 
-export default async function HomePage() {
-  const hero: HeroContent | null = await fetchHeroContent();
-  return <Landing hero={hero} />;
+import Landing from './components/landing';
+
+export default function HomePage() {
+  return <Landing />;
 }

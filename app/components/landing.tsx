@@ -18,7 +18,8 @@ import StarryBackground from '@/components/StarryBackground';
 
 
 
-const Landing: React.FC<{ hero: HeroContent | null }> = ({ hero }) => {
+const Landing: React.FC = (props: any) => {
+  const hero = props.hero;
 
   const { isConnected } = useSignerStatus();
   const [showLogin, setShowLogin] = useState(false);
