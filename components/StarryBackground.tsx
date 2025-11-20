@@ -17,28 +17,28 @@ export default function StarryBackground() {
       d: Math.random() * 0.5 + 0.2,
     }));
     function draw() {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      ctx.save();
-      ctx.globalAlpha = 0.8;
+      ctx!.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      ctx!.save();
+      ctx!.globalAlpha = 0.8;
       for (const star of stars) {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.r, 0, 2 * Math.PI);
-        ctx.fillStyle = "#fff";
-        ctx.shadowColor = "#00eaff";
-        ctx.shadowBlur = 8;
-        ctx.fill();
+        ctx!.beginPath();
+        ctx!.arc(star.x, star.y, star.r, 0, 2 * Math.PI);
+        ctx!.fillStyle = "#fff";
+        ctx!.shadowColor = "#00eaff";
+        ctx!.shadowBlur = 8;
+        ctx!.fill();
         star.y += star.d;
         if (star.y > window.innerHeight) {
           star.y = 0;
           star.x = Math.random() * window.innerWidth;
         }
       }
-      ctx.restore();
+      ctx!.restore();
       animationId = requestAnimationFrame(draw);
     }
     function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas!.width = window.innerWidth;
+      canvas!.height = window.innerHeight;
     }
     resize();
     window.addEventListener("resize", resize);
