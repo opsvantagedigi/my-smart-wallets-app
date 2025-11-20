@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export default function StarryBackground() {
+import React, { PropsWithChildren } from "react";
+
+export default function StarryBackground({ children }: PropsWithChildren) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -50,19 +52,22 @@ export default function StarryBackground() {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      id="canvas-container"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: 0,
-        pointerEvents: "none",
-      }}
-      aria-hidden="true"
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        id="canvas-container"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+        aria-hidden="true"
+      />
+      <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
+    </>
   );
 }

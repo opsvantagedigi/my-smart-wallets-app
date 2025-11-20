@@ -28,8 +28,8 @@
     "dotenv": "^17.2.3",
     "lucide-react": "^0.511.0",
     "next-sanity": "^11.6.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "rxjs": "^7.8.2",
     "sanity": "^4.15.0",
     "sharp": "^0.34.5",
@@ -44,8 +44,8 @@
     "@tailwindcss/postcss": "^4.1.17",
     "@types/next": "^8.0.7",
     "@types/node": "^20.19.25",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "18.2.41",
+    "@types/react-dom": "18.2.17",
     "cross-env": "^10.1.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",
@@ -55,6 +55,18 @@
     "tailwindcss": "^4.1.17",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "resolutions": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@types/react": "18.2.41",
+    "@types/react-dom": "18.2.17"
+  },
+  "overrides": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@types/react": "18.2.41",
+    "@types/react-dom": "18.2.17"
   },
   "engines": {
     "node": "20.x"
