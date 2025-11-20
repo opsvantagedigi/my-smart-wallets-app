@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Clear .next and node_modules",
+			"type": "shell",
+			"command": "rm -rf .next node_modules"
+		}
+	]
+}
