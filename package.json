@@ -12,6 +12,8 @@
     "start": "next start",
     "lint": "next lint",
     "test:sanity": "cross-env NODE_OPTIONS=--loader=ts-node/esm ts-node test-sanity-fetch.ts",
+    "ci-mock": "node ci/mock-server.js",
+    "ci-mock-stop": "pkill -f 'node ci/mock-server.js' || true",
     "smoke": "node scripts/smoke-check.js"
   },
   "dependencies": {
