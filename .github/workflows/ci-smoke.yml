@@ -1,0 +1,33 @@
+name: CI — Build and Smoke Test
+
+on:
+  pull_request:
+    branches: [ main, cleanup/cloudflare-deploy ]
+  push:
+    branches: [ cleanup/cloudflare-deploy ]
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Start dev server in background
+        run: |
+          nohup npm run dev -- --port 3000 > dev.log 2>&1 &
+          sleep 6
+
+      - name: Run smoke test
+        run: npm run smoke
