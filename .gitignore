@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Ignore Sanity runtime build output
+studio-my-smart-wallets-app/.sanity/runtime/
