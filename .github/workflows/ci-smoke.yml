@@ -1,0 +1,59 @@
+name: CI - Build and Smoke Test
+
+on:
+  pull_request:
+    branches:
+      - main
+      - cleanup/cloudflare-deploy
+  push:
+    branches:
+      - cleanup/cloudflare-deploy
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Export RPC URL for smoke
+        env:
+          CI_RPC_URL: ${{ secrets.CI_RPC_URL }}
+        run: |
+          if [ -n "$CI_RPC_URL" ]; then
+            echo "NEXT_PUBLIC_RPC_URL=$CI_RPC_URL" >> $GITHUB_ENV
+            echo "Using CI_RPC_URL secret"
+          else
+            echo "NEXT_PUBLIC_RPC_URL=https://rpc.devnet.alchemy.com/0969bab5-2013-4458-a04b-61e5e39185dd" >> $GITHUB_ENV
+            echo "CI_RPC_URL secret not set; using fallback Alchemy Devnet URL"
+          fi
+
+      - name: Start CI mock server
+        run: |
+          nohup npm run ci-mock > ci-mock.log 2>&1 &
+          sleep 3
+
+      - name: Run smoke test
+        run: npm run smoke
+
+      - name: Upload mock server log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-mock-log
+          path: ci-mock.log
+
+      - name: Stop CI mock server
+        if: always()
+        run: npm run ci-mock-stop || true
