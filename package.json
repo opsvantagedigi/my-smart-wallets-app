@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:sanity": "cross-env NODE_OPTIONS=--loader=ts-node/esm ts-node test-sanity-fetch.ts"
+    "test:sanity": "cross-env NODE_OPTIONS=--loader=ts-node/esm ts-node test-sanity-fetch.ts",
+    "smoke": "node scripts/smoke-check.js"
   },
   "dependencies": {
     "@account-kit/core": "^4.35.1",
@@ -62,6 +63,5 @@
     "react-dom": "18.3.1",
     "@types/react": "18.2.41",
     "@types/react-dom": "18.2.17"
-  },
-  
+  }
 }
