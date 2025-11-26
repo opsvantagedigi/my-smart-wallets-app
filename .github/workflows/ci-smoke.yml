@@ -1,4 +1,4 @@
-name: CI — Build and Smoke Test
+name: CI - Build and Smoke Test
 
 on:
   pull_request:
