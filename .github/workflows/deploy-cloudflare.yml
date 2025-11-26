@@ -1,0 +1,54 @@
+name: Deploy — Cloudflare Pages/Workers (scaffold)
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - cleanup/cloudflare-deploy
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      built: ${{ steps.build-out.outputs.built }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        id: build-out
+        run: |
+          npm run build
+          echo "built=true" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: prepare
+    runs-on: ubuntu-latest
+    if: ${{ needs.prepare.outputs.built == 'true' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Cloudflare secret status
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "CLOUDFLARE_API_TOKEN not set — deployment will be skipped. Add the secret to enable deploys.";
+            exit 0;
+          else
+            echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run.";
+          fi
+
+      - name: Deploy (wrangler)
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: publish
