@@ -1,7 +1,7 @@
 name: Deploy — Cloudflare Pages/Workers (scaffold)
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   push:
     branches:
       - cleanup/cloudflare-deploy
@@ -57,14 +57,14 @@ jobs:
       - name: Show Cloudflare secret status
         run: |
           if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
-            echo "CLOUDFLARE_API_TOKEN not set — deployment will be skipped. Add the secret to enable deploys.";
-            exit 0;
+            echo "CLOUDFLARE_API_TOKEN not set — deployment will be skipped. Add the secret to enable deploys."
+            exit 0
           else
-            echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run.";
+            echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run."
           fi
 
       - name: Cloudflare debug (whoami + dry-run)
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        if: secrets.CLOUDFLARE_API_TOKEN
         run: |
           set -e
           echo "Running wrangler whoami and publish --dry-run (output saved to artifact)"
@@ -83,7 +83,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Deploy (wrangler)
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        if: secrets.CLOUDFLARE_API_TOKEN
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
