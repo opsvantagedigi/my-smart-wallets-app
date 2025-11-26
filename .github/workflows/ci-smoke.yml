@@ -1,4 +1,4 @@
-name: CI - Build and Smoke Test
+name: CI — Build and Smoke Test
 
 on:
   pull_request:
@@ -21,21 +21,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build
+        run: npm run build
+
       - name: Export RPC URL for smoke
         run: |
           if [ -n "${{ secrets.CI_RPC_URL }}" ]; then
             echo "NEXT_PUBLIC_RPC_URL=${{ secrets.CI_RPC_URL }}" >> $GITHUB_ENV
           else
-            echo "CI_RPC_URL not set; smoke will run with default or local RPC"
+            echo "CI_RPC_URL not set; RPC check will be logged but non-fatal"
           fi
 
-      - name: Build
-        run: npm run build
-
-      - name: Start dev server in background
+      - name: Start CI mock server
         run: |
-          nohup npm run dev -- --port 3000 > dev.log 2>&1 &
-          sleep 6
+          nohup npm run ci-mock > ci-mock.log 2>&1 &
+          sleep 3
 
       - name: Run smoke test
         run: npm run smoke
+
+      - name: Stop CI mock server
+        if: always()
+        run: npm run ci-mock-stop || true
