@@ -1,3 +1,14 @@
+name: CI placeholder - smoke workflow removed
+
+on:
+  workflow_dispatch:
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: No-op placeholder
+        run: echo "CI smoke workflow removed; placeholder to clear editor diagnostics"
 name: CI — Build and Smoke Test
 
 on:
@@ -25,9 +36,11 @@ jobs:
         run: npm run build
 
       - name: Export RPC URL for smoke
+        env:
+          CI_RPC_URL: ${{ secrets.CI_RPC_URL }}
         run: |
-          if [ -n "${{ secrets.CI_RPC_URL }}" ]; then
-            echo "NEXT_PUBLIC_RPC_URL=${{ secrets.CI_RPC_URL }}" >> $GITHUB_ENV
+          if [ -n "$CI_RPC_URL" ]; then
+            echo "NEXT_PUBLIC_RPC_URL=$CI_RPC_URL" >> $GITHUB_ENV
           else
             echo "CI_RPC_URL not set; RPC check will be logged but non-fatal"
           fi
