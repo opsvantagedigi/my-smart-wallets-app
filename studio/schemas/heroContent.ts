@@ -1,4 +1,4 @@
-export default {
+const heroContent = {
   name: 'heroContent',
   title: 'Hero Content',
   type: 'document',
@@ -16,3 +16,5 @@ export default {
     { name: 'visible', title: 'Visible', type: 'boolean' },
   ],
 }
+
+export default heroContent

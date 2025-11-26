@@ -38,3 +38,12 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# CI artifacts
+ci-run-*.log
+ci-extract-*.txt
+npm-audit.json
+artifacts/
+
+# Ignore Sanity runtime build output
+studio-my-smart-wallets-app/.sanity/runtime/

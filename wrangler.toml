@@ -1,0 +1,6 @@
+name = "my-smartwallets-web3-app"
+main = "workers/index.js"
+compatibility_date = "2025-11-26"
+# kv_namespaces = []
+# d1_databases = []
+# vars = { STRIPE_SECRET_KEY = "REPLACE_ME" }

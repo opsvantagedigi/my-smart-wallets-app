@@ -3,17 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:sanity": "cross-env NODE_OPTIONS=--loader=ts-node/esm ts-node test-sanity-fetch.ts"
+    "test:sanity": "cross-env NODE_OPTIONS=--loader=ts-node/esm ts-node test-sanity-fetch.ts",
+    "ci-mock": "node ci/mock-server.js",
+    "ci-mock-stop": "pkill -f 'node ci/mock-server.js' || true",
+    "smoke": "node scripts/smoke-check.js"
   },
   "dependencies": {
     "@account-kit/core": "^4.35.1",
     "@account-kit/infra": "^4.35.1",
     "@account-kit/react": "^4.35.1",
+    "@octokit/rest": "^22.0.1",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@sanity/assist": "^5.0.2",
@@ -22,10 +29,11 @@
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.15.0",
     "@tanstack/react-query": "^5.50.1",
-    "@wagmi/core": "^2.22.1",
+    "@wagmi/core": "2.21.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
+    "libsodium-wrappers": "^0.7.15",
     "lucide-react": "^0.511.0",
     "next-sanity": "^11.6.6",
     "react": "18.3.1",
@@ -40,7 +48,6 @@
     "wagmi": "^2.19.2"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.14.5",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/next": "^8.0.7",
     "@types/node": "^20.19.25",
@@ -49,7 +56,6 @@
     "cross-env": "^10.1.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",
-    "netlify-cli": "^23.10.0",
     "next": "^16.0.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17",
@@ -61,14 +67,5 @@
     "react-dom": "18.3.1",
     "@types/react": "18.2.41",
     "@types/react-dom": "18.2.17"
-  },
-  "overrides": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "@types/react": "18.2.41",
-    "@types/react-dom": "18.2.17"
-  },
-  "engines": {
-    "node": "20.x"
   }
 }

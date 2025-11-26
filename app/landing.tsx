@@ -22,7 +22,10 @@ export default function Landing() {
             Take control of your crypto.<br />Secure. Smart. Scam-proof.
           </h1>
           <p className="mt-4 text-lg md:text-xl font-inter text-white text-center max-w-2xl mx-auto">
-            Enterprise-grade security for every user. Manage your digital assets with confidence and clarity. Seamlessly manage cryptocurrencies, tokens, and NFTs across multiple blockchains from a single, intuitive interface.
+            Enterprise-grade security for every user. Manage your digital assets
+            with confidence and clarity. Seamlessly manage cryptocurrencies,
+            tokens, and NFTs across multiple blockchains from a single,
+            intuitive interface.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <button
