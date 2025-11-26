@@ -1,4 +1,4 @@
-name = "smart-wallet-and-web3-app"
+name = "my-smartwallets-web3-app"
 main = "workers/index.js"
 compatibility_date = "2025-11-26"
 # kv_namespaces = []
