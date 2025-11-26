@@ -38,6 +38,14 @@ jobs:
           path: build.log
           if-no-files-found: warn
 
+      - name: Upload mock server log (if present)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-mock-log
+          path: ci-mock.log
+          if-no-files-found: warn
+
   deploy:
     needs: prepare
     runs-on: ubuntu-latest
@@ -54,6 +62,25 @@ jobs:
           else
             echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run.";
           fi
+
+      - name: Cloudflare debug (whoami + dry-run)
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        run: |
+          set -e
+          echo "Running wrangler whoami and publish --dry-run (output saved to artifact)"
+          npx wrangler whoami --apiToken "${{ secrets.CLOUDFLARE_API_TOKEN }}" > wrangler-whoami.log 2>&1 || true
+          npx wrangler publish --dry-run --apiToken "${{ secrets.CLOUDFLARE_API_TOKEN }}" > wrangler-dry-run.log 2>&1 || true
+        shell: bash
+
+      - name: Upload wrangler debug logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wrangler-debug
+          path: |
+            wrangler-whoami.log
+            wrangler-dry-run.log
+          if-no-files-found: warn
 
       - name: Deploy (wrangler)
         if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
