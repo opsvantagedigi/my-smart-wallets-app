@@ -4,7 +4,7 @@
 		{
 			"label": "Clear .next and node_modules",
 			"type": "shell",
-			"command": "rm -rf .next node_modules"
+			"command": "npx rimraf .next node_modules"
 		}
 	]
 }
