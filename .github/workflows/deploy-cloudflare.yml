@@ -1,7 +1,8 @@
+---
 name: Deploy — Cloudflare Pages/Workers (scaffold)
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   push:
     branches:
       - cleanup/cloudflare-deploy
