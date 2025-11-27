@@ -102,3 +102,11 @@ jobs:
             echo "CLOUDFLARE_API_TOKEN not present; skipping deployment"
           fi
         shell: bash
+
+      - name: Upload wrangler publish log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wrangler-publish-log
+          path: wrangler-publish.log
+          if-no-files-found: warn
