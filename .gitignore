@@ -48,6 +48,7 @@ artifacts/
 run-*.log
 run-artifacts-*/
 eslint-fix.log
+build-local.log
 
 # Ignore Sanity runtime build output
 studio-my-smart-wallets-app/.sanity/runtime/
