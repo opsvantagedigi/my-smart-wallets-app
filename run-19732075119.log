@@ -1,0 +1,552 @@
+prepare	Set up job	﻿2025-11-27T09:48:40.5685046Z Current runner version: '2.329.0'
+prepare	Set up job	2025-11-27T09:48:40.5708704Z ##[group]Runner Image Provisioner
+prepare	Set up job	2025-11-27T09:48:40.5709491Z Hosted Compute Agent
+prepare	Set up job	2025-11-27T09:48:40.5710008Z Version: 20251016.436
+prepare	Set up job	2025-11-27T09:48:40.5710703Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+prepare	Set up job	2025-11-27T09:48:40.5711404Z Build Date: 2025-10-15T20:44:12Z
+prepare	Set up job	2025-11-27T09:48:40.5711995Z ##[endgroup]
+prepare	Set up job	2025-11-27T09:48:40.5712524Z ##[group]Operating System
+prepare	Set up job	2025-11-27T09:48:40.5713102Z Ubuntu
+prepare	Set up job	2025-11-27T09:48:40.5713546Z 24.04.3
+prepare	Set up job	2025-11-27T09:48:40.5714075Z LTS
+prepare	Set up job	2025-11-27T09:48:40.5714584Z ##[endgroup]
+prepare	Set up job	2025-11-27T09:48:40.5715036Z ##[group]Runner Image
+prepare	Set up job	2025-11-27T09:48:40.5715607Z Image: ubuntu-24.04
+prepare	Set up job	2025-11-27T09:48:40.5716147Z Version: 20251112.124.1
+prepare	Set up job	2025-11-27T09:48:40.5717474Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+prepare	Set up job	2025-11-27T09:48:40.5718813Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+prepare	Set up job	2025-11-27T09:48:40.5720069Z ##[endgroup]
+prepare	Set up job	2025-11-27T09:48:40.5721279Z ##[group]GITHUB_TOKEN Permissions
+prepare	Set up job	2025-11-27T09:48:40.5723008Z Contents: read
+prepare	Set up job	2025-11-27T09:48:40.5723549Z Metadata: read
+prepare	Set up job	2025-11-27T09:48:40.5724168Z Packages: read
+prepare	Set up job	2025-11-27T09:48:40.5724683Z ##[endgroup]
+prepare	Set up job	2025-11-27T09:48:40.5726858Z Secret source: Actions
+prepare	Set up job	2025-11-27T09:48:40.5727677Z Prepare workflow directory
+prepare	Set up job	2025-11-27T09:48:40.6148674Z Prepare all required actions
+prepare	Set up job	2025-11-27T09:48:40.6188006Z Getting action download info
+prepare	Set up job	2025-11-27T09:48:40.9435068Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+prepare	Set up job	2025-11-27T09:48:41.6808509Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+prepare	Set up job	2025-11-27T09:48:41.7761735Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+prepare	Set up job	2025-11-27T09:48:41.9732968Z Complete job name: prepare
+prepare	Checkout	﻿2025-11-27T09:48:42.0395159Z ##[group]Run actions/checkout@v4
+prepare	Checkout	2025-11-27T09:48:42.0395969Z with:
+prepare	Checkout	2025-11-27T09:48:42.0396447Z   repository: opsvantagedigi/my-smart-wallets-app
+prepare	Checkout	2025-11-27T09:48:42.0397403Z   token: ***
+prepare	Checkout	2025-11-27T09:48:42.0397770Z   ssh-strict: true
+prepare	Checkout	2025-11-27T09:48:42.0398155Z   ssh-user: git
+prepare	Checkout	2025-11-27T09:48:42.0398542Z   persist-credentials: true
+prepare	Checkout	2025-11-27T09:48:42.0398980Z   clean: true
+prepare	Checkout	2025-11-27T09:48:42.0399371Z   sparse-checkout-cone-mode: true
+prepare	Checkout	2025-11-27T09:48:42.0399847Z   fetch-depth: 1
+prepare	Checkout	2025-11-27T09:48:42.0400217Z   fetch-tags: false
+prepare	Checkout	2025-11-27T09:48:42.0400606Z   show-progress: true
+prepare	Checkout	2025-11-27T09:48:42.0400997Z   lfs: false
+prepare	Checkout	2025-11-27T09:48:42.0401375Z   submodules: false
+prepare	Checkout	2025-11-27T09:48:42.0401768Z   set-safe-directory: true
+prepare	Checkout	2025-11-27T09:48:42.0402427Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.1485616Z Syncing repository: opsvantagedigi/my-smart-wallets-app
+prepare	Checkout	2025-11-27T09:48:42.1487658Z ##[group]Getting Git version info
+prepare	Checkout	2025-11-27T09:48:42.1488553Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+prepare	Checkout	2025-11-27T09:48:42.1490117Z [command]/usr/bin/git version
+prepare	Checkout	2025-11-27T09:48:42.1551332Z git version 2.51.2
+prepare	Checkout	2025-11-27T09:48:42.1578677Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.1592530Z Temporarily overriding HOME='/home/runner/work/_temp/7d91c518-e8f9-4079-8bfd-eb63bf69a1ff' before making global git config changes
+prepare	Checkout	2025-11-27T09:48:42.1594864Z Adding repository directory to the temporary git global config as a safe directory
+prepare	Checkout	2025-11-27T09:48:42.1604903Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+prepare	Checkout	2025-11-27T09:48:42.1640990Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+prepare	Checkout	2025-11-27T09:48:42.1644510Z ##[group]Initializing the repository
+prepare	Checkout	2025-11-27T09:48:42.1648576Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+prepare	Checkout	2025-11-27T09:48:42.1751118Z hint: Using 'master' as the name for the initial branch. This default branch name
+prepare	Checkout	2025-11-27T09:48:42.1752346Z hint: is subject to change. To configure the initial branch name to use in all
+prepare	Checkout	2025-11-27T09:48:42.1753489Z hint: of your new repositories, which will suppress this warning, call:
+prepare	Checkout	2025-11-27T09:48:42.1754267Z hint:
+prepare	Checkout	2025-11-27T09:48:42.1755020Z hint: 	git config --global init.defaultBranch <name>
+prepare	Checkout	2025-11-27T09:48:42.1755922Z hint:
+prepare	Checkout	2025-11-27T09:48:42.1756929Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+prepare	Checkout	2025-11-27T09:48:42.1758110Z hint: 'development'. The just-created branch can be renamed via this command:
+prepare	Checkout	2025-11-27T09:48:42.1758798Z hint:
+prepare	Checkout	2025-11-27T09:48:42.1759154Z hint: 	git branch -m <name>
+prepare	Checkout	2025-11-27T09:48:42.1759583Z hint:
+prepare	Checkout	2025-11-27T09:48:42.1760313Z hint: Disable this message with "git config set advice.defaultBranchName false"
+prepare	Checkout	2025-11-27T09:48:42.1761622Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
+prepare	Checkout	2025-11-27T09:48:42.1766223Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
+prepare	Checkout	2025-11-27T09:48:42.1798883Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.1799589Z ##[group]Disabling automatic garbage collection
+prepare	Checkout	2025-11-27T09:48:42.1802919Z [command]/usr/bin/git config --local gc.auto 0
+prepare	Checkout	2025-11-27T09:48:42.1830543Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.1831218Z ##[group]Setting up auth
+prepare	Checkout	2025-11-27T09:48:42.1837232Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+prepare	Checkout	2025-11-27T09:48:42.1867026Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+prepare	Checkout	2025-11-27T09:48:42.2183306Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+prepare	Checkout	2025-11-27T09:48:42.2215156Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+prepare	Checkout	2025-11-27T09:48:42.2433026Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+prepare	Checkout	2025-11-27T09:48:42.2463606Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+prepare	Checkout	2025-11-27T09:48:42.2693441Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+prepare	Checkout	2025-11-27T09:48:42.2728011Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.2729111Z ##[group]Fetching the repository
+prepare	Checkout	2025-11-27T09:48:42.2735530Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +27a603663bbe14084d9c5a03fcb027282a1daa31:refs/remotes/origin/cleanup/cloudflare-deploy
+prepare	Checkout	2025-11-27T09:48:42.6855878Z From https://github.com/opsvantagedigi/my-smart-wallets-app
+prepare	Checkout	2025-11-27T09:48:42.6887125Z  * [new ref]         27a603663bbe14084d9c5a03fcb027282a1daa31 -> origin/cleanup/cloudflare-deploy
+prepare	Checkout	2025-11-27T09:48:42.6889624Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.6890685Z ##[group]Determining the checkout info
+prepare	Checkout	2025-11-27T09:48:42.6891559Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.6894931Z [command]/usr/bin/git sparse-checkout disable
+prepare	Checkout	2025-11-27T09:48:42.6934915Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+prepare	Checkout	2025-11-27T09:48:42.6961290Z ##[group]Checking out the ref
+prepare	Checkout	2025-11-27T09:48:42.6966088Z [command]/usr/bin/git checkout --progress --force -B cleanup/cloudflare-deploy refs/remotes/origin/cleanup/cloudflare-deploy
+prepare	Checkout	2025-11-27T09:48:42.7265576Z Switched to a new branch 'cleanup/cloudflare-deploy'
+prepare	Checkout	2025-11-27T09:48:42.7267636Z branch 'cleanup/cloudflare-deploy' set up to track 'origin/cleanup/cloudflare-deploy'.
+prepare	Checkout	2025-11-27T09:48:42.7277717Z ##[endgroup]
+prepare	Checkout	2025-11-27T09:48:42.7314466Z [command]/usr/bin/git log -1 --format=%H
+prepare	Checkout	2025-11-27T09:48:42.7336615Z 27a603663bbe14084d9c5a03fcb027282a1daa31
+prepare	Setup Node 20	﻿2025-11-27T09:48:42.7594062Z ##[group]Run actions/setup-node@v4
+prepare	Setup Node 20	2025-11-27T09:48:42.7594686Z with:
+prepare	Setup Node 20	2025-11-27T09:48:42.7595064Z   node-version: 20
+prepare	Setup Node 20	2025-11-27T09:48:42.7595473Z   always-auth: false
+prepare	Setup Node 20	2025-11-27T09:48:42.7595886Z   check-latest: false
+prepare	Setup Node 20	2025-11-27T09:48:42.7596966Z   token: ***
+prepare	Setup Node 20	2025-11-27T09:48:42.7597387Z ##[endgroup]
+prepare	Setup Node 20	2025-11-27T09:48:42.9372616Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+prepare	Setup Node 20	2025-11-27T09:48:42.9379804Z ##[group]Environment details
+prepare	Setup Node 20	2025-11-27T09:48:43.2483220Z node: v20.19.5
+prepare	Setup Node 20	2025-11-27T09:48:43.2484504Z npm: 10.8.2
+prepare	Setup Node 20	2025-11-27T09:48:43.2485592Z yarn: 1.22.22
+prepare	Setup Node 20	2025-11-27T09:48:43.2487551Z ##[endgroup]
+prepare	Install dependencies	﻿2025-11-27T09:48:43.2628782Z ##[group]Run npm ci
+prepare	Install dependencies	2025-11-27T09:48:43.2629945Z [36;1mnpm ci[0m
+prepare	Install dependencies	2025-11-27T09:48:43.2676335Z shell: /usr/bin/bash -e {0}
+prepare	Install dependencies	2025-11-27T09:48:43.2677786Z ##[endgroup]
+prepare	Install dependencies	2025-11-27T09:48:45.8668755Z npm warn ERESOLVE overriding peer dependency
+prepare	Install dependencies	2025-11-27T09:48:45.8669599Z npm warn While resolving: qrcode.react@1.0.1
+prepare	Install dependencies	2025-11-27T09:48:45.8669987Z npm warn Found: react@18.3.1
+prepare	Install dependencies	2025-11-27T09:48:45.8670323Z npm warn node_modules/react
+prepare	Install dependencies	2025-11-27T09:48:45.8670705Z npm warn   react@"18.3.1" from the root project
+prepare	Install dependencies	2025-11-27T09:48:45.8671185Z npm warn   99 more (@account-kit/react, zustand, zustand, ...)
+prepare	Install dependencies	2025-11-27T09:48:45.8671645Z npm warn
+prepare	Install dependencies	2025-11-27T09:48:45.8671947Z npm warn Could not resolve dependency:
+prepare	Install dependencies	2025-11-27T09:48:45.8672443Z npm warn peer react@"^15.5.3 || ^16.0.0 || ^17.0.0" from qrcode.react@1.0.1
+prepare	Install dependencies	2025-11-27T09:48:45.8672977Z npm warn node_modules/@keystonehq/sdk/node_modules/qrcode.react
+prepare	Install dependencies	2025-11-27T09:48:45.8673497Z npm warn   qrcode.react@"^1.0.1" from @keystonehq/sdk@0.19.2
+prepare	Install dependencies	2025-11-27T09:48:45.8673911Z npm warn   node_modules/@keystonehq/sdk
+prepare	Install dependencies	2025-11-27T09:48:45.8674301Z npm warn
+prepare	Install dependencies	2025-11-27T09:48:45.8674671Z npm warn Conflicting peer dependency: react@17.0.2
+prepare	Install dependencies	2025-11-27T09:48:45.8675092Z npm warn node_modules/react
+prepare	Install dependencies	2025-11-27T09:48:45.8675559Z npm warn   peer react@"^15.5.3 || ^16.0.0 || ^17.0.0" from qrcode.react@1.0.1
+prepare	Install dependencies	2025-11-27T09:48:45.8676096Z npm warn   node_modules/@keystonehq/sdk/node_modules/qrcode.react
+prepare	Install dependencies	2025-11-27T09:48:45.8676873Z npm warn     qrcode.react@"^1.0.1" from @keystonehq/sdk@0.19.2
+prepare	Install dependencies	2025-11-27T09:48:45.8677353Z npm warn     node_modules/@keystonehq/sdk
+prepare	Install dependencies	2025-11-27T09:48:46.1673618Z npm warn ERESOLVE overriding peer dependency
+prepare	Install dependencies	2025-11-27T09:48:46.1675329Z npm warn While resolving: react-qr-reader@2.2.1
+prepare	Install dependencies	2025-11-27T09:48:46.1681471Z npm warn Found: react@18.3.1
+prepare	Install dependencies	2025-11-27T09:48:46.1682068Z npm warn node_modules/react
+prepare	Install dependencies	2025-11-27T09:48:46.1682710Z npm warn   react@"18.3.1" from the root project
+prepare	Install dependencies	2025-11-27T09:48:46.1683530Z npm warn   99 more (@account-kit/react, zustand, zustand, ...)
+prepare	Install dependencies	2025-11-27T09:48:46.1684170Z npm warn
+prepare	Install dependencies	2025-11-27T09:48:46.1684687Z npm warn Could not resolve dependency:
+prepare	Install dependencies	2025-11-27T09:48:46.1685400Z npm warn peer react@"~16" from react-qr-reader@2.2.1
+prepare	Install dependencies	2025-11-27T09:48:46.1686257Z npm warn node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+prepare	Install dependencies	2025-11-27T09:48:46.1687460Z npm warn   react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+prepare	Install dependencies	2025-11-27T09:48:46.1688234Z npm warn   node_modules/@keystonehq/sdk
+prepare	Install dependencies	2025-11-27T09:48:46.1688741Z npm warn
+prepare	Install dependencies	2025-11-27T09:48:46.1689305Z npm warn Conflicting peer dependency: react@16.14.0
+prepare	Install dependencies	2025-11-27T09:48:46.1689926Z npm warn node_modules/react
+prepare	Install dependencies	2025-11-27T09:48:46.1690602Z npm warn   peer react@"~16" from react-qr-reader@2.2.1
+prepare	Install dependencies	2025-11-27T09:48:46.1691493Z npm warn   node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+prepare	Install dependencies	2025-11-27T09:48:46.1692401Z npm warn     react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+prepare	Install dependencies	2025-11-27T09:48:46.1693152Z npm warn     node_modules/@keystonehq/sdk
+prepare	Install dependencies	2025-11-27T09:48:46.1877416Z npm warn ERESOLVE overriding peer dependency
+prepare	Install dependencies	2025-11-27T09:48:46.1879790Z npm warn While resolving: react-qr-reader@2.2.1
+prepare	Install dependencies	2025-11-27T09:48:46.1889138Z npm warn Found: react-dom@18.3.1
+prepare	Install dependencies	2025-11-27T09:48:46.1889685Z npm warn node_modules/react-dom
+prepare	Install dependencies	2025-11-27T09:48:46.1890260Z npm warn   react-dom@"18.3.1" from the root project
+prepare	Install dependencies	2025-11-27T09:48:46.1890979Z npm warn   31 more (@account-kit/react, @dnd-kit/core, ...)
+prepare	Install dependencies	2025-11-27T09:48:46.1891495Z npm warn
+prepare	Install dependencies	2025-11-27T09:48:46.1891927Z npm warn Could not resolve dependency:
+prepare	Install dependencies	2025-11-27T09:48:46.1892581Z npm warn peer react-dom@"~16" from react-qr-reader@2.2.1
+prepare	Install dependencies	2025-11-27T09:48:46.1893397Z npm warn node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+prepare	Install dependencies	2025-11-27T09:48:46.1894824Z npm warn   react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+prepare	Install dependencies	2025-11-27T09:48:46.1895520Z npm warn   node_modules/@keystonehq/sdk
+prepare	Install dependencies	2025-11-27T09:48:46.1895989Z npm warn
+prepare	Install dependencies	2025-11-27T09:48:46.1975162Z npm warn Conflicting peer dependency: react-dom@16.14.0
+prepare	Install dependencies	2025-11-27T09:48:46.1975810Z npm warn node_modules/react-dom
+prepare	Install dependencies	2025-11-27T09:48:46.1977085Z npm warn   peer react-dom@"~16" from react-qr-reader@2.2.1
+prepare	Install dependencies	2025-11-27T09:48:46.1977990Z npm warn   node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+prepare	Install dependencies	2025-11-27T09:48:46.1978892Z npm warn     react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+prepare	Install dependencies	2025-11-27T09:48:46.1979612Z npm warn     node_modules/@keystonehq/sdk
+prepare	Install dependencies	2025-11-27T09:48:50.8729792Z npm warn deprecated yaeti@0.0.6: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+prepare	Install dependencies	2025-11-27T09:48:51.2765544Z npm warn deprecated uuidv4@6.2.13: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+prepare	Install dependencies	2025-11-27T09:48:52.2804670Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+prepare	Install dependencies	2025-11-27T09:48:53.4411970Z npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+prepare	Install dependencies	2025-11-27T09:48:54.1564447Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+prepare	Install dependencies	2025-11-27T09:48:54.5407990Z npm warn deprecated get-random-values-esm@1.0.2: use crypto.getRandomValues() instead
+prepare	Install dependencies	2025-11-27T09:49:00.2375641Z npm warn deprecated @toruslabs/solana-embed@2.1.0: This sdk is now deprecated. Please use @web3auth/ws-embed instead
+prepare	Install dependencies	2025-11-27T09:49:00.4762946Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+prepare	Install dependencies	2025-11-27T09:49:00.4766789Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+prepare	Install dependencies	2025-11-27T09:49:00.5636725Z npm warn deprecated @paulmillr/qr@0.2.1: The package is now available as "qr": npm install qr
+prepare	Install dependencies	2025-11-27T09:49:02.8675459Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:03.2313414Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:06.1603964Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:06.8876111Z npm warn deprecated @walletconnect/sign-client@2.21.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:06.9054461Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:07.0090518Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:07.3974021Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:08.5599647Z npm warn deprecated @walletconnect/universal-provider@2.21.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:09.1641119Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:11.1555072Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+prepare	Install dependencies	2025-11-27T09:49:15.8812651Z npm warn deprecated @walletconnect/ethereum-provider@2.21.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:16.7232717Z npm warn deprecated @walletconnect/sign-client@2.19.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:16.7423788Z npm warn deprecated @walletconnect/sign-client@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:16.7738052Z npm warn deprecated @walletconnect/sign-client@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:16.7870524Z npm warn deprecated @walletconnect/sign-client@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:16.8551070Z npm warn deprecated @walletconnect/sign-client@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:16.8833597Z npm warn deprecated @walletconnect/sign-client@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.1419237Z npm warn deprecated @walletconnect/sign-client@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.1505917Z npm warn deprecated @walletconnect/universal-provider@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.2218702Z npm warn deprecated @walletconnect/universal-provider@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.2223207Z npm warn deprecated @walletconnect/universal-provider@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.2744708Z npm warn deprecated @walletconnect/universal-provider@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.3515274Z npm warn deprecated @walletconnect/universal-provider@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.3923172Z npm warn deprecated @walletconnect/universal-provider@2.19.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:17.4146284Z npm warn deprecated @walletconnect/universal-provider@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+prepare	Install dependencies	2025-11-27T09:49:20.1032744Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+prepare	Install dependencies	2025-11-27T09:50:29.0544628Z 
+prepare	Install dependencies	2025-11-27T09:50:29.0551433Z added 2856 packages, and audited 2857 packages in 2m
+prepare	Install dependencies	2025-11-27T09:50:29.0562174Z 
+prepare	Install dependencies	2025-11-27T09:50:29.0562524Z 401 packages are looking for funding
+prepare	Install dependencies	2025-11-27T09:50:29.0563014Z   run `npm fund` for details
+prepare	Install dependencies	2025-11-27T09:50:29.1969617Z 
+prepare	Install dependencies	2025-11-27T09:50:29.1970314Z 14 high severity vulnerabilities
+prepare	Install dependencies	2025-11-27T09:50:29.1970686Z 
+prepare	Install dependencies	2025-11-27T09:50:29.1971034Z To address issues that do not require attention, run:
+prepare	Install dependencies	2025-11-27T09:50:29.1971565Z   npm audit fix
+prepare	Install dependencies	2025-11-27T09:50:29.1971799Z 
+prepare	Install dependencies	2025-11-27T09:50:29.1972221Z To address all issues possible (including breaking changes), run:
+prepare	Install dependencies	2025-11-27T09:50:29.1972824Z   npm audit fix --force
+prepare	Install dependencies	2025-11-27T09:50:29.1973041Z 
+prepare	Install dependencies	2025-11-27T09:50:29.1973361Z Some issues need review, and may require choosing
+prepare	Install dependencies	2025-11-27T09:50:29.1973876Z a different dependency.
+prepare	Install dependencies	2025-11-27T09:50:29.1974112Z 
+prepare	Install dependencies	2025-11-27T09:50:29.1974321Z Run `npm audit` for details.
+prepare	Build	﻿2025-11-27T09:50:29.2926281Z ##[group]Run # Fail fast and save build console output to build.log for diagnostics
+prepare	Build	2025-11-27T09:50:29.2927023Z [36;1m# Fail fast and save build console output to build.log for diagnostics[0m
+prepare	Build	2025-11-27T09:50:29.2927370Z [36;1mset -e[0m
+prepare	Build	2025-11-27T09:50:29.2927574Z [36;1mnpm run build 2>&1 | tee build.log[0m
+prepare	Build	2025-11-27T09:50:29.2927843Z [36;1mecho "built=true" >> $GITHUB_OUTPUT[0m
+prepare	Build	2025-11-27T09:50:29.2965073Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+prepare	Build	2025-11-27T09:50:29.2965393Z ##[endgroup]
+prepare	Build	2025-11-27T09:50:29.4052524Z 
+prepare	Build	2025-11-27T09:50:29.4053422Z > ui-components-qs-nextjs@0.1.0 build
+prepare	Build	2025-11-27T09:50:29.4053821Z > next build
+prepare	Build	2025-11-27T09:50:29.4053950Z 
+prepare	Build	2025-11-27T09:50:29.9423662Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+prepare	Build	2025-11-27T09:50:29.9509099Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+prepare	Build	2025-11-27T09:50:29.9510225Z This information is used to shape Next.js' roadmap and prioritize features.
+prepare	Build	2025-11-27T09:50:29.9511725Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+prepare	Build	2025-11-27T09:50:29.9512752Z https://nextjs.org/telemetry
+prepare	Build	2025-11-27T09:50:29.9513069Z 
+prepare	Build	2025-11-27T09:50:29.9758557Z    ▲ Next.js 16.0.4 (Turbopack)
+prepare	Build	2025-11-27T09:50:29.9758984Z 
+prepare	Build	2025-11-27T09:50:30.0654937Z    Creating an optimized production build ...
+prepare	Build	2025-11-27T09:50:36.5838930Z  ✓ Compiled successfully in 6.2s
+prepare	Build	2025-11-27T09:50:36.5917550Z    Running TypeScript ...
+prepare	Build	2025-11-27T09:50:45.2802122Z    Collecting page data using 3 workers ...
+prepare	Build	2025-11-27T09:50:45.7304635Z    Generating static pages using 3 workers (0/5) ...
+prepare	Build	2025-11-27T09:50:46.2207662Z    Generating static pages using 3 workers (1/5) 
+prepare	Build	2025-11-27T09:50:46.2221032Z    Generating static pages using 3 workers (2/5) 
+prepare	Build	2025-11-27T09:50:46.2222362Z    Generating static pages using 3 workers (3/5) 
+prepare	Build	2025-11-27T09:50:46.2226058Z  ✓ Generating static pages using 3 workers (5/5) in 492.2ms
+prepare	Build	2025-11-27T09:50:46.2359413Z    Finalizing page optimization ...
+prepare	Build	2025-11-27T09:50:46.3898474Z 
+prepare	Build	2025-11-27T09:50:46.3916401Z Route (app)
+prepare	Build	2025-11-27T09:50:46.3917300Z ┌ ○ /
+prepare	Build	2025-11-27T09:50:46.3917683Z ├ ○ /_not-found
+prepare	Build	2025-11-27T09:50:46.3918083Z └ ○ /contact
+prepare	Build	2025-11-27T09:50:46.3918272Z 
+prepare	Build	2025-11-27T09:50:46.3918286Z 
+prepare	Build	2025-11-27T09:50:46.3918680Z ○  (Static)  prerendered as static content
+prepare	Build	2025-11-27T09:50:46.3919047Z 
+prepare	Upload build log	﻿2025-11-27T09:50:46.4335809Z ##[group]Run actions/upload-artifact@v4
+prepare	Upload build log	2025-11-27T09:50:46.4336103Z with:
+prepare	Upload build log	2025-11-27T09:50:46.4336289Z   name: build-log
+prepare	Upload build log	2025-11-27T09:50:46.4336665Z   path: build.log
+prepare	Upload build log	2025-11-27T09:50:46.4336885Z   if-no-files-found: warn
+prepare	Upload build log	2025-11-27T09:50:46.4337091Z   compression-level: 6
+prepare	Upload build log	2025-11-27T09:50:46.4337279Z   overwrite: false
+prepare	Upload build log	2025-11-27T09:50:46.4337463Z   include-hidden-files: false
+prepare	Upload build log	2025-11-27T09:50:46.4337755Z ##[endgroup]
+prepare	Upload build log	2025-11-27T09:50:46.6461147Z With the provided path, there will be 1 file uploaded
+prepare	Upload build log	2025-11-27T09:50:46.6467441Z Artifact name is valid!
+prepare	Upload build log	2025-11-27T09:50:46.6468392Z Root directory input is valid!
+prepare	Upload build log	2025-11-27T09:50:46.7653496Z Beginning upload of artifact content to blob storage
+prepare	Upload build log	2025-11-27T09:50:46.9029277Z Uploaded bytes 703
+prepare	Upload build log	2025-11-27T09:50:46.9387914Z Finished uploading artifact content to blob storage!
+prepare	Upload build log	2025-11-27T09:50:46.9391014Z SHA256 digest of uploaded artifact zip is 78e26c62288f75b3bdd86744ace5d48e4afbb982ee6c9fbd1fdc677ad5fb5ea6
+prepare	Upload build log	2025-11-27T09:50:46.9392621Z Finalizing artifact upload
+prepare	Upload build log	2025-11-27T09:50:47.1209807Z Artifact build-log.zip successfully finalized. Artifact ID 4695815893
+prepare	Upload build log	2025-11-27T09:50:47.1211142Z Artifact build-log has been successfully uploaded! Final size is 703 bytes. Artifact ID is 4695815893
+prepare	Upload build log	2025-11-27T09:50:47.1219600Z Artifact download URL: https://github.com/opsvantagedigi/my-smart-wallets-app/actions/runs/19732075119/artifacts/4695815893
+prepare	Upload mock server log (if present)	﻿2025-11-27T09:50:47.1339247Z ##[group]Run actions/upload-artifact@v4
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1339527Z with:
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1339692Z   name: ci-mock-log
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1339879Z   path: ci-mock.log
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1340067Z   if-no-files-found: warn
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1340271Z   compression-level: 6
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1340464Z   overwrite: false
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1340656Z   include-hidden-files: false
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.1340864Z ##[endgroup]
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.3538985Z With the provided path, there will be 1 file uploaded
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.3543698Z Artifact name is valid!
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.3545097Z Root directory input is valid!
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.4851548Z Beginning upload of artifact content to blob storage
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.6065014Z Uploaded bytes 171
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.6416136Z Finished uploading artifact content to blob storage!
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.6419089Z SHA256 digest of uploaded artifact zip is 5a3ccf44fd235c8b46ac30d47b4a337a0789f020c2f59f209efb1915ed35822b
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.6421051Z Finalizing artifact upload
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.7476340Z Artifact ci-mock-log.zip successfully finalized. Artifact ID 4695815984
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.7478045Z Artifact ci-mock-log has been successfully uploaded! Final size is 171 bytes. Artifact ID is 4695815984
+prepare	Upload mock server log (if present)	2025-11-27T09:50:47.7485758Z Artifact download URL: https://github.com/opsvantagedigi/my-smart-wallets-app/actions/runs/19732075119/artifacts/4695815984
+prepare	Post Setup Node 20	﻿2025-11-27T09:50:47.7608631Z Post job cleanup.
+prepare	Post Checkout	﻿2025-11-27T09:50:47.9335548Z Post job cleanup.
+prepare	Post Checkout	2025-11-27T09:50:48.0296013Z [command]/usr/bin/git version
+prepare	Post Checkout	2025-11-27T09:50:48.0337349Z git version 2.51.2
+prepare	Post Checkout	2025-11-27T09:50:48.0382099Z Temporarily overriding HOME='/home/runner/work/_temp/ef33f0bc-ac65-4c5b-9539-28356f018fee' before making global git config changes
+prepare	Post Checkout	2025-11-27T09:50:48.0383527Z Adding repository directory to the temporary git global config as a safe directory
+prepare	Post Checkout	2025-11-27T09:50:48.0387989Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+prepare	Post Checkout	2025-11-27T09:50:48.0423164Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+prepare	Post Checkout	2025-11-27T09:50:48.0460645Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+prepare	Post Checkout	2025-11-27T09:50:48.0703144Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+prepare	Post Checkout	2025-11-27T09:50:48.0724951Z http.https://github.com/.extraheader
+prepare	Post Checkout	2025-11-27T09:50:48.0738234Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+prepare	Post Checkout	2025-11-27T09:50:48.0769428Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+prepare	Post Checkout	2025-11-27T09:50:48.0985872Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+prepare	Post Checkout	2025-11-27T09:50:48.1017256Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+prepare	Complete job	﻿2025-11-27T09:50:48.1338742Z Evaluate and set job outputs
+prepare	Complete job	2025-11-27T09:50:48.1345482Z Set output 'built'
+prepare	Complete job	2025-11-27T09:50:48.1347679Z Cleaning up orphan processes
+deploy	Set up job	﻿2025-11-27T09:50:52.8907598Z Current runner version: '2.329.0'
+deploy	Set up job	2025-11-27T09:50:52.8931790Z ##[group]Runner Image Provisioner
+deploy	Set up job	2025-11-27T09:50:52.8932590Z Hosted Compute Agent
+deploy	Set up job	2025-11-27T09:50:52.8933190Z Version: 20251016.436
+deploy	Set up job	2025-11-27T09:50:52.8933881Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+deploy	Set up job	2025-11-27T09:50:52.8934596Z Build Date: 2025-10-15T20:44:12Z
+deploy	Set up job	2025-11-27T09:50:52.8935210Z ##[endgroup]
+deploy	Set up job	2025-11-27T09:50:52.8935757Z ##[group]Operating System
+deploy	Set up job	2025-11-27T09:50:52.8936624Z Ubuntu
+deploy	Set up job	2025-11-27T09:50:52.8937145Z 24.04.3
+deploy	Set up job	2025-11-27T09:50:52.8937637Z LTS
+deploy	Set up job	2025-11-27T09:50:52.8938161Z ##[endgroup]
+deploy	Set up job	2025-11-27T09:50:52.8938659Z ##[group]Runner Image
+deploy	Set up job	2025-11-27T09:50:52.8939271Z Image: ubuntu-24.04
+deploy	Set up job	2025-11-27T09:50:52.8939833Z Version: 20251112.124.1
+deploy	Set up job	2025-11-27T09:50:52.8940824Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2025-11-27T09:50:52.8942233Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+deploy	Set up job	2025-11-27T09:50:52.8943443Z ##[endgroup]
+deploy	Set up job	2025-11-27T09:50:52.8944575Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2025-11-27T09:50:52.8946606Z Contents: read
+deploy	Set up job	2025-11-27T09:50:52.8947325Z Metadata: read
+deploy	Set up job	2025-11-27T09:50:52.8947891Z Packages: read
+deploy	Set up job	2025-11-27T09:50:52.8948422Z ##[endgroup]
+deploy	Set up job	2025-11-27T09:50:52.8950554Z Secret source: Actions
+deploy	Set up job	2025-11-27T09:50:52.8951542Z Prepare workflow directory
+deploy	Set up job	2025-11-27T09:50:52.9268073Z Prepare all required actions
+deploy	Set up job	2025-11-27T09:50:52.9306789Z Getting action download info
+deploy	Set up job	2025-11-27T09:50:53.2391071Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+deploy	Set up job	2025-11-27T09:50:53.5640563Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+deploy	Set up job	2025-11-27T09:50:53.7505392Z Complete job name: deploy
+deploy	Checkout	﻿2025-11-27T09:50:53.8174378Z ##[group]Run actions/checkout@v4
+deploy	Checkout	2025-11-27T09:50:53.8175244Z with:
+deploy	Checkout	2025-11-27T09:50:53.8175726Z   repository: opsvantagedigi/my-smart-wallets-app
+deploy	Checkout	2025-11-27T09:50:53.8176708Z   token: ***
+deploy	Checkout	2025-11-27T09:50:53.8177151Z   ssh-strict: true
+deploy	Checkout	2025-11-27T09:50:53.8177567Z   ssh-user: git
+deploy	Checkout	2025-11-27T09:50:53.8177994Z   persist-credentials: true
+deploy	Checkout	2025-11-27T09:50:53.8178459Z   clean: true
+deploy	Checkout	2025-11-27T09:50:53.8178883Z   sparse-checkout-cone-mode: true
+deploy	Checkout	2025-11-27T09:50:53.8179371Z   fetch-depth: 1
+deploy	Checkout	2025-11-27T09:50:53.8179778Z   fetch-tags: false
+deploy	Checkout	2025-11-27T09:50:53.8180207Z   show-progress: true
+deploy	Checkout	2025-11-27T09:50:53.8180649Z   lfs: false
+deploy	Checkout	2025-11-27T09:50:53.8181062Z   submodules: false
+deploy	Checkout	2025-11-27T09:50:53.8181489Z   set-safe-directory: true
+deploy	Checkout	2025-11-27T09:50:53.8182204Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:53.9396951Z Syncing repository: opsvantagedigi/my-smart-wallets-app
+deploy	Checkout	2025-11-27T09:50:53.9399647Z ##[group]Getting Git version info
+deploy	Checkout	2025-11-27T09:50:53.9401024Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+deploy	Checkout	2025-11-27T09:50:53.9403050Z [command]/usr/bin/git version
+deploy	Checkout	2025-11-27T09:50:53.9443477Z git version 2.51.2
+deploy	Checkout	2025-11-27T09:50:53.9473302Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:53.9499393Z Temporarily overriding HOME='/home/runner/work/_temp/4b1a4188-7d51-4e3a-b705-344b1ac3e768' before making global git config changes
+deploy	Checkout	2025-11-27T09:50:53.9500800Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Checkout	2025-11-27T09:50:53.9504876Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+deploy	Checkout	2025-11-27T09:50:53.9543891Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+deploy	Checkout	2025-11-27T09:50:53.9547394Z ##[group]Initializing the repository
+deploy	Checkout	2025-11-27T09:50:53.9552784Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+deploy	Checkout	2025-11-27T09:50:53.9657373Z hint: Using 'master' as the name for the initial branch. This default branch name
+deploy	Checkout	2025-11-27T09:50:53.9658620Z hint: is subject to change. To configure the initial branch name to use in all
+deploy	Checkout	2025-11-27T09:50:53.9660193Z hint: of your new repositories, which will suppress this warning, call:
+deploy	Checkout	2025-11-27T09:50:53.9661643Z hint:
+deploy	Checkout	2025-11-27T09:50:53.9662392Z hint: 	git config --global init.defaultBranch <name>
+deploy	Checkout	2025-11-27T09:50:53.9663335Z hint:
+deploy	Checkout	2025-11-27T09:50:53.9663915Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+deploy	Checkout	2025-11-27T09:50:53.9664791Z hint: 'development'. The just-created branch can be renamed via this command:
+deploy	Checkout	2025-11-27T09:50:53.9665486Z hint:
+deploy	Checkout	2025-11-27T09:50:53.9665884Z hint: 	git branch -m <name>
+deploy	Checkout	2025-11-27T09:50:53.9666563Z hint:
+deploy	Checkout	2025-11-27T09:50:53.9667167Z hint: Disable this message with "git config set advice.defaultBranchName false"
+deploy	Checkout	2025-11-27T09:50:53.9668753Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
+deploy	Checkout	2025-11-27T09:50:53.9673669Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
+deploy	Checkout	2025-11-27T09:50:53.9711458Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:53.9712646Z ##[group]Disabling automatic garbage collection
+deploy	Checkout	2025-11-27T09:50:53.9717842Z [command]/usr/bin/git config --local gc.auto 0
+deploy	Checkout	2025-11-27T09:50:53.9751773Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:53.9752533Z ##[group]Setting up auth
+deploy	Checkout	2025-11-27T09:50:53.9763093Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Checkout	2025-11-27T09:50:53.9799937Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Checkout	2025-11-27T09:50:54.0127614Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Checkout	2025-11-27T09:50:54.0162920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Checkout	2025-11-27T09:50:54.0378735Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Checkout	2025-11-27T09:50:54.0409992Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Checkout	2025-11-27T09:50:54.0628749Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+deploy	Checkout	2025-11-27T09:50:54.0662084Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:54.0663180Z ##[group]Fetching the repository
+deploy	Checkout	2025-11-27T09:50:54.0671203Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +27a603663bbe14084d9c5a03fcb027282a1daa31:refs/remotes/origin/cleanup/cloudflare-deploy
+deploy	Checkout	2025-11-27T09:50:54.3670137Z From https://github.com/opsvantagedigi/my-smart-wallets-app
+deploy	Checkout	2025-11-27T09:50:54.3672676Z  * [new ref]         27a603663bbe14084d9c5a03fcb027282a1daa31 -> origin/cleanup/cloudflare-deploy
+deploy	Checkout	2025-11-27T09:50:54.3709345Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:54.3710698Z ##[group]Determining the checkout info
+deploy	Checkout	2025-11-27T09:50:54.3712539Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:54.3716883Z [command]/usr/bin/git sparse-checkout disable
+deploy	Checkout	2025-11-27T09:50:54.3758221Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+deploy	Checkout	2025-11-27T09:50:54.3788228Z ##[group]Checking out the ref
+deploy	Checkout	2025-11-27T09:50:54.3790942Z [command]/usr/bin/git checkout --progress --force -B cleanup/cloudflare-deploy refs/remotes/origin/cleanup/cloudflare-deploy
+deploy	Checkout	2025-11-27T09:50:54.4087556Z Switched to a new branch 'cleanup/cloudflare-deploy'
+deploy	Checkout	2025-11-27T09:50:54.4091593Z branch 'cleanup/cloudflare-deploy' set up to track 'origin/cleanup/cloudflare-deploy'.
+deploy	Checkout	2025-11-27T09:50:54.4100803Z ##[endgroup]
+deploy	Checkout	2025-11-27T09:50:54.4140729Z [command]/usr/bin/git log -1 --format=%H
+deploy	Checkout	2025-11-27T09:50:54.4164415Z 27a603663bbe14084d9c5a03fcb027282a1daa31
+deploy	Show Cloudflare secret status	﻿2025-11-27T09:50:54.4397743Z ##[group]Run if [ -z "***" ]; then
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4399542Z [36;1mif [ -z "***" ]; then[0m
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4401544Z [36;1m  echo "CLOUDFLARE_API_TOKEN not set — deployment will be skipped. Add the secret to enable deploys."[0m
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4403614Z [36;1melse[0m
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4405011Z [36;1m  echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run."[0m
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4407113Z [36;1mfi[0m
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4444793Z shell: /usr/bin/bash -e {0}
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4445992Z ##[endgroup]
+deploy	Show Cloudflare secret status	2025-11-27T09:50:54.4529207Z CLOUDFLARE_API_TOKEN is present. Deployment step will run.
+deploy	Cloudflare debug (whoami + dry-run)	﻿2025-11-27T09:50:54.4590601Z ##[group]Run # Use a runtime shell check instead of step-level `if:` to avoid editor linter warnings.
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4592969Z [36;1m# Use a runtime shell check instead of step-level `if:` to avoid editor linter warnings.[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4594964Z [36;1mif [ -n "***" ]; then[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4595979Z [36;1m  set -e[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4597615Z [36;1m  echo "Running wrangler whoami and publish --dry-run (output saved to artifact)"[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4600185Z [36;1m  npx wrangler whoami --apiToken "***" > wrangler-whoami.log 2>&1 || true[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4602722Z [36;1m  npx wrangler publish --dry-run --apiToken "***" > wrangler-dry-run.log 2>&1 || true[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4604313Z [36;1melse[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4605619Z [36;1m  echo "CLOUDFLARE_API_TOKEN not present; skipping wrangler debug steps"[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4607401Z [36;1mfi[0m
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4642457Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4643801Z ##[endgroup]
+deploy	Cloudflare debug (whoami + dry-run)	2025-11-27T09:50:54.4702660Z Running wrangler whoami and publish --dry-run (output saved to artifact)
+deploy	Upload wrangler debug logs	﻿2025-11-27T09:51:08.6130625Z ##[group]Run actions/upload-artifact@v4
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6131320Z with:
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6131556Z   name: wrangler-debug
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6131847Z   path: wrangler-whoami.log
+deploy	Upload wrangler debug logs	wrangler-dry-run.log
+deploy	Upload wrangler debug logs	
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6132264Z   if-no-files-found: warn
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6132524Z   compression-level: 6
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6132753Z   overwrite: false
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6132987Z   include-hidden-files: false
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.6133246Z ##[endgroup]
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.8255359Z Multiple search paths detected. Calculating the least common ancestor of all paths
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.8259531Z The least common ancestor is /home/runner/work/my-smart-wallets-app/my-smart-wallets-app. This will be the root directory of the artifact
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.8261021Z With the provided path, there will be 2 files uploaded
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.8267207Z Artifact name is valid!
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.8268599Z Root directory input is valid!
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.9211635Z Beginning upload of artifact content to blob storage
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.9651933Z Uploaded bytes 2256
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.9777640Z Finished uploading artifact content to blob storage!
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.9781193Z SHA256 digest of uploaded artifact zip is 6d4e0a17b6cfcb5b59f831897bfba81cae50817c4b8bd6198a762f5ea4a9bf5e
+deploy	Upload wrangler debug logs	2025-11-27T09:51:08.9782922Z Finalizing artifact upload
+deploy	Upload wrangler debug logs	2025-11-27T09:51:09.0841702Z Artifact wrangler-debug.zip successfully finalized. Artifact ID 4695819438
+deploy	Upload wrangler debug logs	2025-11-27T09:51:09.0843033Z Artifact wrangler-debug has been successfully uploaded! Final size is 2256 bytes. Artifact ID is 4695819438
+deploy	Upload wrangler debug logs	2025-11-27T09:51:09.0850058Z Artifact download URL: https://github.com/opsvantagedigi/my-smart-wallets-app/actions/runs/19732075119/artifacts/4695819438
+deploy	Deploy (wrangler)	﻿2025-11-27T09:51:09.0948588Z ##[group]Run if [ -n "***" ]; then
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0949036Z [36;1mif [ -n "***" ]; then[0m
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0949379Z [36;1m  echo "Deploying with wrangler-action wrapper"[0m
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0950026Z [36;1m  npx wrangler publish --apiToken "***"[0m
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0950398Z [36;1melse[0m
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0950676Z [36;1m  echo "CLOUDFLARE_API_TOKEN not present; skipping deployment"[0m
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0951044Z [36;1mfi[0m
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0988555Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.0988912Z ##[endgroup]
+deploy	Deploy (wrangler)	2025-11-27T09:51:09.1042650Z Deploying with wrangler-action wrapper
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9234921Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9599900Z [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mUnknown arguments: apiToken, publish[0m
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9600617Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9600630Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9746835Z wrangler
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9748668Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9749045Z COMMANDS
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9750005Z   wrangler docs [search..]        📚 Open Wrangler's command documentation in your browser
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9750740Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9751254Z   wrangler init [name]            📥 Initialize a basic Worker
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9752173Z   wrangler dev [script]           👂 Start a local server for developing your Worker
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9753117Z   wrangler deploy [script]        🆙 Deploy a Worker to Cloudflare
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9754079Z   wrangler setup                  🪄 Setup a project to work on Cloudflare [experimental]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9755154Z   wrangler deployments            🚢 List and view the current and past deployments for your Worker
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9756358Z   wrangler rollback [version-id]  🔙 Rollback a deployment for a Worker
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9757494Z   wrangler versions               🫧 List, view, upload and deploy Versions of your Worker to Cloudflare
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9758677Z   wrangler triggers               🎯 Updates the triggers of your current deployment [experimental]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9759737Z   wrangler delete [script]        🗑  Delete a Worker from Cloudflare
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9760688Z   wrangler tail [worker]          🦚 Start a log tailing session for a Worker
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9761726Z   wrangler secret                 🤫 Generate a secret that can be referenced in a Worker
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9762738Z   wrangler types [path]           📝 Generate types from your Worker configuration
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9763351Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9763837Z   wrangler kv                     🗂️  Manage Workers KV Namespaces
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9764658Z   wrangler queues                 📬 Manage Workers Queues
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9765494Z   wrangler r2                     📦 Manage R2 buckets & objects
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9766405Z   wrangler d1                     🗄  Manage Workers D1 databases
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9767182Z   wrangler vectorize              🧮 Manage Vectorize indexes
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9768044Z   wrangler hyperdrive             🚀 Manage Hyperdrive databases
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9769249Z   wrangler cert                   🪪 Manage client mTLS certificates and CA certificate chains used for secured connections [open-beta]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9770299Z   wrangler pages                  ⚡️ Configure Cloudflare Pages
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9771245Z   wrangler mtls-certificate       🪪 Manage certificates used for mTLS connections
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9772174Z   wrangler containers             📦 Manage Containers [open-beta]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9774174Z   wrangler pubsub                 📮 Manage Pub/Sub brokers [private beta]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9774920Z   wrangler dispatch-namespace     🏗️  Manage dispatch namespaces
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9775546Z   wrangler ai                     🤖 Manage AI models
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9776402Z   wrangler secrets-store          🔐 Manage the Secrets Store [open-beta]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9777084Z   wrangler workflows              🔁 Manage Workflows
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9777775Z   wrangler pipelines              🚰 Manage Cloudflare Pipelines [open-beta]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9778873Z   wrangler vpc                    🌐 Manage VPC [open-beta]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9779459Z   wrangler login                  🔓 Login to Cloudflare
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9780057Z   wrangler logout                 🚪 Logout from Cloudflare
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9780704Z   wrangler whoami                 🕵️  Retrieve your user information
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9781071Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9781192Z GLOBAL FLAGS
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9781568Z   -c, --config    Path to Wrangler configuration file  [string]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9782417Z       --cwd       Run as if Wrangler was started in the specified directory instead of the current working directory  [string]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9783410Z   -e, --env       Environment to use for operations, and for selecting .env and .dev.vars files  [string]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9784577Z       --env-file  Path to an .env file to load - can be specified multiple times - values from earlier files are overridden by values in later files  [array]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9785716Z   -h, --help      Show help  [boolean]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9786137Z   -v, --version   Show version number  [boolean]
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9786622Z 
+deploy	Deploy (wrangler)	2025-11-27T09:51:10.9787005Z Please report any issues to https://github.com/cloudflare/workers-sdk/issues/new/choose
+deploy	Deploy (wrangler)	2025-11-27T09:51:11.0603068Z 🪵  Logs were written to "/home/runner/.config/.wrangler/logs/wrangler-2025-11-27_09-51-10_756.log"
+deploy	Deploy (wrangler)	2025-11-27T09:51:11.1642956Z ##[error]Process completed with exit code 1.
+deploy	Post Checkout	﻿2025-11-27T09:51:11.1740943Z Post job cleanup.
+deploy	Post Checkout	2025-11-27T09:51:11.2678001Z [command]/usr/bin/git version
+deploy	Post Checkout	2025-11-27T09:51:11.2713886Z git version 2.51.2
+deploy	Post Checkout	2025-11-27T09:51:11.2757871Z Temporarily overriding HOME='/home/runner/work/_temp/8a1e7c80-e6ef-472e-beea-8dfe30a85250' before making global git config changes
+deploy	Post Checkout	2025-11-27T09:51:11.2758754Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Checkout	2025-11-27T09:51:11.2763592Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+deploy	Post Checkout	2025-11-27T09:51:11.2799379Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Checkout	2025-11-27T09:51:11.2830885Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Checkout	2025-11-27T09:51:11.3059349Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Checkout	2025-11-27T09:51:11.3081194Z http.https://github.com/.extraheader
+deploy	Post Checkout	2025-11-27T09:51:11.3093199Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+deploy	Post Checkout	2025-11-27T09:51:11.3122632Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Post Checkout	2025-11-27T09:51:11.3338007Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Post Checkout	2025-11-27T09:51:11.3370862Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Complete job	﻿2025-11-27T09:51:11.3695002Z Cleaning up orphan processes
