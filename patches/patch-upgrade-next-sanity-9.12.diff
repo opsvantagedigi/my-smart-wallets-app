@@ -1,0 +1,5 @@
+--- a/package.json
++++ b/package.json
+@@
+-    "next-sanity": "9.11.0",
++    "next-sanity": "^9.12.0",
