@@ -65,16 +65,17 @@ jobs:
             echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run."
           fi
 
-      - name: Cloudflare debug (whoami + dry-run)
+      - name: Cloudflare debug (whoami)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          # Use a runtime shell check instead of step-level `if:` to avoid editor linter warnings.
-          if [ -n "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+          # Avoid passing unsupported CLI flags. Provide token via env and run whoami for auth check.
+          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
             set -e
-            echo "Running wrangler whoami and publish --dry-run (output saved to artifact)"
-            npx wrangler whoami --apiToken "${{ secrets.CLOUDFLARE_API_TOKEN }}" > wrangler-whoami.log 2>&1 || true
-            npx wrangler publish --dry-run --apiToken "${{ secrets.CLOUDFLARE_API_TOKEN }}" > wrangler-dry-run.log 2>&1 || true
+            echo "Running wrangler whoami (output saved to artifact)"
+            npx wrangler whoami > wrangler-whoami.log 2>&1 || true
           else
-            echo "CLOUDFLARE_API_TOKEN not present; skipping wrangler debug steps"
+            echo "CLOUDFLARE_API_TOKEN not present; skipping wrangler whoami"
           fi
         shell: bash
 
@@ -89,10 +90,14 @@ jobs:
           if-no-files-found: warn
 
       - name: Deploy (wrangler)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          if [ -n "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
-            echo "Deploying with wrangler-action wrapper"
-            npx wrangler publish --apiToken "${{ secrets.CLOUDFLARE_API_TOKEN }}"
+          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            set -e
+            echo "Deploying with wrangler (token provided via env)"
+            # Use npx to ensure a consistent installed version; do not pass unsupported flags.
+            npx wrangler publish > wrangler-publish.log 2>&1
           else
             echo "CLOUDFLARE_API_TOKEN not present; skipping deployment"
           fi
