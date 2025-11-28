@@ -173,3 +173,66 @@ Security notes:
 - Do NOT commit tokens to source code.
 - Use least-privilege tokens (read-only for smoke checks).
 - Rotate tokens regularly.
+
+## Husky v10 Setup & Verification
+
+Follow these steps to install Husky v10, register hooks on clones, and verify the pre-commit/pre-push guards that protect local secrets.
+
+### Install Husky v10
+
+```bash
+npm install --save-dev husky@^10
+npx husky install
+```
+
+### Reinstall hooks on new clones
+
+When a new developer clones the repository, ensure hooks are installed:
+
+```bash
+npm install
+npx husky install
+```
+
+### Verify hooks
+
+- Stage `.env.local` and try to commit — the hook should block the commit:
+
+```bash
+git add .env.local
+git commit -m "test: should be blocked"
+# Expected: pre-commit hook exits with a message blocking the commit
+```
+
+- Without `.env.local` staged, commits should succeed:
+
+```bash
+git reset -- .env.local
+git add README.md
+git commit -m "test: allowed commit"
+# Expected: commit succeeds
+```
+
+### Push branch and watch CI
+
+- After committing, push your branch and monitor GitHub Actions for the workflow run:
+
+```bash
+git push origin chore/remediate/sanity-secrets
+# or monitor with gh CLI:
+gh run list --branch chore/remediate/sanity-secrets --limit 5
+```
+
+- CI workflows will fail fast if required repository secrets are missing. Ensure the following secrets are configured in GitHub Settings → Secrets and variables → Actions before running CI smoke checks.
+
+### Security Notes
+
+- `.env.local` must never be committed.
+- Store secrets only in GitHub Settings → Secrets and variables → Actions:
+	- `SANITY_API_TOKEN`
+	- `SANITY_PROJECT_ID`
+	- `SANITY_DATASET`
+	- Optionally: `NPM_TOKEN`, `NPM_REGISTRY_URL`
+- CI workflows must read secrets via `${{ secrets.SANITY_API_TOKEN }}` etc.
+- CI contains a fail-fast step to abort if required secrets are missing.
+
