@@ -1,0 +1,195 @@
+build	Set up job	﻿2025-11-28T14:42:53.3013700Z Current runner version: '2.329.0'
+build	Set up job	2025-11-28T14:42:53.3039478Z ##[group]Runner Image Provisioner
+build	Set up job	2025-11-28T14:42:53.3040735Z Hosted Compute Agent
+build	Set up job	2025-11-28T14:42:53.3041407Z Version: 20251016.436
+build	Set up job	2025-11-28T14:42:53.3042035Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+build	Set up job	2025-11-28T14:42:53.3042739Z Build Date: 2025-10-15T20:44:12Z
+build	Set up job	2025-11-28T14:42:53.3043353Z ##[endgroup]
+build	Set up job	2025-11-28T14:42:53.3043914Z ##[group]Operating System
+build	Set up job	2025-11-28T14:42:53.3044444Z Ubuntu
+build	Set up job	2025-11-28T14:42:53.3044982Z 24.04.3
+build	Set up job	2025-11-28T14:42:53.3045415Z LTS
+build	Set up job	2025-11-28T14:42:53.3045870Z ##[endgroup]
+build	Set up job	2025-11-28T14:42:53.3046479Z ##[group]Runner Image
+build	Set up job	2025-11-28T14:42:53.3047036Z Image: ubuntu-24.04
+build	Set up job	2025-11-28T14:42:53.3047518Z Version: 20251112.124.1
+build	Set up job	2025-11-28T14:42:53.3048618Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2025-11-28T14:42:53.3050173Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+build	Set up job	2025-11-28T14:42:53.3051452Z ##[endgroup]
+build	Set up job	2025-11-28T14:42:53.3052526Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2025-11-28T14:42:53.3054415Z Contents: read
+build	Set up job	2025-11-28T14:42:53.3055006Z Metadata: read
+build	Set up job	2025-11-28T14:42:53.3055603Z Packages: read
+build	Set up job	2025-11-28T14:42:53.3056168Z ##[endgroup]
+build	Set up job	2025-11-28T14:42:53.3058195Z Secret source: Actions
+build	Set up job	2025-11-28T14:42:53.3058994Z Prepare workflow directory
+build	Set up job	2025-11-28T14:42:53.3384650Z Prepare all required actions
+build	Set up job	2025-11-28T14:42:53.3427193Z Getting action download info
+build	Set up job	2025-11-28T14:42:53.7964277Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+build	Set up job	2025-11-28T14:42:54.3531771Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build	Set up job	2025-11-28T14:42:54.5243354Z Complete job name: build
+build	Run actions/checkout@v4	﻿2025-11-28T14:42:54.5950634Z ##[group]Run actions/checkout@v4
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5951563Z with:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5952058Z   repository: opsvantagedigi/my-smart-wallets-app
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5952846Z   token: ***
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5953268Z   ssh-strict: true
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5953691Z   ssh-user: git
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5954120Z   persist-credentials: true
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5954589Z   clean: true
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5955012Z   sparse-checkout-cone-mode: true
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5955553Z   fetch-depth: 1
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5955956Z   fetch-tags: false
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5956391Z   show-progress: true
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5956829Z   lfs: false
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5957224Z   submodules: false
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5957650Z   set-safe-directory: true
+build	Run actions/checkout@v4	2025-11-28T14:42:54.5958318Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7050138Z Syncing repository: opsvantagedigi/my-smart-wallets-app
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7052530Z ##[group]Getting Git version info
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7053479Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7054722Z [command]/usr/bin/git version
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7148163Z git version 2.51.2
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7176890Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7195193Z Temporarily overriding HOME='/home/runner/work/_temp/8503c549-211a-4727-a675-5199340f13de' before making global git config changes
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7197642Z Adding repository directory to the temporary git global config as a safe directory
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7210996Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7253800Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7257882Z ##[group]Initializing the repository
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7263626Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7387271Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7388669Z hint: is subject to change. To configure the initial branch name to use in all
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7389911Z hint: of your new repositories, which will suppress this warning, call:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7391500Z hint:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7392253Z hint: 	git config --global init.defaultBranch <name>
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7392942Z hint:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7393898Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7395459Z hint: 'development'. The just-created branch can be renamed via this command:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7396714Z hint:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7397424Z hint: 	git branch -m <name>
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7398220Z hint:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7399270Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7401432Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7408804Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7451931Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7453221Z ##[group]Disabling automatic garbage collection
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7457456Z [command]/usr/bin/git config --local gc.auto 0
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7490491Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7491777Z ##[group]Setting up auth
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7498894Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7533776Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7908596Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Run actions/checkout@v4	2025-11-28T14:42:54.7941211Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Run actions/checkout@v4	2025-11-28T14:42:54.8167674Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Run actions/checkout@v4	2025-11-28T14:42:54.8201317Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Run actions/checkout@v4	2025-11-28T14:42:54.8438037Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	Run actions/checkout@v4	2025-11-28T14:42:54.8472786Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:54.8474102Z ##[group]Fetching the repository
+build	Run actions/checkout@v4	2025-11-28T14:42:54.8483007Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9a7d6c81d227f06190ba4ed1d56a7d7296fb2ae9:refs/remotes/origin/chore/remediate/sanity-secrets
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4682812Z From https://github.com/opsvantagedigi/my-smart-wallets-app
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4686295Z  * [new ref]         9a7d6c81d227f06190ba4ed1d56a7d7296fb2ae9 -> origin/chore/remediate/sanity-secrets
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4717355Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4718918Z ##[group]Determining the checkout info
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4720653Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4724156Z [command]/usr/bin/git sparse-checkout disable
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4786973Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4812756Z ##[group]Checking out the ref
+build	Run actions/checkout@v4	2025-11-28T14:42:55.4817868Z [command]/usr/bin/git checkout --progress --force -B chore/remediate/sanity-secrets refs/remotes/origin/chore/remediate/sanity-secrets
+build	Run actions/checkout@v4	2025-11-28T14:42:55.5147208Z Switched to a new branch 'chore/remediate/sanity-secrets'
+build	Run actions/checkout@v4	2025-11-28T14:42:55.5151130Z branch 'chore/remediate/sanity-secrets' set up to track 'origin/chore/remediate/sanity-secrets'.
+build	Run actions/checkout@v4	2025-11-28T14:42:55.5161716Z ##[endgroup]
+build	Run actions/checkout@v4	2025-11-28T14:42:55.5198939Z [command]/usr/bin/git log -1 --format=%H
+build	Run actions/checkout@v4	2025-11-28T14:42:55.5221531Z 9a7d6c81d227f06190ba4ed1d56a7d7296fb2ae9
+build	Use Node.js	﻿2025-11-28T14:42:55.5533356Z ##[group]Run actions/setup-node@v4
+build	Use Node.js	2025-11-28T14:42:55.5534507Z with:
+build	Use Node.js	2025-11-28T14:42:55.5535258Z   node-version: 20
+build	Use Node.js	2025-11-28T14:42:55.5536104Z   always-auth: false
+build	Use Node.js	2025-11-28T14:42:55.5536973Z   check-latest: false
+build	Use Node.js	2025-11-28T14:42:55.5538117Z   token: ***
+build	Use Node.js	2025-11-28T14:42:55.5538896Z ##[endgroup]
+build	Use Node.js	2025-11-28T14:42:55.7407938Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+build	Use Node.js	2025-11-28T14:42:55.7413020Z ##[group]Environment details
+build	Use Node.js	2025-11-28T14:42:59.1620579Z node: v20.19.5
+build	Use Node.js	2025-11-28T14:42:59.1621237Z npm: 10.8.2
+build	Use Node.js	2025-11-28T14:42:59.1621642Z yarn: 1.22.22
+build	Use Node.js	2025-11-28T14:42:59.1623738Z ##[endgroup]
+build	Warn if package-lock missing (opsvantage-web)	﻿2025-11-28T14:42:59.1727082Z ##[group]Run if [ ! -f opsvantage-web/package-lock.json ]; then
+build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1727661Z [36;1mif [ ! -f opsvantage-web/package-lock.json ]; then[0m
+build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1728269Z [36;1m  echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"[0m
+build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1728804Z [36;1mfi[0m
+build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1778178Z shell: /usr/bin/bash -e {0}
+build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1778501Z ##[endgroup]
+build	Fail fast if secrets missing (only on push)	﻿2025-11-28T14:42:59.1912890Z ##[group]Run if [ -z "***" ]; then echo "Missing NEXT_PUBLIC_ALCHEMY_API_KEY"; exit 1; fi
+build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1913607Z [36;1mif [ -z "***" ]; then echo "Missing NEXT_PUBLIC_ALCHEMY_API_KEY"; exit 1; fi[0m
+build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1914327Z [36;1mif [ -z "***" ]; then echo "Missing MARZ_MINT_PRIVATE_KEY"; exit 1; fi[0m
+build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1947273Z shell: /usr/bin/bash -e {0}
+build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1947570Z ##[endgroup]
+build	Install dependencies (opsvantage-web)	﻿2025-11-28T14:42:59.2107045Z ##[group]Run if [ -f opsvantage-web/package-lock.json ]; then
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2107616Z [36;1mif [ -f opsvantage-web/package-lock.json ]; then[0m
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2107995Z [36;1m  npm ci --prefix opsvantage-web[0m
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2108283Z [36;1melse[0m
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2108662Z [36;1m  echo "package-lock.json not found in opsvantage-web, running npm install instead"[0m
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2109128Z [36;1m  npm install --prefix opsvantage-web[0m
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2109431Z [36;1mfi[0m
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2142431Z shell: /usr/bin/bash -e {0}
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2142730Z env:
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2143138Z   NEXT_PUBLIC_ALCHEMY_API_KEY: ***
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2143617Z   MARZ_MINT_PRIVATE_KEY: ***
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2143999Z   NEXT_PUBLIC_MARZ_TOKEN_ADDRESS: ***
+build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2144299Z ##[endgroup]
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:03.8557179Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:03.9196578Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:04.5579292Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.6391404Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.6698465Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.8987145Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9332371Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9692493Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9693688Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9696513Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:06.0127803Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:07.2538787Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4236619Z 
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4237446Z added 593 packages, and audited 594 packages in 18s
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4237910Z 
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4238631Z 166 packages are looking for funding
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4239154Z   run `npm fund` for details
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5411689Z 
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5412432Z 4 vulnerabilities (3 high, 1 critical)
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5412956Z 
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5413293Z To address all issues (including breaking changes), run:
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5413722Z   npm audit fix --force
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5413928Z 
+build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5726690Z Run `npm audit` for details.
+build	Lint (opsvantage-web)	﻿2025-11-28T14:43:17.5755346Z ##[group]Run cd opsvantage-web
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.5755675Z [36;1mcd opsvantage-web[0m
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.5755896Z [36;1mnpm run lint[0m
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.5790021Z shell: /usr/bin/bash -e {0}
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.5790273Z ##[endgroup]
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.6886562Z 
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.6887221Z > opsvantage-web@0.1.0 lint
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.6887597Z > next lint
+build	Lint (opsvantage-web)	2025-11-28T14:43:17.6887759Z 
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.1333596Z 
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.1340760Z    We detected TypeScript in your project and reconfigured your tsconfig.json file for you. Strict-mode is set to false by default.
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.1342342Z    The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.1342967Z 
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.1343203Z    	- incremental was set to true
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.1343417Z 
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.2652091Z Failed to load config "next/core-web-vitals" to extend from.
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.2653740Z Referenced from: /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.eslintrc.json
+build	Lint (opsvantage-web)	2025-11-28T14:43:18.2816537Z ##[error]Process completed with exit code 1.
+build	Post Run actions/checkout@v4	﻿2025-11-28T14:43:18.2921709Z Post job cleanup.
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3862336Z [command]/usr/bin/git version
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3898428Z git version 2.51.2
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3941973Z Temporarily overriding HOME='/home/runner/work/_temp/7d1cd856-9af0-4969-8489-2ea112ac5e68' before making global git config changes
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3942910Z Adding repository directory to the temporary git global config as a safe directory
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3947422Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3988827Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4020700Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4256408Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4277942Z http.https://github.com/.extraheader
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4291643Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4323120Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4545739Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4576843Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Complete job	﻿2025-11-28T14:43:18.4906724Z Cleaning up orphan processes
