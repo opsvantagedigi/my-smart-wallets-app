@@ -1,11 +1,11 @@
-name: CI — Lint / Test (Pull Requests)
+name: CI - Lint / Test (Pull Requests)
 
 on:
-  pull_request: {}
+  pull_request:
 
 jobs:
   pr-ci:
-    name: PR CI — lint / test (no secrets)
+    name: PR CI - lint / test (no secrets)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

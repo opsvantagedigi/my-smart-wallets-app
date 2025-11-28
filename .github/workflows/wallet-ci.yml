@@ -20,7 +20,7 @@ jobs:
       - name: Warn if package-lock missing (opsvantage-web)
         run: |
           if [ ! -f opsvantage-web/package-lock.json ]; then
-            echo "::warning::opsvantage-web/package-lock.json is missing — CI will use npm install instead of npm ci"
+            echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"
           fi
 
       - name: Fail fast if secrets missing (only on push)

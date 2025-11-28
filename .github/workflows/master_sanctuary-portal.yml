@@ -23,7 +23,7 @@ jobs:
       - name: Warn if package-lock missing (opsvantage-web)
         run: |
           if [ ! -f opsvantage-web/package-lock.json ]; then
-            echo "::warning::opsvantage-web/package-lock.json is missing — CI will use npm install instead of npm ci"
+            echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"
           fi
 
       - name: Install dependencies (opsvantage-web)
@@ -64,10 +64,10 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8F77433F840F4B40B4BD30C7EDE56ACC }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E76D716DB76F48DD96B79CC2C1AAB13D }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'sanctuary-portal'
-          slot-name: 'Production'
+          app-name: sanctuary-portal
+          slot-name: Production
           package: .

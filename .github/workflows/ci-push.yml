@@ -1,11 +1,11 @@
-name: CI — Push Build / Test / Smoke
+name: CI - Push Build / Test / Smoke
 
 on:
-  push: {}
+  push:
 
 jobs:
   push-ci:
-    name: Push CI — lint / build / test / smoke
+    name: Push CI - lint / build / test / smoke
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,7 +20,7 @@ jobs:
       - name: Warn if package-lock missing (opsvantage-web)
         run: |
           if [ ! -f opsvantage-web/package-lock.json ]; then
-            echo "::warning::opsvantage-web/package-lock.json is missing — CI will use npm install instead of npm ci"
+            echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"
           fi
 
       - name: Configure private registry
