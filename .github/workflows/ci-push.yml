@@ -33,7 +33,13 @@ jobs:
         shell: bash
 
       - name: Install dependencies (opsvantage-web only)
-        run: npm ci --prefix opsvantage-web
+        run: |
+          if [ -f opsvantage-web/package-lock.json ]; then
+            npm ci --prefix opsvantage-web
+          else
+            echo "package-lock.json not found in opsvantage-web, running npm install instead"
+            npm install --prefix opsvantage-web
+          fi
         env:
           CI: true
 

@@ -24,7 +24,13 @@ jobs:
           if [ -z "${{ secrets.MARZ_MINT_PRIVATE_KEY }}" ]; then echo "Missing MARZ_MINT_PRIVATE_KEY"; exit 1; fi
 
       - name: Install dependencies (opsvantage-web)
-        run: npm ci --prefix opsvantage-web
+        run: |
+          if [ -f opsvantage-web/package-lock.json ]; then
+            npm ci --prefix opsvantage-web
+          else
+            echo "package-lock.json not found in opsvantage-web, running npm install instead"
+            npm install --prefix opsvantage-web
+          fi
         env:
           NEXT_PUBLIC_ALCHEMY_API_KEY: ${{ secrets.NEXT_PUBLIC_ALCHEMY_API_KEY }}
           MARZ_MINT_PRIVATE_KEY: ${{ secrets.MARZ_MINT_PRIVATE_KEY }}
