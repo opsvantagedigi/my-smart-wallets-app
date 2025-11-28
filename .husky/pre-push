@@ -1,0 +1,8 @@
+#!/bin/sh
+# Husky v10-compatible pre-push hook to block pushing when .env.local is staged
+if git diff --cached --name-only | grep -E "(^|/)\.env.local$" >/dev/null 2>&1; then
+  echo "❌ Push blocked: .env.local is staged. Please remove it from the commit."
+  exit 1
+fi
+
+exit 0
