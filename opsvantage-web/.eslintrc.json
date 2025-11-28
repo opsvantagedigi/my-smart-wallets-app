@@ -1,0 +1,14 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "max-len": ["warn", { "code": 200, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreUrls": true }]
+  },
+  "overrides": [
+    {
+      "files": ["components/ui/**/*.{ts,tsx}"],
+      "rules": {
+        "max-len": "off"
+      }
+    }
+  ]
+}
