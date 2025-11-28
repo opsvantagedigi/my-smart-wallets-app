@@ -26,6 +26,7 @@
     "@types/react": "^18.0.0",
     "@types/node": "^20.0.0",
     "eslint": "^8.0.0",
+    "eslint-config-next": "^14.2.4",
     "supertest": "^6.3.3",
     "@types/supertest": "2.0.12"
   }
