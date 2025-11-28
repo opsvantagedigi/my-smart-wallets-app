@@ -1,11 +1,11 @@
-name: PR CI — lint / build / test / smoke
+name: CI — Lint / Test (Pull Requests)
 
 on:
-  push:
+  pull_request: {}
 
 jobs:
   pr-ci:
-    name: PR CI
+    name: PR CI — lint / test (no secrets)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,222 +17,17 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: Inject secrets and configure npm auth
-        if: ${{ github.event_name == 'push' }}
-        env:
-          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_REGISTRY_URL: ${{ secrets.NPM_REGISTRY_URL }}
-        run: |
-          # Fail fast if token required but missing
-          if [ -z "$SANITY_API_TOKEN" ]; then
-            echo "ERROR: SANITY_API_TOKEN secret is not set. Add it in repository Settings -> Secrets."
-            exit 1
-          fi
-          # Configure npm auth if NPM_TOKEN is provided (for private registries)
-          if [ -n "$NPM_TOKEN" ]; then
-            if [ -n "$NPM_REGISTRY_URL" ]; then
-              # Example for custom registry host (adjust format for your registry)
-              echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc
-            else
-              # Default to public npm registry token
-              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-            fi
-            chmod 600 ~/.npmrc
-          fi
-        shell: bash
-
-      - name: Install dependencies
-        if: ${{ github.event_name == 'push' }}
-        run: npm ci
-        env:
-          CI: true
-          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-
-      - name: Run lint
-        run: npm run lint
+      - name: Install dependencies (opsvantage-web only)
+        run: npm ci --prefix opsvantage-web
         env:
           CI: true
 
-      - name: Build
-        run: npm run build
+      - name: Run lint (opsvantage-web)
+        run: npm run lint --prefix opsvantage-web
         env:
           CI: true
 
-      - name: Run tests
-        run: npm test
+      - name: Run tests (opsvantage-web)
+        run: npm test --prefix opsvantage-web
         env:
           CI: true
-
-      - name: Run Sanity smoke check
-        run: npm run smoke
-        env:
-          CI: true
-          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-name: PR CI — lint / build / test / smoke
-
-on:
-  pull_request:
-
-jobs:
-  pr-ci:
-    name: PR CI
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js 20.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-          cache: 'npm'
-
-      - name: Inject secrets and configure npm auth
-        if: ${{ github.event_name == 'push' }}
-        env:
-          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_REGISTRY_URL: ${{ secrets.NPM_REGISTRY_URL }}
-        run: |
-          # Fail fast if token required but missing
-          if [ -z "$SANITY_API_TOKEN" ]; then
-            echo "ERROR: SANITY_API_TOKEN secret is not set. Add it in repository Settings -> Secrets."
-            exit 1
-          fi
-          # Configure npm auth if NPM_TOKEN is provided (for private registries)
-          if [ -n "$NPM_TOKEN" ]; then
-            if [ -n "$NPM_REGISTRY_URL" ]; then
-              # Example for custom registry host (adjust format for your registry)
-              echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc
-            else
-              # Default to public npm registry token
-              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-            fi
-            chmod 600 ~/.npmrc
-          fi
-        shell: bash
-
-      - name: Install dependencies
-        if: ${{ github.event_name == 'push' }}
-        run: npm ci
-        env:
-          CI: true
-          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-
-      - name: Run lint
-        run: npm run lint
-        env:
-          CI: true
-
-      - name: Build
-        run: npm run build
-        env:
-          CI: true
-
-      - name: Run tests
-        run: npm test
-        env:
-          CI: true
-
-      - name: Run Sanity smoke check
-        run: npm run smoke
-        env:
-          CI: true
-          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-name: PR CI — lint / build / test / smoke
-
-on:
-  pull_request:
-
-jobs:
-  pr-ci:
-    name: PR CI — lint / build / test / smoke
-
-    on:
-      pull_request:
-
-    jobs:
-      pr-ci:
-        name: PR CI
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout repository
-            uses: actions/checkout@v4
-
-          - name: Setup Node.js 20.x
-            uses: actions/setup-node@v4
-            with:
-              node-version: '20.x'
-              cache: 'npm'
-
-          - name: Inject secrets and configure npm auth
-            if: ${{ github.event_name == 'push' }}
-            env:
-              SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-              SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-              SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-              NPM_REGISTRY_URL: ${{ secrets.NPM_REGISTRY_URL }}
-            run: |
-              # Fail fast if token required but missing
-              if [ -z "$SANITY_API_TOKEN" ]; then
-                echo "ERROR: SANITY_API_TOKEN secret is not set. Add it in repository Settings -> Secrets."
-                exit 1
-              fi
-              # Configure npm auth if NPM_TOKEN is provided (for private registries)
-              if [ -n "$NPM_TOKEN" ]; then
-                if [ -n "$NPM_REGISTRY_URL" ]; then
-                  # Example for custom registry host (adjust format for your registry)
-                  echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc
-                else
-                  # Default to public npm registry token
-                  echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-                fi
-                chmod 600 ~/.npmrc
-              fi
-            shell: bash
-
-          - name: Install dependencies
-            if: ${{ github.event_name == 'push' }}
-            run: npm ci
-            env:
-              CI: true
-              SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-              SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-              SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-
-          - name: Run lint
-            run: npm run lint
-            env:
-              CI: true
-
-          - name: Build
-            run: npm run build
-            env:
-              CI: true
-
-          - name: Run tests
-            run: npm test
-            env:
-              CI: true
-
-          - name: Run Sanity smoke check
-            run: npm run smoke
-            env:
-              CI: true
-              SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-              SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-              SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
