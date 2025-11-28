@@ -10,6 +10,18 @@
 				"clean"
 			],
 			"problemMatcher": []
+		},
+		{
+			"label": "Deploy to Cloudflare",
+			"type": "shell",
+			"command": "wrangler publish",
+			"group": "build"
+		},
+		{
+			"label": "Cloudflare Dev",
+			"type": "shell",
+			"command": "wrangler dev",
+			"group": "test"
 		}
 	]
 }

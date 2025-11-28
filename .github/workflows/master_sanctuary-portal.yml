@@ -20,6 +20,12 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Warn if package-lock missing (opsvantage-web)
+        run: |
+          if [ ! -f opsvantage-web/package-lock.json ]; then
+            echo "::warning::opsvantage-web/package-lock.json is missing — CI will use npm install instead of npm ci"
+          fi
+
       - name: Install dependencies (opsvantage-web)
         run: |
           if [ -f opsvantage-web/package-lock.json ]; then

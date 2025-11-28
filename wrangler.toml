@@ -1,6 +1,4 @@
-name = "smart-wallet-and-web3-app"
-main = "workers/index.js"
-compatibility_date = "2025-11-26"
-# kv_namespaces = []
-# d1_databases = []
-# vars = { STRIPE_SECRET_KEY = "REPLACE_ME" }
+name = "opsvantage-web"
+account_id = "<your-account-id>"
+workers_dev = true
+main = "src/index.ts"
