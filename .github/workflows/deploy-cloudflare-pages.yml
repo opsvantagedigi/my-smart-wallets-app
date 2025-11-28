@@ -1,0 +1,31 @@
+name: Deploy to Cloudflare Pages
+on:
+  push:
+    branches: [ main, chore/remediate-sanity-secrets ]
+
+jobs:
+  deploy:
+    name: Deploy Pages (Cloudflare)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps for opsvantage-web
+        run: npm ci --prefix opsvantage-web
+
+      - name: Build opsvantage-web
+        run: npm run build --prefix opsvantage-web
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'my-smartwallets-web3-app'
+          directory: '.next'
