@@ -1,0 +1,17 @@
+
+> ui-components-qs-nextjs@0.1.0 smoke
+> node scripts/smoke-check.js
+
+tier check failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:14900:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async run (C:\Users\AjaySidal\my-smart-wallets-app\scripts\smoke-check.js:8:21) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1122:18)
+      at afterConnectMultiple (node:net:1689:7) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+rpc status: 403 no-json
+smoke check failed: /api/tier did not return ok
