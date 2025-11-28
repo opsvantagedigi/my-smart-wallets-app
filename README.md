@@ -95,6 +95,66 @@ npm run start   # run production build
 npm run lint    # lint code
 ```
 
+## Safe push helpers
+
+Use the provided helper scripts to stage, review, and push changes safely. Both scripts protect against accidentally committing a local `.env.local` file and provide a dry-run mode to preview changes.
+
+- **Bash:**
+
+```bash
+# Dry-run: shows staged diff and status without committing or pushing
+./scripts/push-changes.sh --dry-run
+
+# Commit & push (interactive confirmation)
+./scripts/push-changes.sh
+
+# Specify a branch (positional or with --branch)
+./scripts/push-changes.sh chore/remediate/sanity-secrets
+./scripts/push-changes.sh --branch release/my-change
+```
+
+- **PowerShell (Windows):**
+
+```powershell
+# Dry-run: shows staged diff and status without committing or pushing
+.\scripts\push-changes.ps1 -DryRun
+
+# Commit & push (interactive confirmation)
+.\scripts\push-changes.ps1
+
+# Specify a branch
+.\scripts\push-changes.ps1 -Branch 'release/my-change'
+```
+
+Notes:
+- Both scripts will attempt to `git reset -- .env.local` so local secret files are not included in commits.
+- If you have the GitHub CLI (`gh`) installed, the scripts will list recent workflow runs for the branch after a push.
+
+## Re-run CI (helper)
+
+If a workflow run fails and you need to re-run it from your machine, use the helper script which uses the GitHub CLI (`gh`). The script will attempt to find the last failed or cancelled run for the `chore/remediate/sanity-secrets` branch and request a rerun. It falls back to interactively asking you to choose a run id if automatic detection fails.
+
+```bash
+./scripts/rerun-ci.sh                  # rerun last failed run for chore/remediate/sanity-secrets
+./scripts/rerun-ci.sh release/my-branch  # rerun last failed run for a different branch
+```
+
+Requirements:
+- `gh` (GitHub CLI) must be installed and authenticated (`gh auth login`).
+- `jq` is optional; if installed the script can automatically detect the failing run.
+
+## Security reminders
+
+- Never commit local secret files such as ` .env.local` into source control. The helper scripts explicitly `git reset` that file if present.
+- Store runtime secrets only in GitHub: **Settings → Secrets and variables → Actions**. Add the following secrets at minimum for CI smoke checks:
+	- `SANITY_API_TOKEN` (read-only token for smoke checks)
+	- `SANITY_PROJECT_ID`
+	- `SANITY_DATASET`
+	- Optionally `NPM_TOKEN` and `NPM_REGISTRY_URL` if you use a private npm registry
+- Use least-privilege tokens and rotate secrets regularly.
+
+
+
 ## 🛂 License
 
 MIT

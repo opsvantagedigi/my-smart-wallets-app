@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Block committing .env.local
+if git diff --cached --name-only | grep -q "^.env.local$\|\.env.local$"; then
+  echo "❌ Commit blocked: .env.local must not be committed."
+  exit 1
+fi
+
+exit 0
