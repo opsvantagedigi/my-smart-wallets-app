@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { ethers } from 'ethers'
+import { JsonRpcProvider } from 'ethers'
 
 type Data = { success: boolean; txs?: any[]; error?: string }
 
@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   const RPC = process.env.NEXT_PUBLIC_ALCHEMY_RPC || `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
   try {
-    const provider = new ethers.providers.JsonRpcProvider(RPC)
+    const provider = new JsonRpcProvider(RPC)
     // fetch recent transactions; for large-scale use consider Alchemy APIs
     const history = await provider.getHistory(String(address), Date.now() - 1000 * 60 * 60 * 24 * 7)
     const mapped = history.map(tx => ({ hash: tx.hash, from: tx.from, to: tx.to, value: tx.value.toString(), timestamp: tx.timestamp }))

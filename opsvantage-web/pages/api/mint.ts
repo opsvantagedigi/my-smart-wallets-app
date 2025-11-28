@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { ethers } from 'ethers'
+import { JsonRpcProvider, Wallet, Contract, parseUnits } from 'ethers'
 
 type Data = { success: boolean; txHash?: string; error?: string }
 
@@ -17,18 +17,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   if (!TOKEN_ADDRESS) return res.status(500).json({ success: false, error: 'MARZ token address not configured' })
 
   try {
-    const provider = new ethers.providers.JsonRpcProvider(RPC)
-    const wallet = new ethers.Wallet(PRIVATE_KEY, provider)
+    const provider = new JsonRpcProvider(RPC)
+    const wallet = new Wallet(PRIVATE_KEY, provider)
     const abi = [
       'function mint(address to, uint256 amount) public returns (bool)',
       'function decimals() view returns (uint8)'
     ]
-    const contract = new ethers.Contract(TOKEN_ADDRESS, abi, wallet)
+    const contract = new Contract(TOKEN_ADDRESS, abi, wallet)
 
     // Convert amount to token units using decimals if available
     let decimals = 18
     try { decimals = await contract.decimals() } catch {}
-    const parsed = ethers.utils.parseUnits(String(amount), decimals)
+    const parsed = parseUnits(String(amount), decimals)
 
     const tx = await contract.mint(to, parsed)
     await tx.wait()
