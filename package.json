@@ -70,6 +70,8 @@
     "@types/react-dom": "18.2.17"
   }
   ,"overrides": {
-    "@tanstack/form-core": "0.42.1"
+    "@tanstack/form-core": "0.42.1",
+    "@tanstack/react-form": "0.42.1",
+    "@tanstack/zod-form-adapter": "0.42.1"
   }
 }

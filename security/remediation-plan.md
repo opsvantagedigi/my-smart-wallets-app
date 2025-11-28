@@ -243,6 +243,11 @@ Follow-up actions
 - **Post-merge step**:
   - Re-run `npm audit --production` and update counts and remaining advisories in this plan. Add links to merged PRs and note any follow-up upgrades required.
 
+- **chore/override-tanstack-form-core** (temporary mitigation)
+  - PR: https://github.com/opsvantagedigi/my-smart-wallets-app/pull/9
+  - Purpose: Add a temporary `overrides` entry to force `@tanstack/form-core@0.42.1` to mitigate a prototype-pollution advisory while upstream package upgrades are prepared.
+  - Verification: After applying the override and updating the lockfile (`npm install`), `npm audit --production` no longer shows the `@tanstack/form-core` prototype-pollution advisory. See `npm-audit-after-overrides.json` for details.
+
   ## Notes
   - `dist/` build artifacts were accidentally committed during local testing. These have been removed from the `chore/upgrade-sanity-3.95` branch and `dist/` is now ignored via `.gitignore`.
   - CI will produce fresh `dist/` artifacts during builds; the repo no longer tracks them to keep the history clean.
