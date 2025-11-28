@@ -40,72 +40,114 @@ jobs:
           path: build.log
           if-no-files-found: warn
 
-      - name: Upload mock server log (if present)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ci-mock-log
-          path: ci-mock.log
-          if-no-files-found: warn
+      name: Deploy — Cloudflare Pages/Workers (scaffold)
 
-  deploy:
-    needs: prepare
-    runs-on: ubuntu-latest
-    if: ${{ always() }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      on:
+        workflow_dispatch: {}
+        push:
+          branches:
+            - cleanup/cloudflare-deploy
 
-      - name: Show Cloudflare secret status
-        run: |
-          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
-            echo "CLOUDFLARE_API_TOKEN not set — deployment will be skipped. Add the secret to enable deploys."
-          else
-            echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run."
-          fi
+      jobs:
+        prepare:
+          runs-on: ubuntu-latest
+          outputs:
+            built: ${{ steps.build-out.outputs.built }}
+          steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - name: Cloudflare debug (whoami)
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          # Avoid passing unsupported CLI flags. Provide token via env and run whoami for auth check.
-          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
-            set -e
-            echo "Running wrangler whoami (output saved to artifact)"
-            npx wrangler whoami > wrangler-whoami.log 2>&1 || true
-          else
-            echo "CLOUDFLARE_API_TOKEN not present; skipping wrangler whoami"
-          fi
-        shell: bash
+            - name: Setup Node 20
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
 
-      - name: Upload wrangler debug logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: wrangler-debug
-          path: |
-            wrangler-whoami.log
-            wrangler-dry-run.log
-          if-no-files-found: warn
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Deploy (wrangler)
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
-            set -e
-            echo "Deploying with wrangler (token provided via env)"
-            # Use npx to ensure a consistent installed version; do not pass unsupported flags.
-            npx wrangler publish > wrangler-publish.log 2>&1
-          else
-            echo "CLOUDFLARE_API_TOKEN not present; skipping deployment"
-          fi
-        shell: bash
+            - name: Build
+              id: build-out
+              run: |
+                # Fail fast and save build console output to build.log for diagnostics
+                set -e
+                npm run build 2>&1 | tee build.log
+                echo "built=true" >> $GITHUB_OUTPUT
+              shell: bash
 
-      - name: Upload wrangler publish log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: wrangler-publish-log
-          path: wrangler-publish.log
-          if-no-files-found: warn
+            - name: Upload build log
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: build-log
+                path: build.log
+                if-no-files-found: warn
+
+            - name: Upload mock server log (if present)
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: ci-mock-log
+                path: ci-mock.log
+                if-no-files-found: warn
+
+        deploy:
+          needs: prepare
+          runs-on: ubuntu-latest
+          if: ${{ always() }}
+          steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Show Cloudflare secret status
+              run: |
+                if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+                  echo "CLOUDFLARE_API_TOKEN not set — deployment will be skipped. Add the secret to enable deploys."
+                else
+                  echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run."
+                fi
+
+            - name: Cloudflare debug (whoami)
+              env:
+                CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+              run: |
+                # Avoid passing unsupported CLI flags. Provide token via env and run whoami for auth check.
+                if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+                  set -e
+                  echo "Running wrangler whoami (output saved to artifact)"
+                  npx wrangler whoami > wrangler-whoami.log 2>&1 || true
+                else
+                  echo "CLOUDFLARE_API_TOKEN not present; skipping wrangler whoami"
+                fi
+              shell: bash
+
+            - name: Upload wrangler debug logs
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: wrangler-debug
+                path: |
+                  wrangler-whoami.log
+                  wrangler-dry-run.log
+                if-no-files-found: warn
+
+            - name: Deploy (wrangler)
+              env:
+                CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+              run: |
+                if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+                  set -e
+                  echo "Deploying with wrangler (token provided via env)"
+                  # Use npx to ensure a consistent installed version; do not pass unsupported flags.
+                  npx wrangler publish > wrangler-publish.log 2>&1
+                else
+                  echo "CLOUDFLARE_API_TOKEN not present; skipping deployment"
+                fi
+              shell: bash
+
+            - name: Upload wrangler publish log
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: wrangler-publish-log
+                path: wrangler-publish.log
+                if-no-files-found: warn

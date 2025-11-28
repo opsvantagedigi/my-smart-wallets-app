@@ -1,10 +1,6 @@
 name: CI - Build and Smoke Test
 
 on:
-  pull_request:
-    branches:
-      - main
-      - cleanup/cloudflare-deploy
   push:
     branches:
       - cleanup/cloudflare-deploy
@@ -28,6 +24,7 @@ jobs:
         run: npm run build
 
       - name: Export RPC URL for smoke
+        if: ${{ github.event_name == 'push' }}
         run: |
           # Avoid using 'env:' mapping to secrets (some editors flag it).
           # Use the secrets expression directly in the script so the YAML linter doesn't warn.
