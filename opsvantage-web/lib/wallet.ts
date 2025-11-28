@@ -11,21 +11,21 @@
   This file is a scaffold — adjust to your Alchemy Smart Wallet client.
 */
 
-import { Web3Provider, JsonRpcProvider } from 'ethers'
+import { BrowserProvider, JsonRpcProvider } from 'ethers'
 // import { Alchemy } from '@alchemy/sdk' // optional, uncomment if installed
 
 const ALCHEMY_API_KEY = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY || process.env.ALCHEMY_API_KEY
 const ALCHEMY_APP_ID = process.env.NEXT_PUBLIC_ALCHEMY_APP_ID || process.env.ALCHEMY_APP_ID
 
-let provider: Web3Provider | JsonRpcProvider | null = null
+let provider: BrowserProvider | JsonRpcProvider | null = null
 
 export async function connectWallet(): Promise<string | null> {
   if (typeof window === 'undefined') return null
   if ((window as any).ethereum) {
-    provider = new Web3Provider((window as any).ethereum)
+    provider = new BrowserProvider((window as any).ethereum)
     try {
       await (window as any).ethereum.request({ method: 'eth_requestAccounts' })
-      const signer = provider.getSigner()
+      const signer = await provider.getSigner()
       const addr = await signer.getAddress()
       return addr
     } catch (err) {
@@ -44,7 +44,7 @@ export async function connectWallet(): Promise<string | null> {
 export async function getWalletAddress(): Promise<string | null> {
   if (!provider) return null
   try {
-    const signer = (provider as Web3Provider).getSigner()
+    const signer = await (provider as any).getSigner()
     return await signer.getAddress()
   } catch {
     return null
@@ -54,7 +54,7 @@ export async function getWalletAddress(): Promise<string | null> {
 export async function signMessage(message: string): Promise<string | null> {
   if (!provider) return null
   try {
-    const signer = (provider as Web3Provider).getSigner()
+    const signer = await (provider as any).getSigner()
     return await signer.signMessage(message)
   } catch (err) {
     console.error('signMessage error', err)
