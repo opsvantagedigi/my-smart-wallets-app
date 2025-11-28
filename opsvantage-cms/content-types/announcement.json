@@ -1,0 +1,11 @@
+{
+  "collectionName": "announcements",
+  "info": {"singularName": "announcement","pluralName":"announcements","displayName":"Announcement"},
+  "options": {"draftAndPublish": false},
+  "attributes": {
+    "title": {"type": "string", "required": true},
+    "message": {"type": "text"},
+    "priority": {"type": "enumeration", "enum": ["low","medium","high"], "default": "low"},
+    "expiresAt": {"type": "datetime"}
+  }
+}

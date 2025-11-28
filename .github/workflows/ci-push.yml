@@ -1,0 +1,71 @@
+name: CI — Push Build / Test / Smoke
+
+on:
+  push: {}
+
+jobs:
+  push-ci:
+    name: Push CI — lint / build / test / smoke
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Configure private registry
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_REGISTRY_URL: ${{ secrets.NPM_REGISTRY_URL }}
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            if [ -n "$NPM_REGISTRY_URL" ]; then
+              echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc
+            else
+              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+            fi
+            chmod 600 ~/.npmrc
+          fi
+        shell: bash
+
+      - name: Install dependencies (opsvantage-web only)
+        run: |
+          if [ -f opsvantage-web/package-lock.json ]; then
+            npm ci --prefix opsvantage-web
+          else
+            echo "package-lock.json not found in opsvantage-web, running npm install instead"
+            npm install --prefix opsvantage-web
+          fi
+        env:
+          CI: true
+
+      - name: Run lint (opsvantage-web)
+        run: npm run lint --prefix opsvantage-web
+        env:
+          CI: true
+
+      - name: Build (opsvantage-web)
+        run: npm run build --prefix opsvantage-web
+        env:
+          CI: true
+
+      - name: Run tests (opsvantage-web)
+        run: npm test --prefix opsvantage-web
+        env:
+          CI: true
+
+      - name: Sanity smoke check
+        env:
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+        run: |
+          if [ -z "$SANITY_API_TOKEN" ]; then
+            echo "SANITY_API_TOKEN not set, skipping sanity smoke check"
+            exit 0
+          fi
+          npm run smoke --prefix opsvantage-web

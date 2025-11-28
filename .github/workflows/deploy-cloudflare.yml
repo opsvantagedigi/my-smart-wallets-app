@@ -1,7 +1,7 @@
 name: Deploy — Cloudflare Pages/Workers (scaffold)
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   push:
     branches:
       - cleanup/cloudflare-deploy
@@ -20,15 +20,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies (opsvantage-web)
+        run: |
+          if [ -f opsvantage-web/package-lock.json ]; then
+            npm ci --prefix opsvantage-web
+          else
+            echo "package-lock.json not found in opsvantage-web, running npm install instead"
+            npm install --prefix opsvantage-web
+          fi
 
-      - name: Build
+      - name: Build (opsvantage-web)
         id: build-out
         run: |
-          # Fail fast and save build console output to build.log for diagnostics
           set -e
-          npm run build 2>&1 | tee build.log
+          npm run build --prefix opsvantage-web 2>&1 | tee build.log
           echo "built=true" >> $GITHUB_OUTPUT
         shell: bash
 
@@ -38,15 +43,6 @@ jobs:
         with:
           name: build-log
           path: build.log
-          if-no-files-found: warn
-
-      - name: Upload mock server log (if present)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ci-mock-log
-          path: ci-mock.log
-          if-no-files-found: warn
 
   deploy:
     needs: prepare
@@ -64,13 +60,16 @@ jobs:
             echo "CLOUDFLARE_API_TOKEN is present. Deployment step will run."
           fi
 
-      - name: Cloudflare debug (whoami + dry-run)
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+      - name: Cloudflare debug (whoami)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          set -e
-          echo "Running wrangler whoami and publish --dry-run (output saved to artifact)"
-          npx wrangler whoami --apiToken "${{ secrets.CLOUDFLARE_API_TOKEN }}" > wrangler-whoami.log 2>&1 || true
-          npx wrangler publish --dry-run --apiToken "${{ secrets.CLOUDFLARE_API_TOKEN }}" > wrangler-dry-run.log 2>&1 || true
+          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            set -e
+            npx wrangler whoami > wrangler-whoami.log 2>&1 || true
+          else
+            echo "CLOUDFLARE_API_TOKEN not present; skipping wrangler whoami"
+          fi
         shell: bash
 
       - name: Upload wrangler debug logs
@@ -81,11 +80,22 @@ jobs:
           path: |
             wrangler-whoami.log
             wrangler-dry-run.log
-          if-no-files-found: warn
 
       - name: Deploy (wrangler)
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
-        uses: cloudflare/wrangler-action@2.0.0
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            set -e
+            npx wrangler publish > wrangler-publish.log 2>&1
+          else
+            echo "CLOUDFLARE_API_TOKEN not present; skipping deployment"
+          fi
+        shell: bash
+
+      - name: Upload wrangler publish log
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: publish
+          name: wrangler-publish-log
+          path: wrangler-publish.log

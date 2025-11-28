@@ -95,6 +95,144 @@ npm run start   # run production build
 npm run lint    # lint code
 ```
 
+## Safe push helpers
+
+Use the provided helper scripts to stage, review, and push changes safely. Both scripts protect against accidentally committing a local `.env.local` file and provide a dry-run mode to preview changes.
+
+- **Bash:**
+
+```bash
+# Dry-run: shows staged diff and status without committing or pushing
+./scripts/push-changes.sh --dry-run
+
+# Commit & push (interactive confirmation)
+./scripts/push-changes.sh
+
+# Specify a branch (positional or with --branch)
+./scripts/push-changes.sh chore/remediate/sanity-secrets
+./scripts/push-changes.sh --branch release/my-change
+```
+
+- **PowerShell (Windows):**
+
+```powershell
+# Dry-run: shows staged diff and status without committing or pushing
+.\scripts\push-changes.ps1 -DryRun
+
+# Commit & push (interactive confirmation)
+.\scripts\push-changes.ps1
+
+# Specify a branch
+.\scripts\push-changes.ps1 -Branch 'release/my-change'
+```
+
+Notes:
+- Both scripts will attempt to `git reset -- .env.local` so local secret files are not included in commits.
+- If you have the GitHub CLI (`gh`) installed, the scripts will list recent workflow runs for the branch after a push.
+
+## Re-run CI (helper)
+
+If a workflow run fails and you need to re-run it from your machine, use the helper script which uses the GitHub CLI (`gh`). The script will attempt to find the last failed or cancelled run for the `chore/remediate/sanity-secrets` branch and request a rerun. It falls back to interactively asking you to choose a run id if automatic detection fails.
+
+```bash
+./scripts/rerun-ci.sh                  # rerun last failed run for chore/remediate/sanity-secrets
+./scripts/rerun-ci.sh release/my-branch  # rerun last failed run for a different branch
+```
+
+Requirements:
+- `gh` (GitHub CLI) must be installed and authenticated (`gh auth login`).
+- `jq` is optional; if installed the script can automatically detect the failing run.
+
+## Security reminders
+
+- Never commit local secret files such as ` .env.local` into source control. The helper scripts explicitly `git reset` that file if present.
+- Store runtime secrets only in GitHub: **Settings → Secrets and variables → Actions**. Add the following secrets at minimum for CI smoke checks:
+	- `SANITY_API_TOKEN` (read-only token for smoke checks)
+	- `SANITY_PROJECT_ID`
+	- `SANITY_DATASET`
+	- Optionally `NPM_TOKEN` and `NPM_REGISTRY_URL` if you use a private npm registry
+- Use least-privilege tokens and rotate secrets regularly.
+
+
+
 ## 🛂 License
 
 MIT
+
+## Secrets & CI — Sanity token
+
+This project requires a server-side Sanity token for certain CI smoke checks and server operations. Follow these steps to add and use the token securely.
+
+- Add `SANITY_API_TOKEN` as a GitHub repository secret (Settings → Secrets and variables → Actions → New repository secret).
+- Optionally add `SANITY_PROJECT_ID` and `SANITY_DATASET` as secrets or set them in your environment.
+- If you use a private npm registry, add `NPM_TOKEN` (and `NPM_REGISTRY_URL`) as repository secrets.
+
+CI consumes these secrets as environment variables (in workflows they are referenced as `${{ secrets.SANITY_API_TOKEN }}`) and are never written to logs. See `.github/workflows/ci.yml` for details.
+
+Security notes:
+- Do NOT commit tokens to source code.
+- Use least-privilege tokens (read-only for smoke checks).
+- Rotate tokens regularly.
+
+## Husky v10 Setup & Verification
+
+Follow these steps to install Husky v10, register hooks on clones, and verify the pre-commit/pre-push guards that protect local secrets.
+
+### Install Husky v10
+
+```bash
+npm install --save-dev husky@^10
+npx husky install
+```
+
+### Reinstall hooks on new clones
+
+When a new developer clones the repository, ensure hooks are installed:
+
+```bash
+npm install
+npx husky install
+```
+
+### Verify hooks
+
+- Stage `.env.local` and try to commit — the hook should block the commit:
+
+```bash
+git add .env.local
+git commit -m "test: should be blocked"
+# Expected: pre-commit hook exits with a message blocking the commit
+```
+
+- Without `.env.local` staged, commits should succeed:
+
+```bash
+git reset -- .env.local
+git add README.md
+git commit -m "test: allowed commit"
+# Expected: commit succeeds
+```
+
+### Push branch and watch CI
+
+- After committing, push your branch and monitor GitHub Actions for the workflow run:
+
+```bash
+git push origin chore/remediate/sanity-secrets
+# or monitor with gh CLI:
+gh run list --branch chore/remediate/sanity-secrets --limit 5
+```
+
+- CI workflows will fail fast if required repository secrets are missing. Ensure the following secrets are configured in GitHub Settings → Secrets and variables → Actions before running CI smoke checks.
+
+### Security Notes
+
+- `.env.local` must never be committed.
+- Store secrets only in GitHub Settings → Secrets and variables → Actions:
+	- `SANITY_API_TOKEN`
+	- `SANITY_PROJECT_ID`
+	- `SANITY_DATASET`
+	- Optionally: `NPM_TOKEN`, `NPM_REGISTRY_URL`
+- CI workflows must read secrets via `${{ secrets.SANITY_API_TOKEN }}` etc.
+- CI contains a fail-fast step to abort if required secrets are missing.
+

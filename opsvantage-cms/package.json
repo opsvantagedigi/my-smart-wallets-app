@@ -1,0 +1,16 @@
+{
+  "name": "opsvantage-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Strapi backend for OpsVantage Digital",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build"
+  },
+  "dependencies": {
+    "@strapi/strapi": "4.20.5",
+    "sqlite3": "^5.1.6",
+    "@strapi/plugin-graphql": "4.20.5"
+  }
+}

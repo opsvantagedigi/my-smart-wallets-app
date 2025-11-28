@@ -1,0 +1,52 @@
+name: Wallet CI
+
+on:
+  push:
+    branches: [ main, chore/remediate/sanity-secrets ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fail fast if secrets missing (only on push)
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          if [ -z "${{ secrets.NEXT_PUBLIC_ALCHEMY_API_KEY }}" ]; then echo "Missing NEXT_PUBLIC_ALCHEMY_API_KEY"; exit 1; fi
+          if [ -z "${{ secrets.MARZ_MINT_PRIVATE_KEY }}" ]; then echo "Missing MARZ_MINT_PRIVATE_KEY"; exit 1; fi
+
+      - name: Install dependencies (opsvantage-web)
+        run: |
+          if [ -f opsvantage-web/package-lock.json ]; then
+            npm ci --prefix opsvantage-web
+          else
+            echo "package-lock.json not found in opsvantage-web, running npm install instead"
+            npm install --prefix opsvantage-web
+          fi
+        env:
+          NEXT_PUBLIC_ALCHEMY_API_KEY: ${{ secrets.NEXT_PUBLIC_ALCHEMY_API_KEY }}
+          MARZ_MINT_PRIVATE_KEY: ${{ secrets.MARZ_MINT_PRIVATE_KEY }}
+          NEXT_PUBLIC_MARZ_TOKEN_ADDRESS: ${{ secrets.NEXT_PUBLIC_MARZ_TOKEN_ADDRESS }}
+
+      - name: Lint (opsvantage-web)
+        run: |
+          cd opsvantage-web
+          npm run lint
+
+      - name: Build (opsvantage-web)
+        run: npm run build --prefix opsvantage-web
+
+      - name: Test (opsvantage-web)
+        run: npm test --prefix opsvantage-web
+
+      - name: Run smoke against Sepolia (placeholder)
+        run: |
+          echo "Running smoke tests (placeholder)"

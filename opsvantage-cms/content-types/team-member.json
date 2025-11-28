@@ -1,0 +1,11 @@
+{
+  "collectionName": "team_members",
+  "info": {"singularName":"team-member","pluralName":"team-members","displayName":"TeamMember"},
+  "options": {"draftAndPublish": false},
+  "attributes": {
+    "name": {"type": "string", "required": true},
+    "role": {"type": "string"},
+    "bio": {"type": "text"},
+    "avatar": {"type": "media", "multiple": false, "allowedTypes": ["images"]}
+  }
+}

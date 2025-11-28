@@ -1,0 +1,9 @@
+#!/bin/sh
+# Husky v10-compatible pre-commit hook (no husky helper dependency)
+# Block committing .env.local
+if git diff --cached --name-only | grep -E "(^|/)\.env.local$" >/dev/null 2>&1; then
+  echo "❌ Commit blocked: .env.local must not be committed."
+  exit 1
+fi
+
+exit 0

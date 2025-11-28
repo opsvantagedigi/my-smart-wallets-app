@@ -1,10 +1,6 @@
 name: CI - Build and Smoke Test
 
 on:
-  pull_request:
-    branches:
-      - main
-      - cleanup/cloudflare-deploy
   push:
     branches:
       - cleanup/cloudflare-deploy
@@ -28,11 +24,10 @@ jobs:
         run: npm run build
 
       - name: Export RPC URL for smoke
-        env:
-          CI_RPC_URL: ${{ secrets.CI_RPC_URL }}
+        if: ${{ github.event_name == 'push' }}
         run: |
-          if [ -n "$CI_RPC_URL" ]; then
-            echo "NEXT_PUBLIC_RPC_URL=$CI_RPC_URL" >> $GITHUB_ENV
+          if [ -n "${{ secrets.CI_RPC_URL }}" ]; then
+            echo "NEXT_PUBLIC_RPC_URL=${{ secrets.CI_RPC_URL }}" >> $GITHUB_ENV
             echo "Using CI_RPC_URL secret"
           else
             echo "NEXT_PUBLIC_RPC_URL=https://rpc.devnet.alchemy.com/0969bab5-2013-4458-a04b-61e5e39185dd" >> $GITHUB_ENV
