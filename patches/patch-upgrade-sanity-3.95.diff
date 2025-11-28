@@ -1,0 +1,5 @@
+--- a/package.json
++++ b/package.json
+@@
+-    "sanity": "3.94.0",
++    "sanity": "^3.95.0",

@@ -44,6 +44,19 @@ ci-run-*.log
 ci-extract-*.txt
 npm-audit.json
 artifacts/
+# Local GitHub Actions run logs and downloaded artifacts
+run-*.log
+run-artifacts-*/
+eslint-fix.log
+build-local.log
 
 # Ignore Sanity runtime build output
 studio-my-smart-wallets-app/.sanity/runtime/
+
+# Static build artifacts
+dist/
+
+# Common build outputs
+.next/
+out/
+coverage/

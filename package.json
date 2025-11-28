@@ -7,6 +7,7 @@
     "node": "20.x"
   },
   "scripts": {
+    "clean": "npx rimraf .next node_modules",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -67,5 +68,10 @@
     "react-dom": "18.3.1",
     "@types/react": "18.2.41",
     "@types/react-dom": "18.2.17"
+  }
+  ,"overrides": {
+    "@tanstack/form-core": "0.42.1",
+    "@tanstack/react-form": "0.42.1",
+    "@tanstack/zod-form-adapter": "0.42.1"
   }
 }
