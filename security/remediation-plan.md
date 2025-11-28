@@ -51,6 +51,20 @@ Example entry
 ## Change Log
 - Record PR links, commit hashes, and verification notes for each fix.
 
+## Phase 2 — @tanstack form-core remediation
+
+- **chore/upgrade-tanstack-form-core**
+  - PR: https://github.com/opsvantagedigi/my-smart-wallets-app/pull/10
+  - Purpose: Upgrade form-related `@tanstack` packages and ensure `@tanstack/form-core` resolves to `>=0.42.1` to remediate GHSA-ggv3-vmgw-xv2q (prototype pollution).
+  - Changes: added direct dependencies `@tanstack/react-form@^0.42.1`, `@tanstack/zod-form-adapter@^0.42.1` and an `overrides` entry to force `@tanstack/form-core@0.42.1` during resolution.
+  - Verification:
+    - Run `npm install` to update the lockfile
+    - Run `npm ci && npm audit --production` — expected: the `@tanstack/form-core` advisory is cleared
+    - Run `npm run smoke` (form-flow smoke tests) — expected: form flows behave correctly
+  - Owner: @Ajay
+  - ETA: 2025-12-04
+  - Notes: Audit output after applying these changes confirmed the `@tanstack` advisory removed; remaining high advisories pertain to `sanity`/`glob` and are tracked in Phase 1 PRs.
+
 ## Risk Register
 - For any advisory without an immediate fix, document risk, compensating controls, and review cadence.
 
