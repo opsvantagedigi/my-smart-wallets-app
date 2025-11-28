@@ -98,3 +98,18 @@ npm run lint    # lint code
 ## 🛂 License
 
 MIT
+
+## Secrets & CI — Sanity token
+
+This project requires a server-side Sanity token for certain CI smoke checks and server operations. Follow these steps to add and use the token securely.
+
+- Add `SANITY_API_TOKEN` as a GitHub repository secret (Settings → Secrets and variables → Actions → New repository secret).
+- Optionally add `SANITY_PROJECT_ID` and `SANITY_DATASET` as secrets or set them in your environment.
+- If you use a private npm registry, add `NPM_TOKEN` (and `NPM_REGISTRY_URL`) as repository secrets.
+
+CI consumes these secrets as environment variables (in workflows they are referenced as `${{ secrets.SANITY_API_TOKEN }}`) and are never written to logs. See `.github/workflows/ci.yml` for details.
+
+Security notes:
+- Do NOT commit tokens to source code.
+- Use least-privilege tokens (read-only for smoke checks).
+- Rotate tokens regularly.
