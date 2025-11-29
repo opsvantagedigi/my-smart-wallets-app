@@ -1,195 +1,315 @@
-build	Set up job	﻿2025-11-28T14:42:53.3013700Z Current runner version: '2.329.0'
-build	Set up job	2025-11-28T14:42:53.3039478Z ##[group]Runner Image Provisioner
-build	Set up job	2025-11-28T14:42:53.3040735Z Hosted Compute Agent
-build	Set up job	2025-11-28T14:42:53.3041407Z Version: 20251016.436
-build	Set up job	2025-11-28T14:42:53.3042035Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
-build	Set up job	2025-11-28T14:42:53.3042739Z Build Date: 2025-10-15T20:44:12Z
-build	Set up job	2025-11-28T14:42:53.3043353Z ##[endgroup]
-build	Set up job	2025-11-28T14:42:53.3043914Z ##[group]Operating System
-build	Set up job	2025-11-28T14:42:53.3044444Z Ubuntu
-build	Set up job	2025-11-28T14:42:53.3044982Z 24.04.3
-build	Set up job	2025-11-28T14:42:53.3045415Z LTS
-build	Set up job	2025-11-28T14:42:53.3045870Z ##[endgroup]
-build	Set up job	2025-11-28T14:42:53.3046479Z ##[group]Runner Image
-build	Set up job	2025-11-28T14:42:53.3047036Z Image: ubuntu-24.04
-build	Set up job	2025-11-28T14:42:53.3047518Z Version: 20251112.124.1
-build	Set up job	2025-11-28T14:42:53.3048618Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
-build	Set up job	2025-11-28T14:42:53.3050173Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
-build	Set up job	2025-11-28T14:42:53.3051452Z ##[endgroup]
-build	Set up job	2025-11-28T14:42:53.3052526Z ##[group]GITHUB_TOKEN Permissions
-build	Set up job	2025-11-28T14:42:53.3054415Z Contents: read
-build	Set up job	2025-11-28T14:42:53.3055006Z Metadata: read
-build	Set up job	2025-11-28T14:42:53.3055603Z Packages: read
-build	Set up job	2025-11-28T14:42:53.3056168Z ##[endgroup]
-build	Set up job	2025-11-28T14:42:53.3058195Z Secret source: Actions
-build	Set up job	2025-11-28T14:42:53.3058994Z Prepare workflow directory
-build	Set up job	2025-11-28T14:42:53.3384650Z Prepare all required actions
-build	Set up job	2025-11-28T14:42:53.3427193Z Getting action download info
-build	Set up job	2025-11-28T14:42:53.7964277Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
-build	Set up job	2025-11-28T14:42:54.3531771Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
-build	Set up job	2025-11-28T14:42:54.5243354Z Complete job name: build
-build	Run actions/checkout@v4	﻿2025-11-28T14:42:54.5950634Z ##[group]Run actions/checkout@v4
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5951563Z with:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5952058Z   repository: opsvantagedigi/my-smart-wallets-app
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5952846Z   token: ***
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5953268Z   ssh-strict: true
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5953691Z   ssh-user: git
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5954120Z   persist-credentials: true
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5954589Z   clean: true
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5955012Z   sparse-checkout-cone-mode: true
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5955553Z   fetch-depth: 1
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5955956Z   fetch-tags: false
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5956391Z   show-progress: true
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5956829Z   lfs: false
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5957224Z   submodules: false
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5957650Z   set-safe-directory: true
-build	Run actions/checkout@v4	2025-11-28T14:42:54.5958318Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7050138Z Syncing repository: opsvantagedigi/my-smart-wallets-app
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7052530Z ##[group]Getting Git version info
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7053479Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7054722Z [command]/usr/bin/git version
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7148163Z git version 2.51.2
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7176890Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7195193Z Temporarily overriding HOME='/home/runner/work/_temp/8503c549-211a-4727-a675-5199340f13de' before making global git config changes
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7197642Z Adding repository directory to the temporary git global config as a safe directory
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7210996Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7253800Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7257882Z ##[group]Initializing the repository
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7263626Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7387271Z hint: Using 'master' as the name for the initial branch. This default branch name
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7388669Z hint: is subject to change. To configure the initial branch name to use in all
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7389911Z hint: of your new repositories, which will suppress this warning, call:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7391500Z hint:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7392253Z hint: 	git config --global init.defaultBranch <name>
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7392942Z hint:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7393898Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7395459Z hint: 'development'. The just-created branch can be renamed via this command:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7396714Z hint:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7397424Z hint: 	git branch -m <name>
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7398220Z hint:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7399270Z hint: Disable this message with "git config set advice.defaultBranchName false"
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7401432Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7408804Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7451931Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7453221Z ##[group]Disabling automatic garbage collection
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7457456Z [command]/usr/bin/git config --local gc.auto 0
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7490491Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7491777Z ##[group]Setting up auth
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7498894Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7533776Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7908596Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-build	Run actions/checkout@v4	2025-11-28T14:42:54.7941211Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-build	Run actions/checkout@v4	2025-11-28T14:42:54.8167674Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-build	Run actions/checkout@v4	2025-11-28T14:42:54.8201317Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-build	Run actions/checkout@v4	2025-11-28T14:42:54.8438037Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-build	Run actions/checkout@v4	2025-11-28T14:42:54.8472786Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:54.8474102Z ##[group]Fetching the repository
-build	Run actions/checkout@v4	2025-11-28T14:42:54.8483007Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9a7d6c81d227f06190ba4ed1d56a7d7296fb2ae9:refs/remotes/origin/chore/remediate/sanity-secrets
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4682812Z From https://github.com/opsvantagedigi/my-smart-wallets-app
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4686295Z  * [new ref]         9a7d6c81d227f06190ba4ed1d56a7d7296fb2ae9 -> origin/chore/remediate/sanity-secrets
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4717355Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4718918Z ##[group]Determining the checkout info
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4720653Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4724156Z [command]/usr/bin/git sparse-checkout disable
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4786973Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4812756Z ##[group]Checking out the ref
-build	Run actions/checkout@v4	2025-11-28T14:42:55.4817868Z [command]/usr/bin/git checkout --progress --force -B chore/remediate/sanity-secrets refs/remotes/origin/chore/remediate/sanity-secrets
-build	Run actions/checkout@v4	2025-11-28T14:42:55.5147208Z Switched to a new branch 'chore/remediate/sanity-secrets'
-build	Run actions/checkout@v4	2025-11-28T14:42:55.5151130Z branch 'chore/remediate/sanity-secrets' set up to track 'origin/chore/remediate/sanity-secrets'.
-build	Run actions/checkout@v4	2025-11-28T14:42:55.5161716Z ##[endgroup]
-build	Run actions/checkout@v4	2025-11-28T14:42:55.5198939Z [command]/usr/bin/git log -1 --format=%H
-build	Run actions/checkout@v4	2025-11-28T14:42:55.5221531Z 9a7d6c81d227f06190ba4ed1d56a7d7296fb2ae9
-build	Use Node.js	﻿2025-11-28T14:42:55.5533356Z ##[group]Run actions/setup-node@v4
-build	Use Node.js	2025-11-28T14:42:55.5534507Z with:
-build	Use Node.js	2025-11-28T14:42:55.5535258Z   node-version: 20
-build	Use Node.js	2025-11-28T14:42:55.5536104Z   always-auth: false
-build	Use Node.js	2025-11-28T14:42:55.5536973Z   check-latest: false
-build	Use Node.js	2025-11-28T14:42:55.5538117Z   token: ***
-build	Use Node.js	2025-11-28T14:42:55.5538896Z ##[endgroup]
-build	Use Node.js	2025-11-28T14:42:55.7407938Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
-build	Use Node.js	2025-11-28T14:42:55.7413020Z ##[group]Environment details
-build	Use Node.js	2025-11-28T14:42:59.1620579Z node: v20.19.5
-build	Use Node.js	2025-11-28T14:42:59.1621237Z npm: 10.8.2
-build	Use Node.js	2025-11-28T14:42:59.1621642Z yarn: 1.22.22
-build	Use Node.js	2025-11-28T14:42:59.1623738Z ##[endgroup]
-build	Warn if package-lock missing (opsvantage-web)	﻿2025-11-28T14:42:59.1727082Z ##[group]Run if [ ! -f opsvantage-web/package-lock.json ]; then
-build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1727661Z [36;1mif [ ! -f opsvantage-web/package-lock.json ]; then[0m
-build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1728269Z [36;1m  echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"[0m
-build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1728804Z [36;1mfi[0m
-build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1778178Z shell: /usr/bin/bash -e {0}
-build	Warn if package-lock missing (opsvantage-web)	2025-11-28T14:42:59.1778501Z ##[endgroup]
-build	Fail fast if secrets missing (only on push)	﻿2025-11-28T14:42:59.1912890Z ##[group]Run if [ -z "***" ]; then echo "Missing NEXT_PUBLIC_ALCHEMY_API_KEY"; exit 1; fi
-build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1913607Z [36;1mif [ -z "***" ]; then echo "Missing NEXT_PUBLIC_ALCHEMY_API_KEY"; exit 1; fi[0m
-build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1914327Z [36;1mif [ -z "***" ]; then echo "Missing MARZ_MINT_PRIVATE_KEY"; exit 1; fi[0m
-build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1947273Z shell: /usr/bin/bash -e {0}
-build	Fail fast if secrets missing (only on push)	2025-11-28T14:42:59.1947570Z ##[endgroup]
-build	Install dependencies (opsvantage-web)	﻿2025-11-28T14:42:59.2107045Z ##[group]Run if [ -f opsvantage-web/package-lock.json ]; then
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2107616Z [36;1mif [ -f opsvantage-web/package-lock.json ]; then[0m
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2107995Z [36;1m  npm ci --prefix opsvantage-web[0m
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2108283Z [36;1melse[0m
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2108662Z [36;1m  echo "package-lock.json not found in opsvantage-web, running npm install instead"[0m
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2109128Z [36;1m  npm install --prefix opsvantage-web[0m
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2109431Z [36;1mfi[0m
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2142431Z shell: /usr/bin/bash -e {0}
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2142730Z env:
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2143138Z   NEXT_PUBLIC_ALCHEMY_API_KEY: ***
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2143617Z   MARZ_MINT_PRIVATE_KEY: ***
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2143999Z   NEXT_PUBLIC_MARZ_TOKEN_ADDRESS: ***
-build	Install dependencies (opsvantage-web)	2025-11-28T14:42:59.2144299Z ##[endgroup]
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:03.8557179Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:03.9196578Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:04.5579292Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.6391404Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.6698465Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.8987145Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9332371Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9692493Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9693688Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:05.9696513Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:06.0127803Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:07.2538787Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4236619Z 
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4237446Z added 593 packages, and audited 594 packages in 18s
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4237910Z 
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4238631Z 166 packages are looking for funding
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.4239154Z   run `npm fund` for details
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5411689Z 
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5412432Z 4 vulnerabilities (3 high, 1 critical)
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5412956Z 
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5413293Z To address all issues (including breaking changes), run:
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5413722Z   npm audit fix --force
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5413928Z 
-build	Install dependencies (opsvantage-web)	2025-11-28T14:43:17.5726690Z Run `npm audit` for details.
-build	Lint (opsvantage-web)	﻿2025-11-28T14:43:17.5755346Z ##[group]Run cd opsvantage-web
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.5755675Z [36;1mcd opsvantage-web[0m
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.5755896Z [36;1mnpm run lint[0m
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.5790021Z shell: /usr/bin/bash -e {0}
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.5790273Z ##[endgroup]
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.6886562Z 
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.6887221Z > opsvantage-web@0.1.0 lint
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.6887597Z > next lint
-build	Lint (opsvantage-web)	2025-11-28T14:43:17.6887759Z 
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.1333596Z 
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.1340760Z    We detected TypeScript in your project and reconfigured your tsconfig.json file for you. Strict-mode is set to false by default.
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.1342342Z    The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.1342967Z 
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.1343203Z    	- incremental was set to true
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.1343417Z 
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.2652091Z Failed to load config "next/core-web-vitals" to extend from.
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.2653740Z Referenced from: /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.eslintrc.json
-build	Lint (opsvantage-web)	2025-11-28T14:43:18.2816537Z ##[error]Process completed with exit code 1.
-build	Post Run actions/checkout@v4	﻿2025-11-28T14:43:18.2921709Z Post job cleanup.
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3862336Z [command]/usr/bin/git version
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3898428Z git version 2.51.2
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3941973Z Temporarily overriding HOME='/home/runner/work/_temp/7d1cd856-9af0-4969-8489-2ea112ac5e68' before making global git config changes
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3942910Z Adding repository directory to the temporary git global config as a safe directory
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3947422Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.3988827Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4020700Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4256408Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4277942Z http.https://github.com/.extraheader
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4291643Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4323120Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4545739Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-build	Post Run actions/checkout@v4	2025-11-28T14:43:18.4576843Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-build	Complete job	﻿2025-11-28T14:43:18.4906724Z Cleaning up orphan processes
+Push CI - lint / build / test / smoke	UNKNOWN STEP	﻿2025-11-28T21:15:46.4623431Z Current runner version: '2.329.0'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4648117Z ##[group]Runner Image Provisioner
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4649072Z Hosted Compute Agent
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4649706Z Version: 20251016.436
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4650359Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4651035Z Build Date: 2025-10-15T20:44:12Z
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4651721Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4652357Z ##[group]Operating System
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4653112Z Ubuntu
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4653619Z 24.04.3
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4654113Z LTS
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4654585Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4655171Z ##[group]Runner Image
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4655698Z Image: ubuntu-24.04
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4656230Z Version: 20251112.124.1
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4657329Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4658887Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4660016Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4661125Z ##[group]GITHUB_TOKEN Permissions
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4663230Z Contents: read
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4663817Z Metadata: read
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4664324Z Packages: read
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4664958Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4667224Z Secret source: Actions
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.4667949Z Prepare workflow directory
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.5013863Z Prepare all required actions
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.5054184Z Getting action download info
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:46.9534935Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.5700048Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.7949800Z Complete job name: Push CI - lint / build / test / smoke
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8651419Z ##[group]Run actions/checkout@v4
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8652274Z with:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8652766Z   repository: opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8653708Z   token: ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8654109Z   ssh-strict: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8654516Z   ssh-user: git
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8654931Z   persist-credentials: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8655392Z   clean: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8655809Z   sparse-checkout-cone-mode: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8656295Z   fetch-depth: 1
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8656697Z   fetch-tags: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8657114Z   show-progress: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8657532Z   lfs: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8657917Z   submodules: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8658340Z   set-safe-directory: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.8659032Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.9861410Z Syncing repository: opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.9864203Z ##[group]Getting Git version info
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.9865497Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.9867094Z [command]/usr/bin/git version
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:47.9976202Z git version 2.51.2
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0003466Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0018814Z Temporarily overriding HOME='/home/runner/work/_temp/e50becf2-f3bc-4a98-84c4-8fdc15e17308' before making global git config changes
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0020999Z Adding repository directory to the temporary git global config as a safe directory
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0031973Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0070107Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0073834Z ##[group]Initializing the repository
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0078002Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0201017Z hint: Using 'master' as the name for the initial branch. This default branch name
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0202664Z hint: is subject to change. To configure the initial branch name to use in all
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0204070Z hint: of your new repositories, which will suppress this warning, call:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0205503Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0206148Z hint: 	git config --global init.defaultBranch <name>
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0207022Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0207595Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0208539Z hint: 'development'. The just-created branch can be renamed via this command:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0209286Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0209695Z hint: 	git branch -m <name>
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0210164Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0211058Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0212649Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0218936Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0288191Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0288976Z ##[group]Disabling automatic garbage collection
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0294051Z [command]/usr/bin/git config --local gc.auto 0
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0324216Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0324893Z ##[group]Setting up auth
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0332400Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0364155Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0734446Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0767094Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.0989028Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.1020632Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.1322217Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.1375055Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.1376672Z ##[group]Fetching the repository
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.1388645Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +739f5c05986467d642c84d8e6575200d806f9aed:refs/remotes/origin/chore/remediate/sanity-secrets
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7313210Z From https://github.com/opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7315533Z  * [new ref]         739f5c05986467d642c84d8e6575200d806f9aed -> origin/chore/remediate/sanity-secrets
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7355899Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7357407Z ##[group]Determining the checkout info
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7358869Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7359734Z [command]/usr/bin/git sparse-checkout disable
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7405259Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7436558Z ##[group]Checking out the ref
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7441177Z [command]/usr/bin/git checkout --progress --force -B chore/remediate/sanity-secrets refs/remotes/origin/chore/remediate/sanity-secrets
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7780773Z Switched to a new branch 'chore/remediate/sanity-secrets'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7782184Z branch 'chore/remediate/sanity-secrets' set up to track 'origin/chore/remediate/sanity-secrets'.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7793463Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7832655Z [command]/usr/bin/git log -1 --format=%H
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.7855795Z 739f5c05986467d642c84d8e6575200d806f9aed
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8156068Z ##[group]Run actions/setup-node@v4
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8156732Z with:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8157127Z   node-version: 20.x
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8157575Z   cache: npm
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8158032Z   always-auth: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8158504Z   check-latest: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8159144Z   token: ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:48.8159762Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:49.0318548Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:49.0325487Z ##[group]Environment details
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.1148426Z node: v20.19.5
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.1149067Z npm: 10.8.2
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.1149496Z yarn: 1.22.22
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.1153568Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.1174701Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.3866761Z /home/runner/.npm
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7138423Z npm cache is not found
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7258143Z ##[group]Run if [ ! -f opsvantage-web/package-lock.json ]; then
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7258676Z [36;1mif [ ! -f opsvantage-web/package-lock.json ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7259230Z [36;1m  echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7259692Z [36;1mfi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7305504Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7305793Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7433457Z ##[group]Run if [ -n "$NPM_TOKEN" ]; then
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7433860Z [36;1mif [ -n "$NPM_TOKEN" ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7434149Z [36;1m  if [ -n "$NPM_REGISTRY_URL" ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7434515Z [36;1m    echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7434837Z [36;1m  else[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7435112Z [36;1m    echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7435429Z [36;1m  fi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7435615Z [36;1m  chmod 600 ~/.npmrc[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7435822Z [36;1mfi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7471388Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7471725Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7471899Z   NPM_TOKEN: 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7472080Z   NPM_REGISTRY_URL: 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7472287Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7632543Z ##[group]Run if [ -f opsvantage-web/package-lock.json ]; then
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7633232Z [36;1mif [ -f opsvantage-web/package-lock.json ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7633725Z [36;1m  npm ci --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7633989Z [36;1melse[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7634322Z [36;1m  echo "package-lock.json not found in opsvantage-web, running npm install instead"[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7634749Z [36;1m  npm install --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7635011Z [36;1mfi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7669597Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7669883Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7670092Z   CI: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:51.7670272Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:55.2527477Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:55.3819156Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:56.0903366Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.2282367Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.2368412Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.2987088Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.5495900Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.6215176Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.6218483Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.6220686Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:57.6444769Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:15:59.1523730Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.6807448Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.6809322Z added 619 packages, and audited 620 packages in 18s
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.6810753Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.6811063Z 173 packages are looking for funding
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.6811618Z   run `npm fund` for details
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.7990832Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.7991841Z 4 vulnerabilities (3 high, 1 critical)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.7992311Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.7992739Z To address all issues (including breaking changes), run:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.7993787Z   npm audit fix --force
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.7994071Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.7994300Z Run `npm audit` for details.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.8380469Z ##[group]Run npm run lint --prefix opsvantage-web
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.8380842Z [36;1mnpm run lint --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.8414753Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.8414975Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.8415134Z   CI: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.8415294Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.9552284Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.9553275Z > opsvantage-web@0.1.0 lint
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.9553838Z > next lint
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:09.9554069Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:10.3985395Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:10.3990838Z    We detected TypeScript in your project and reconfigured your tsconfig.json file for you. Strict-mode is set to false by default.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:10.3992728Z    The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:10.3993824Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:10.3994199Z    	- incremental was set to true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:10.3994433Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.4624359Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.4625570Z This information is used to shape Next.js' roadmap and prioritize features.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.4626952Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.4627888Z https://nextjs.org/telemetry
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.4630541Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.5964151Z ✔ No ESLint warnings or errors
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.6954680Z ##[group]Run npm run build --prefix opsvantage-web
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.6955062Z [36;1mnpm run build --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.6989024Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.6989260Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.6989423Z   CI: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.6989586Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.8142599Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.8143291Z > opsvantage-web@0.1.0 build
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.8143669Z > next build
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:11.8143833Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:12.4190303Z   ▲ Next.js 14.2.4
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:12.4194038Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:12.4197870Z    Linting and checking validity of types ...
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:15.0225615Z    Creating an optimized *** build ...
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8940448Z Found 1 warning while optimizing generated CSS:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8940827Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8941548Z [2m│   opacity: 90%;[22m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8941982Z [2m│ }[22m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8943564Z [2m│[22m @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap');
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8944607Z [2m┆[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer statements[39m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8945055Z [2m┆[22m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8945282Z [2m│ :root {[22m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8945858Z [2m│   --brand-gradient: linear-gradient(90deg,#0f172a 0%,#10b981 50%,#fbbf24 100%);[22m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:19.8946182Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:22.8009574Z  ✓ Compiled successfully
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:22.8016115Z    Collecting page data ...
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:23.4689979Z    Generating static pages (0/6) ...
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:23.6994502Z    Generating static pages (1/6) 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:23.6997591Z    Generating static pages (2/6) 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:23.7271517Z    Generating static pages (4/6) 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:23.7744914Z  ✓ Generating static pages (6/6)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:24.1184029Z    Finalizing page optimization ...
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:24.1184524Z    Collecting build traces ...
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.2271646Z  ⚠ Statically exporting a Next.js application via `next export` disables API routes and middleware.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.2273258Z This command is meant for static-only hosts, and is not necessary to make your application static.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.2275049Z Pages in your application without server-side data dependencies will be automatically statically exported by `next build`, including pages powered by `getStaticProps`.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.2276555Z Learn more: https://nextjs.org/docs/messages/api-routes-static-export
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4304319Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4418709Z Route (pages)                             Size     First Load JS
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4419885Z ┌ ○ /                                     3.09 kB        81.4 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4420946Z ├   /_app                                 0 B            78.3 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4421783Z ├ ○ /404                                  180 B          78.5 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4422529Z ├ ○ /about                                543 B          78.8 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4423500Z ├ ƒ /api/activity                         0 B            78.3 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4424401Z ├ ƒ /api/balance                          0 B            78.3 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4425345Z ├ ƒ /api/mint                             0 B            78.3 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4426196Z ├ ○ /dashboard                            1.31 kB         171 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4427068Z └ ○ /mint                                 1.27 kB         171 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4427756Z + First Load JS shared by all             79.1 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4428555Z   ├ chunks/framework-ecc4130bc7a58a64.js  45.2 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4429293Z   ├ chunks/main-be89c515900796e7.js       32 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4429927Z   └ other shared chunks (total)           1.94 kB
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4430269Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4430622Z ○  (Static)   prerendered as static content
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4431110Z ƒ  (Dynamic)  server-rendered on demand
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4431406Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4861229Z ##[group]Run npm test --prefix opsvantage-web
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4861597Z [36;1mnpm test --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4894746Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4894977Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4895140Z   CI: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.4895304Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.6112704Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.6113392Z > opsvantage-web@0.1.0 test
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.6113935Z > jest --runInBand
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:30.6114168Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0067975Z PASS __tests__/api-mint.test.ts
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0071103Z   API /api/mint smoke
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0074429Z     ✓ POST /api/mint without secrets returns 400 or error (176 ms)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0074905Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0095973Z Test Suites: 1 passed, 1 total
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0096532Z Tests:       1 passed, 1 total
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0096986Z Snapshots:   0 total
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0097386Z Time:        3.068 s
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0097759Z Ran all test suites.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0632722Z ##[group]Run if [ -z "$SANITY_API_TOKEN" ]; then
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0633528Z [36;1mif [ -z "$SANITY_API_TOKEN" ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0634141Z [36;1m  echo "SANITY_API_TOKEN not set, skipping sanity smoke check"[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0634717Z [36;1m  exit 0[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0635029Z [36;1mfi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0635383Z [36;1mnpm run smoke --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0682561Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0683193Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0685321Z   SANITY_API_TOKEN: ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0685820Z   SANITY_PROJECT_ID: ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0686599Z   SANITY_DATASET: ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.0686948Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.1831250Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.1831942Z > opsvantage-web@0.1.0 smoke
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.1832728Z > jest --testPathPattern=__tests__ --runInBand
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:34.1833442Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4500103Z PASS __tests__/api-mint.test.ts
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4503382Z   API /api/mint smoke
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4506640Z     ✓ POST /api/mint without secrets returns 400 or error (114 ms)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4507131Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4529730Z Test Suites: 1 passed, 1 total
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4530286Z Tests:       1 passed, 1 total
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4530726Z Snapshots:   0 total
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4531204Z Time:        1.963 s, estimated 4 s
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4531771Z Ran all test suites matching /__tests__/i.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.4965090Z Post job cleanup.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:36.6732350Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/my-smart-wallets-app/my-smart-wallets-app --files-from manifest.txt --use-compress-program zstdmt
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:38.4044090Z Sent 0 of 154300387 (0.0%), 0.0 MBs/sec
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:39.4085892Z Sent 154300387 of 154300387 (100.0%), 73.4 MBs/sec
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:39.9302222Z Cache saved with the key: node-cache-Linux-x64-npm-ff4150b15b9ae1396dccaaa1d15a76bd12f95b2dfb3fcb68bcce3678dab2da13
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:39.9450589Z Post job cleanup.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0438699Z [command]/usr/bin/git version
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0478934Z git version 2.51.2
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0528274Z Temporarily overriding HOME='/home/runner/work/_temp/84a40f2e-826a-411b-890a-91d993f4cc3c' before making global git config changes
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0529790Z Adding repository directory to the temporary git global config as a safe directory
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0535458Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0576709Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0612278Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0850226Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0874629Z http.https://github.com/.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0887801Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.0922451Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.1156131Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.1187839Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-28T21:16:40.1531025Z Cleaning up orphan processes
