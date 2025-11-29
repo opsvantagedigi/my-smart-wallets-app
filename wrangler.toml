@@ -1,9 +1,9 @@
 name = "my-smartwallets-web3-app"
 type = "javascript"
+# Replace the placeholder with your Cloudflare account ID or provide it via the
+# `CLOUDFLARE_ACCOUNT_ID` GitHub secret used by workflows. Do not commit a real
+# account id to source control if you prefer to use secrets.
 account_id = "REPLACE_WITH_ACCOUNT_ID"
 workers_dev = true
 compatibility_date = "2025-11-29"
-name = "opsvantage-web"
-account_id = "<your-account-id>"
-workers_dev = true
 main = "src/index.ts"
