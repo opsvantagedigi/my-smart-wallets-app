@@ -1,0 +1,202 @@
+Push CI - lint / build / test / smoke	UNKNOWN STEP	﻿2025-11-29T01:44:19.7281773Z Current runner version: '2.329.0'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7304088Z ##[group]Runner Image Provisioner
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7304880Z Hosted Compute Agent
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7305400Z Version: 20251016.436
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7306167Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7306820Z Build Date: 2025-10-15T20:44:12Z
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7307355Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7307898Z ##[group]Operating System
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7308395Z Ubuntu
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7308817Z 24.04.3
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7309274Z LTS
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7309707Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7310129Z ##[group]Runner Image
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7310693Z Image: ubuntu-24.04
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7311167Z Version: 20251112.124.1
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7312115Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7313537Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7314548Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7315535Z ##[group]GITHUB_TOKEN Permissions
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7317695Z Contents: read
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7318235Z Metadata: read
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7318691Z Packages: read
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7319403Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7321450Z Secret source: Actions
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7322096Z Prepare workflow directory
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7671348Z Prepare all required actions
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:19.7708798Z Getting action download info
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:20.1158100Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:20.9501542Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.1360746Z Complete job name: Push CI - lint / build / test / smoke
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2002247Z ##[group]Run actions/checkout@v4
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2003187Z with:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2003859Z   repository: opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2004791Z   token: ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2005285Z   ssh-strict: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2005854Z   ssh-user: git
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2006697Z   persist-credentials: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2007261Z   clean: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2007858Z   sparse-checkout-cone-mode: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2008502Z   fetch-depth: 1
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2009051Z   fetch-tags: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2009656Z   show-progress: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2010278Z   lfs: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2010754Z   submodules: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2011370Z   set-safe-directory: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.2012303Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3022828Z Syncing repository: opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3025163Z ##[group]Getting Git version info
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3026614Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3028049Z [command]/usr/bin/git version
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3075026Z git version 2.51.2
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3096913Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3109097Z Temporarily overriding HOME='/home/runner/work/_temp/528423ff-6fc9-46e2-8e89-9f05d1a4f239' before making global git config changes
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3110718Z Adding repository directory to the temporary git global config as a safe directory
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3121691Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3154484Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3157275Z ##[group]Initializing the repository
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3161702Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3260695Z hint: Using 'master' as the name for the initial branch. This default branch name
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3262639Z hint: is subject to change. To configure the initial branch name to use in all
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3264363Z hint: of your new repositories, which will suppress this warning, call:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3265491Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3266277Z hint: 	git config --global init.defaultBranch <name>
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3267090Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3267800Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3269220Z hint: 'development'. The just-created branch can be renamed via this command:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3270051Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3270607Z hint: 	git branch -m <name>
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3271173Z hint:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3271862Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3273119Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3275648Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3303087Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3304044Z ##[group]Disabling automatic garbage collection
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3306327Z [command]/usr/bin/git config --local gc.auto 0
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3329671Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3433881Z ##[group]Setting up auth
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3435544Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3439338Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3636803Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3660767Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3832712Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.3858585Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.4034752Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.4063235Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.4064221Z ##[group]Fetching the repository
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:21.4071071Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b876478a30ef25433da9e3a7596a9f9dcbde540b:refs/remotes/origin/chore/remediate-sanity-secrets
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.1918985Z From https://github.com/opsvantagedigi/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.1920007Z  * [new ref]         b876478a30ef25433da9e3a7596a9f9dcbde540b -> origin/chore/remediate-sanity-secrets
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.1943917Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.1944821Z ##[group]Determining the checkout info
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.1945832Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.1950721Z [command]/usr/bin/git sparse-checkout disable
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.1982888Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2003195Z ##[group]Checking out the ref
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2006551Z [command]/usr/bin/git checkout --progress --force -B chore/remediate-sanity-secrets refs/remotes/origin/chore/remediate-sanity-secrets
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2266763Z Switched to a new branch 'chore/remediate-sanity-secrets'
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2268439Z branch 'chore/remediate-sanity-secrets' set up to track 'origin/chore/remediate-sanity-secrets'.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2275820Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2307438Z [command]/usr/bin/git log -1 --format=%H
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2325191Z b876478a30ef25433da9e3a7596a9f9dcbde540b
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2528463Z ##[group]Run actions/setup-node@v4
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2528959Z with:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2529312Z   node-version: 20.x
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2529706Z   cache: npm
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2530078Z   always-auth: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2530478Z   check-latest: false
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2531037Z   token: ***
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.2531595Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.4572322Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:22.4577780Z ##[group]Environment details
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:25.0733132Z node: v20.19.5
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:25.0733796Z npm: 10.8.2
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:25.0734167Z yarn: 1.22.22
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:25.0735433Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:25.0753999Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:25.3088930Z /home/runner/.npm
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:25.5932183Z Cache hit for: node-cache-Linux-x64-npm-ff4150b15b9ae1396dccaaa1d15a76bd12f95b2dfb3fcb68bcce3678dab2da13
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:26.8372613Z Received 50331648 of 154301182 (32.6%), 48.0 MBs/sec
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.6058644Z Received 154301182 of 154301182 (100.0%), 83.2 MBs/sec
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.6059824Z Cache Size: ~147 MB (154301182 B)
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.6123352Z [command]/usr/bin/tar -xf /home/runner/work/_temp/da74e4c6-913e-4236-8047-65a6631e8519/cache.tzst -P -C /home/runner/work/my-smart-wallets-app/my-smart-wallets-app --use-compress-program unzstd
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8145806Z Cache restored successfully
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8327729Z Cache restored from key: node-cache-Linux-x64-npm-ff4150b15b9ae1396dccaaa1d15a76bd12f95b2dfb3fcb68bcce3678dab2da13
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8436643Z ##[group]Run if [ ! -f opsvantage-web/package-lock.json ]; then
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8437233Z [36;1mif [ ! -f opsvantage-web/package-lock.json ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8437901Z [36;1m  echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8438469Z [36;1mfi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8469913Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8470201Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8574531Z ##[group]Run if [ -n "$NPM_TOKEN" ]; then
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8574915Z [36;1mif [ -n "$NPM_TOKEN" ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8575244Z [36;1m  if [ -n "$NPM_REGISTRY_URL" ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8575681Z [36;1m    echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8576263Z [36;1m  else[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8576703Z [36;1m    echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8577117Z [36;1m  fi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8577350Z [36;1m  chmod 600 ~/.npmrc[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8577599Z [36;1mfi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8598645Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8598985Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8599206Z   NPM_TOKEN: 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8599407Z   NPM_REGISTRY_URL: 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8599627Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8663088Z ##[group]Run if [ -f opsvantage-web/package-lock.json ]; then
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8663501Z [36;1mif [ -f opsvantage-web/package-lock.json ]; then[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8663841Z [36;1m  npm ci --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8664097Z [36;1melse[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8664432Z [36;1m  echo "package-lock.json not found in opsvantage-web, running npm install instead"[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8664856Z [36;1m  npm install --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8665116Z [36;1mfi[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8683339Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8683612Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8683789Z   CI: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:27.8683972Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:30.8709210Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:30.9730063Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:31.1122010Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:31.1123102Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:31.1124461Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:31.1134961Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:31.6117210Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6543118Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6543907Z added 603 packages, and audited 604 packages in 9s
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6544379Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6544667Z 166 packages are looking for funding
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6545184Z   run `npm fund` for details
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6555146Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6555754Z found 0 vulnerabilities
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6747671Z ##[group]Run npm run lint --prefix opsvantage-web
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6748040Z [36;1mnpm run lint --prefix opsvantage-web[0m
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6766379Z shell: /usr/bin/bash -e {0}
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6766640Z env:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6766822Z   CI: true
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.6766994Z ##[endgroup]
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.7724149Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.7724481Z > opsvantage-web@0.1.0 lint
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.7724771Z > next lint
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:36.7724883Z 
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2623898Z Invalid Options:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2624735Z - Unknown options: useEslintrc, extensions, resolvePluginsRelativeTo, rulePaths, ignorePath, reportUnusedDisableDirectives
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2625475Z - 'extensions' has been removed.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2625798Z - 'resolvePluginsRelativeTo' has been removed.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2626282Z - 'ignorePath' has been removed.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2626721Z - 'rulePaths' has been removed. Please define your rules using plugins.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2627928Z - 'reportUnusedDisableDirectives' has been removed. Please use the 'overrideConfig.linterOptions.reportUnusedDisableDirectives' option instead.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2739051Z ##[error]Process completed with exit code 1.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.2838692Z Post job cleanup.
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.3701181Z [command]/usr/bin/git version
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.3733055Z git version 2.51.2
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.3770064Z Temporarily overriding HOME='/home/runner/work/_temp/9fd133ee-38ab-41f0-9002-dcf429701cdb' before making global git config changes
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.3770973Z Adding repository directory to the temporary git global config as a safe directory
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.3774858Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.3804669Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.3830744Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.4002980Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.4019393Z http.https://github.com/.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.4030442Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.4054773Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.4218237Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.4243307Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Push CI - lint / build / test / smoke	UNKNOWN STEP	2025-11-29T01:44:37.4493290Z Cleaning up orphan processes
