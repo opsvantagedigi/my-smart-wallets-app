@@ -21,11 +21,34 @@ jobs:
 
       - name: Build opsvantage-web
         run: npm run build --prefix opsvantage-web
+      - name: Resolve Cloudflare Account ID
+        id: resolve-account
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          ACCOUNT_ID=""
+          if [ -f wrangler.toml ]; then
+            ACCOUNT_ID=$(grep -E '^account_id' wrangler.toml | head -n1 | sed -E 's/.*"([^"]+)".*/\1/' || true)
+          fi
+          if [ -z "$ACCOUNT_ID" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            ACCOUNT_ID="$CLOUDFLARE_ACCOUNT_ID"
+          fi
+          if [ -z "$ACCOUNT_ID" ]; then
+            echo "::warning::Cloudflare account id not found. Set the repository secret 'CLOUDFLARE_ACCOUNT_ID' or add 'account_id' to wrangler.toml"
+          fi
+          echo "account_id=$ACCOUNT_ID" >> $GITHUB_OUTPUT
+
+      - name: Fail fast if Cloudflare account id missing
+        if: ${{ steps.resolve-account.outputs.account_id == '' }}
+        run: |
+          echo "Error: Cloudflare account id not provided. Add the 'CLOUDFLARE_ACCOUNT_ID' repository secret or set 'account_id' in wrangler.toml"
+          exit 1
 
       - name: Deploy to Cloudflare Pages
+        if: ${{ steps.resolve-account.outputs.account_id != '' }}
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          accountId: ${{ steps.resolve-account.outputs.account_id }}
           projectName: 'my-smartwallets-web3-app'
           directory: '.next'
