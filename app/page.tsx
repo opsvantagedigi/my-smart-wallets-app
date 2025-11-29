@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   const [address, setAddress] = useState<string | null>(null);
@@ -54,7 +55,7 @@ export default function Home() {
 
         <div className="cta-row">
           <button onClick={connectMetaMask}>Connect MetaMask</button>
-          <a href="/signup" className="secondary">Create Marz Wallet</a>
+          <Link href="/signup" className="secondary">Create Marz Wallet</Link>
         </div>
 
         <div className="status-row">
