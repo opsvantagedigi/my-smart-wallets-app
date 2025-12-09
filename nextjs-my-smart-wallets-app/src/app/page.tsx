@@ -20,7 +20,7 @@ export default async function IndexPage() {
           <li className="hover:underline" key={post._id}>
             <Link href={`/${(post.slug as { current?: string })?.current ?? ''}`}>
               <h2 className="text-xl font-semibold">{typeof post.title === "string" ? post.title : "Untitled Post"}</h2>
-              <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
+              <p>{typeof post.publishedAt === "string" || typeof post.publishedAt === "number" ? new Date(post.publishedAt).toLocaleDateString() : "Unknown date"}</p>
             </Link>
           </li>
         ))}
