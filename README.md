@@ -13,3 +13,47 @@ Now you can do the following things:
 CI lint verification is enabled on `vercel_deploy` and runs `npm run lint:ci` before build.
 \nCI trigger: 2025-12-10T08:49:19.6075273+13:00
 \nCI trigger: 2025-12-10T09:09:53
+
+---
+
+## Deployment (Vercel)
+
+- Domains:
+	- Project: `ajay-sidals-projects-132aa3d1/my-smart-wallets-app`
+	- Custom: `marz.opsvantagedigital.online` (attached; nameservers `ns1.vercel-dns.com`, `ns2.vercel-dns.com`)
+
+- Environment Variables (Production):
+	- `NEXT_PUBLIC_ALCHEMY_API_KEY`
+	- `NEXT_PUBLIC_ALCHEMY_RPC_URL`
+	- `NEXT_PUBLIC_EMBEDDED_WALLET_ENABLED`
+	- `NEXT_PUBLIC_APP_URL` = `https://marz.opsvantagedigital.online`
+
+- Local Env Sync:
+	- Pull to local dev: `vercel env pull .env.development.local`
+	- Keep `.env.local` untracked; use Vercel dashboard for prod vars.
+
+- Next.js Config:
+	- Redirect `/` → `/landing` in `next.config.mjs`.
+	- Fonts: Inter (body), Orbitron (headings) via `app/layout.tsx`.
+
+- Workflows:
+	- `.github/workflows/ci.yml`: checkout → setup-node (20) → `npm ci` → `npm run build`.
+	- `.github/workflows/ci-push.yml`: push to `vercel_deploy` → build (deploy via Vercel CLI done manually).
+	- `.github/workflows/master_sanctuary-portal.yml`: archived → noop.
+
+- Scripts:
+	- `npm run dev` — local development.
+	- `npm run lint` — ESLint.
+	- `npm run typecheck` — TypeScript noEmit.
+	- `npm run build` — Next build.
+	- `npm run deploy` — `vercel --prod`.
+
+- Deploy Steps:
+	```pwsh
+	npm install
+	npm run lint
+	npm run typecheck
+	npm run build
+	vercel link
+	vercel --prod
+	```
