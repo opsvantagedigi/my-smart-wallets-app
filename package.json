@@ -20,6 +20,7 @@
     "deploy": "npx wrangler deploy"
   },
   "dependencies": {
+      "@sanity/ui": "^1.9.3",
     "@account-kit/core": "^4.35.1",
     "@account-kit/infra": "^4.35.1",
     "@account-kit/react": "^4.35.1",
