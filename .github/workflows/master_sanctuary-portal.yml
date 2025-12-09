@@ -1,10 +1,10 @@
 name: Sanctuary Portal (Archived)
+
 on:
   workflow_dispatch:
+
 jobs:
   noop:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Workflow archived; deployment moved to Vercel."
-
-# touch: 2025-12-10T09:29:03
