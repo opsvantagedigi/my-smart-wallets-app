@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { type SanityDocument } from "next-sanity";
+import type { SanityDocument } from "@sanity/types";
 import { client } from "../../../sanity/lib/client";
 
 const POSTS_QUERY = `*[
@@ -18,8 +18,8 @@ export default async function IndexPage() {
       <ul className="flex flex-col gap-y-4">
         {posts.map((post) => (
           <li className="hover:underline" key={post._id}>
-            <Link href={`/${post.slug.current}`}>
-              <h2 className="text-xl font-semibold">{post.title}</h2>
+            <Link href={`/${(post.slug as { current?: string })?.current ?? ''}`}>
+              <h2 className="text-xl font-semibold">{typeof post.title === "string" ? post.title : "Untitled Post"}</h2>
               <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
             </Link>
           </li>

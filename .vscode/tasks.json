@@ -22,6 +22,16 @@
 			"type": "shell",
 			"command": "wrangler dev",
 			"group": "test"
+		},
+		{
+			"label": "🚀 Build App",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
 		}
 	]
 }

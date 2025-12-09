@@ -1,4 +1,5 @@
-import { PortableText, type SanityDocument } from "next-sanity";
+import { PortableText } from "@portabletext/react";
+import type { SanityDocument } from "@sanity/types";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "../../../../sanity/lib/client";
@@ -33,15 +34,15 @@ export default async function PostPage({
       {postImageUrl && (
         <Image
           src={postImageUrl}
-          alt={post.title}
+          alt={typeof post.title === "string" ? post.title : "Post image"}
           className="aspect-video rounded-xl"
           width={550}
           height={310}
         />
       )}
-      <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+      <h1 className="text-4xl font-bold mb-8">{typeof post.title === "string" ? post.title : "Untitled Post"}</h1>
       <div className="prose">
-        <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
+        <p>Published: {typeof post.publishedAt === "string" || typeof post.publishedAt === "number" ? new Date(post.publishedAt).toLocaleDateString() : "Unknown date"}</p>
         {Array.isArray(post.body) && <PortableText value={post.body} />}
       </div>
     </main>
