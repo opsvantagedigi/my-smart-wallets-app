@@ -1,73 +1,24 @@
-
+name: CI Push
 on:
   push:
-
+    branches:
+      - vercel_deploy
 jobs:
-  push-ci:
-    name: Push CI - lint / build / test / smoke
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup Node.js 20.x
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           cache: 'npm'
-
-      - name: Warn if package-lock missing (opsvantage-web)
-        run: |
-          if [ ! -f opsvantage-web/package-lock.json ]; then
-            echo "::warning::opsvantage-web/package-lock.json is missing - CI will use npm install instead of npm ci"
-          fi
-
-      - name: Configure private registry
-        # env removed for Vercel migration
-        run: |
-          if [ -z "$NPM_TOKEN" ]; then
-            echo "::error::NPM_TOKEN secret is missing or not set in repository settings."
-            exit 1
-          fi
-          if [ -n "$NPM_REGISTRY_URL" ]; then
-            echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc
-          else
-            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-          fi
-          chmod 600 ~/.npmrc
-        shell: bash
-
-      - name: Install dependencies (opsvantage-web only)
-        run: |
-          if [ -f opsvantage-web/package-lock.json ]; then
-            npm ci --prefix opsvantage-web
-          else
-            echo "package-lock.json not found in opsvantage-web, running npm install instead"
-            npm install --prefix opsvantage-web
-          fi
-        env:
-          CI: true
-
-      - name: Run lint (opsvantage-web)
-        run: npm run lint --prefix opsvantage-web
-        env:
-          CI: true
-
-      - name: Build (opsvantage-web)
-        run: npm run build --prefix opsvantage-web
-        env:
-          CI: true
-
-      - name: Run tests (opsvantage-web)
-        run: npm test --prefix opsvantage-web
-        env:
-          CI: true
-
-      - name: Sanity smoke check
-        # env removed for Vercel migration
-        run: |
-          if [ -z "$SANITY_API_TOKEN" ]; then
-            echo "SANITY_API_TOKEN not set, skipping sanity smoke check"
-            exit 0
-          fi
-          npm run smoke --prefix opsvantage-web
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+      - name: Build
+        run: npm run build
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm test
