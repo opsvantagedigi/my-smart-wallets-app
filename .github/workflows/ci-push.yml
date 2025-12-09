@@ -16,17 +16,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-
-      - name: Install dependencies
-        run: npm ci --loglevel=error
-
-      - name: Run lint
-        run: npm run lint --if-present
-
-      - name: Run typecheck
-        run: npm run typecheck --if-present
-
-      - name: Build Next.js app
-        run: npm run build
-
-      # Deployment handled by Vercel integration; omit CLI deploy to avoid editor warnings
+      - run: npm ci --loglevel=error
+      - run: npm run lint --if-present
+      - run: npm run typecheck --if-present
+      - run: npm run build
