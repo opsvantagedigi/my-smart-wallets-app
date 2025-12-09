@@ -1,5 +1,4 @@
 name: CI Push
-
 on:
   push:
     branches:
@@ -30,5 +29,4 @@ jobs:
       - name: Build Next.js app
         run: npm run build
 
-      - name: Deploy to Vercel
-        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+      # Deployment handled by Vercel integration; omit CLI deploy to avoid editor warnings

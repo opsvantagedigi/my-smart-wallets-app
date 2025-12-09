@@ -1,5 +1,4 @@
 name: Wallet CI
-
 on:
   push:
     paths:

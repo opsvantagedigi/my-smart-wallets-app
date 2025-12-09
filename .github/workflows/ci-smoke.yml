@@ -1,5 +1,4 @@
 name: CI Smoke
-
 on:
   workflow_run:
     workflows: ["CI"]
