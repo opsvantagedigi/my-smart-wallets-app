@@ -28,14 +28,16 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_REGISTRY_URL: ${{ secrets.NPM_REGISTRY_URL }}
         run: |
-          if [ -n "$NPM_TOKEN" ]; then
-            if [ -n "$NPM_REGISTRY_URL" ]; then
-              echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc
-            else
-              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-            fi
-            chmod 600 ~/.npmrc
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "::error::NPM_TOKEN secret is missing or not set in repository settings."
+            exit 1
           fi
+          if [ -n "$NPM_REGISTRY_URL" ]; then
+            echo "//${NPM_REGISTRY_URL}:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          else
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          fi
+          chmod 600 ~/.npmrc
         shell: bash
 
       - name: Install dependencies (opsvantage-web only)
