@@ -57,12 +57,7 @@ jobs:
         with:
           name: node-app
 
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A7C9041F09A34761A277A1041EFA706A }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8F77433F840F4B40B4BD30C7EDE56ACC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E76D716DB76F48DD96B79CC2C1AAB13D }}
+      # Azure login step removed; only Cloudflare deploy is needed
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
