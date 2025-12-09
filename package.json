@@ -17,7 +17,7 @@
     "ci-mock": "node ci/mock-server.js",
     "ci-mock-stop": "pkill -f 'node ci/mock-server.js' || true",
     "smoke": "node scripts/smoke-sanify.js",
-    "deploy": "npx wrangler deploy"
+    "deploy": "vercel --prod"
   },
   "dependencies": {
       "@sanity/ui": "^1.9.3",

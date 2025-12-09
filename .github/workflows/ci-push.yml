@@ -23,9 +23,7 @@ jobs:
           fi
 
       - name: Configure private registry
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_REGISTRY_URL: ${{ secrets.NPM_REGISTRY_URL }}
+        # env removed for Vercel migration
         run: |
           if [ -z "$NPM_TOKEN" ]; then
             echo "::error::NPM_TOKEN secret is missing or not set in repository settings."
@@ -66,10 +64,7 @@ jobs:
           CI: true
 
       - name: Sanity smoke check
-        env:
-          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+        # env removed for Vercel migration
         run: |
           if [ -z "$SANITY_API_TOKEN" ]; then
             echo "SANITY_API_TOKEN not set, skipping sanity smoke check"
