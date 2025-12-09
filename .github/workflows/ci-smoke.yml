@@ -1,21 +1,110 @@
 name: CI Smoke
 on:
-  push:
-    branches:
-      - vercel_deploy
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
 jobs:
   smoke:
+    name: Smoke checks
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-      - name: Install dependencies
+          node-version: 20
+          cache: npm
+      - name: Install
         run: npm ci
       - name: Lint
-        run: npm run lint
-      - name: Typecheck
-        run: npm run typecheck
+        run: npm run lint --if-present
+      - name: Type check
+        run: npm run typecheck --if-present
+name: CI Smoke
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+jobs:
+  smoke:
+    name: Smoke checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Lint
+        run: npm run lint --if-present
+      - name: Type check
+        run: npm run typecheck --if-present
+name: CI Smoke
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+name: CI Smoke
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+name: CI Smoke
+
+
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  smoke:
+    name: Smoke checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Type check
+        run: npm run typecheck --if-present
+  smoke:
+    name: Smoke checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Type check
+        run: npm run typecheck --if-present

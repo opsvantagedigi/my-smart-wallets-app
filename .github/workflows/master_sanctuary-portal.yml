@@ -1,7 +1,27 @@
-name: Archived
-on: [workflow_dispatch]
+name: Sanctuary Portal (Archived)
+on:
+	workflow_dispatch:
 jobs:
-  archived:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "This workflow is archived and not in use."
+	noop:
+		runs-on: ubuntu-latest
+		steps:
+			- run: echo "Workflow archived; deployment moved to Vercel."
+name: Sanctuary Portal (Archived)
+on:
+	workflow_dispatch:
+jobs:
+	noop:
+		runs-on: ubuntu-latest
+		steps:
+			- run: echo "Workflow archived; deployment moved to Vercel."
+name: Sanctuary Portal (Archived)
+
+on:
+	workflow_dispatch:
+
+jobs:
+	noop:
+		runs-on: ubuntu-latest
+		steps:
+			- run: echo "Workflow archived; deployment moved to Vercel."
+

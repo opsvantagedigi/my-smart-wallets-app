@@ -4,6 +4,105 @@ on:
     branches:
       - vercel_deploy
 jobs:
+  verify:
+    name: Verify branch health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+name: CI Push
+on:
+  push:
+    branches:
+      - vercel_deploy
+jobs:
+  verify:
+    name: Verify branch health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+name: CI Push
+on:
+  push:
+    branches:
+      - vercel_deploy
+name: CI Push
+
+name: CI Push
+
+
+  push:
+    branches:
+      - vercel_deploy
+
+on:
+  push:
+    branches:
+      - vercel_deploy
+
+name: CI Push
+
+on:
+  push:
+    branches:
+      - vercel_deploy
+
+jobs:
+  verify:
+    name: Verify branch health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+  verify:
+    name: Verify branch health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
   verify-branch:
     runs-on: ubuntu-latest
     steps:
