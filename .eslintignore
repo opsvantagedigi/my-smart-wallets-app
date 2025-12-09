@@ -1,9 +1,16 @@
 # Ignore shadcn/ui components (generated code)
 components/ui/
 
-# Other common ignores
-node_modules/
+# Build and artifact paths
 .next/
-.vercel/
 out/
-build/ 
+dist/
+node_modules/
+coverage/
+.vercel/
+build/
+
+# Logs and env files
+*.log
+.env.local
+.env.production
