@@ -10,6 +10,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf .next node_modules/.cache",
+    "prepare": "husky install",
     "deploy": "vercel --prod"
   },
   "dependencies": {

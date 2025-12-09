@@ -1,15 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: {
-    remotePatterns: [
+  reactStrictMode: true,
+  swcMinify: true,
+  async redirects() {
+    return [
       {
-        protocol: 'https',
-        hostname: 'static.alchemyapi.io',
-        port: '',
-        pathname: '/**',
+        source: '/',
+        destination: '/landing',
+        permanent: true,
       },
-    ],
+    ];
+  },
+  images: {
+    domains: ['res.cloudinary.com', 'opsvantagedigital.online'],
+  },
+  env: {
+    NEXT_PUBLIC_APP_URL: 'https://marz.opsvantagedigital.online',
   },
 };
 
