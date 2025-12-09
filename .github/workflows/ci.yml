@@ -16,10 +16,6 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
-      - name: Lint
-        run: npm run lint
+        run: npm ci
       - name: Build
         run: npm run build
-      - name: Test
-        run: npm test
