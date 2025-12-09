@@ -1,11 +1,2 @@
-name: CI placeholder - smoke workflow removed
-
-on:
-  workflow_dispatch:
-
-jobs:
-  noop:
-    runs-on: ubuntu-latest
-    steps:
-      - name: No-op placeholder
-        run: echo "CI smoke workflow removed; placeholder to clear editor diagnostics"
+# Backup file retained intentionally for reference only
+# Not a valid workflow; safe to ignore.

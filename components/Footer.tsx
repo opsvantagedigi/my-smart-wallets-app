@@ -3,37 +3,23 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="site-footer-main">
-        <div className="footer-grid">
-          <div className="footer-column">
-            <Link href="/" className="text-logo footer-logo" aria-label="OpsVantage Digital Home">
-              <span className="logo-ops">Ops</span>
-              <span className="logo-vantage">Vantage</span>
-              <span className="logo-digital">Digital</span>
-            </Link>
-          </div>
-          <div className="footer-column">
-            <h4>Navigation</h4>
-            <nav className="footer-nav" aria-label="Footer Navigation">
-              <Link href="/about">About Us</Link>
-              <Link href="/contact">Contact Us</Link>
-              <Link href="/partners">Partners</Link>
-              <Link href="/deals">Deals & Promos</Link>
-            </nav>
-          </div>
-          <div className="footer-column">
-            <h4>Connect</h4>
-            <div className="social-links">
-              <a href="https://x.com/opsvantagedigi/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">X (Twitter)</a>
-              <a href="https://www.linkedin.com/company/opsvantage-digital/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-              <a href="https://www.instagram.com/opsvantagedigital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+    <footer className="fixed bottom-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-lg border-t border-white/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-3" aria-label="OpsVantage Digital Home">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#0030ff] via-green-400 to-[#ffe600] flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
             </div>
+            <span className="font-orbitron text-sm font-bold tracking-wider bg-gradient-to-r from-[#0030ff] via-green-400 to-[#ffe600] text-transparent bg-clip-text">
+              OpsVantage Digital
+            </span>
+          </Link>
+          <div className="text-xs text-gray-400 font-inter">
+            © {new Date().getFullYear()} OpsVantage Digital. All rights reserved.
           </div>
         </div>
-      </div>
-      <div className="footer-bottom">
-        © 2025 OpsVantage Digital. All Rights Reserved. | <Link href="/privacy">Privacy Policy</Link> | <Link href="/terms">Terms of Service</Link> | <Link href="/cookies">Cookie Policy</Link>
       </div>
     </footer>
   );

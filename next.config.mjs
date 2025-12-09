@@ -1,27 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'static.alchemyapi.io',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+  reactStrictMode: true,
+  swcMinify: true,
+  async redirects() {
+    return [{ source: '/', destination: '/landing', permanent: true }];
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-        crypto: false,
-      };
-    }
-    return config;
+  env: {
+    NEXT_PUBLIC_APP_URL: 'https://marz.opsvantagedigital.online',
   },
 };
 

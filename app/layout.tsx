@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import { ClientLayout } from "./ClientLayout";
 
 const inter = Inter({ 
@@ -58,7 +58,7 @@ export default async function RootLayout({
       <body>
         <Providers>
           <Header />
-          <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
+          <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased pt-20 pb-24`}>
             {children}
             <ClientLayout />
           </div>

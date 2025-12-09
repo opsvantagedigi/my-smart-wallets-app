@@ -10,11 +10,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "lint:ci": "eslint . --max-warnings=0",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "typecheck": "tsc --noEmit",
-    "clean": "rimraf .next node_modules/.cache",
-    "prepare": "husky install",
     "deploy": "vercel --prod"
   },
   "dependencies": {
