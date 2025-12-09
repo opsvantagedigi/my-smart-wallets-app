@@ -10,5 +10,4 @@ jobs:
       - name: Archive Notice
         run: |
           echo "Sanctuary Portal Azure deployment is deprecated."
-          echo "This repository now deploys via Vercel."
-          echo "No Azure steps are executed by this workflow."
+          echo "Deployment has moved to Vercel; this workflow does nothing."
