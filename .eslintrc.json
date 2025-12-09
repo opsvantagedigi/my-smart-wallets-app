@@ -1,3 +1,9 @@
 {
-  "extends": ["./opsvantage-web/.eslintrc.json"]
+  "extends": ["./opsvantage-web/.eslintrc.json"],
+  "ignorePatterns": [
+    ".next/**",
+    "dist/**",
+    "out/**",
+    "node_modules/**"
+  ]
 }
