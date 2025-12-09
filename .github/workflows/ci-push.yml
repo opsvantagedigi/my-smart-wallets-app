@@ -1,4 +1,3 @@
-name: CI - Push Build / Test / Smoke
 
 on:
   push:

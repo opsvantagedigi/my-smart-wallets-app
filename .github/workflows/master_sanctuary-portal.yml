@@ -69,5 +69,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: sanctuary-portal
-          slot-name: Production
+          slot-name: 'Production'
           package: .
