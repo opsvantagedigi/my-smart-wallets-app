@@ -1,0 +1,320 @@
+
+> ci-run-19693877764.log:1:build-and-smoke	Set up job	﻿2025-11-26T05:46:12.1683734Z Current runner version: '2.329.0'
+> ci-run-19693877764.log:2:build-and-smoke	Set up job	2025-11-26T05:46:12.1719977Z ##[group]Runner Image Provisioner
+> ci-run-19693877764.log:3:build-and-smoke	Set up job	2025-11-26T05:46:12.1721450Z Hosted Compute Agent
+> ci-run-19693877764.log:4:build-and-smoke	Set up job	2025-11-26T05:46:12.1722431Z Version: 20251016.436
+> ci-run-19693877764.log:5:build-and-smoke	Set up job	2025-11-26T05:46:12.1723364Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+> ci-run-19693877764.log:6:build-and-smoke	Set up job	2025-11-26T05:46:12.1724652Z Build Date: 2025-10-15T20:44:12Z
+> ci-run-19693877764.log:7:build-and-smoke	Set up job	2025-11-26T05:46:12.1725856Z ##[endgroup]
+> ci-run-19693877764.log:8:build-and-smoke	Set up job	2025-11-26T05:46:12.1726706Z ##[group]Operating System
+> ci-run-19693877764.log:9:build-and-smoke	Set up job	2025-11-26T05:46:12.1727772Z Ubuntu
+> ci-run-19693877764.log:10:build-and-smoke	Set up job	2025-11-26T05:46:12.1728571Z 24.04.3
+> ci-run-19693877764.log:11:build-and-smoke	Set up job	2025-11-26T05:46:12.1729261Z LTS
+> ci-run-19693877764.log:12:build-and-smoke	Set up job	2025-11-26T05:46:12.1730155Z ##[endgroup]
+> ci-run-19693877764.log:13:build-and-smoke	Set up job	2025-11-26T05:46:12.1731023Z ##[group]Runner Image
+> ci-run-19693877764.log:14:build-and-smoke	Set up job	2025-11-26T05:46:12.1732032Z Image: ubuntu-24.04
+> ci-run-19693877764.log:15:build-and-smoke	Set up job	2025-11-26T05:46:12.1733017Z Version: 20251112.124.1
+> ci-run-19693877764.log:16:build-and-smoke	Set up job	2025-11-26T05:46:12.1734856Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+> ci-run-19693877764.log:17:build-and-smoke	Set up job	2025-11-26T05:46:12.1737661Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+> ci-run-19693877764.log:18:build-and-smoke	Set up job	2025-11-26T05:46:12.1739885Z ##[endgroup]
+> ci-run-19693877764.log:19:build-and-smoke	Set up job	2025-11-26T05:46:12.1741813Z ##[group]GITHUB_TOKEN Permissions
+> ci-run-19693877764.log:20:build-and-smoke	Set up job	2025-11-26T05:46:12.1745053Z Contents: read
+> ci-run-19693877764.log:21:build-and-smoke	Set up job	2025-11-26T05:46:12.1746266Z Metadata: read
+> ci-run-19693877764.log:22:build-and-smoke	Set up job	2025-11-26T05:46:12.1747202Z Packages: read
+> ci-run-19693877764.log:23:build-and-smoke	Set up job	2025-11-26T05:46:12.1748123Z ##[endgroup]
+> ci-run-19693877764.log:24:build-and-smoke	Set up job	2025-11-26T05:46:12.1751518Z Secret source: Actions
+> ci-run-19693877764.log:25:build-and-smoke	Set up job	2025-11-26T05:46:12.1752988Z Prepare workflow directory
+> ci-run-19693877764.log:26:build-and-smoke	Set up job	2025-11-26T05:46:12.2356613Z Prepare all required actions
+> ci-run-19693877764.log:27:build-and-smoke	Set up job	2025-11-26T05:46:12.2395242Z Getting action download info
+> ci-run-19693877764.log:28:build-and-smoke	Set up job	2025-11-26T05:46:12.5807712Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+> ci-run-19693877764.log:29:build-and-smoke	Set up job	2025-11-26T05:46:13.2926181Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+> ci-run-19693877764.log:30:build-and-smoke	Set up job	2025-11-26T05:46:13.5094038Z Complete job name: build-and-smoke
+> ci-run-19693877764.log:31:build-and-smoke	Checkout	﻿2025-11-26T05:46:13.5750187Z ##[group]Run actions/checkout@v4
+> ci-run-19693877764.log:32:build-and-smoke	Checkout	2025-11-26T05:46:13.5751112Z with:
+> ci-run-19693877764.log:33:build-and-smoke	Checkout	2025-11-26T05:46:13.5751623Z   repository: opsvantagedigi/my-smart-wallets-app
+> ci-run-19693877764.log:34:build-and-smoke	Checkout	2025-11-26T05:46:13.5752402Z   token: ***
+> ci-run-19693877764.log:35:build-and-smoke	Checkout	2025-11-26T05:46:13.5752849Z   ssh-strict: true
+> ci-run-19693877764.log:36:build-and-smoke	Checkout	2025-11-26T05:46:13.5753273Z   ssh-user: git
+> ci-run-19693877764.log:37:build-and-smoke	Checkout	2025-11-26T05:46:13.5753763Z   persist-credentials: true
+> ci-run-19693877764.log:38:build-and-smoke	Checkout	2025-11-26T05:46:13.5754264Z   clean: true
+> ci-run-19693877764.log:39:build-and-smoke	Checkout	2025-11-26T05:46:13.5754699Z   sparse-checkout-cone-mode: true
+> ci-run-19693877764.log:40:build-and-smoke	Checkout	2025-11-26T05:46:13.5755223Z   fetch-depth: 1
+> ci-run-19693877764.log:41:build-and-smoke	Checkout	2025-11-26T05:46:13.5755832Z   fetch-tags: false
+> ci-run-19693877764.log:42:build-and-smoke	Checkout	2025-11-26T05:46:13.5756273Z   show-progress: true
+> ci-run-19693877764.log:43:build-and-smoke	Checkout	2025-11-26T05:46:13.5756727Z   lfs: false
+> ci-run-19693877764.log:44:build-and-smoke	Checkout	2025-11-26T05:46:13.5757144Z   submodules: false
+> ci-run-19693877764.log:45:build-and-smoke	Checkout	2025-11-26T05:46:13.5757605Z   set-safe-directory: true
+> ci-run-19693877764.log:46:build-and-smoke	Checkout	2025-11-26T05:46:13.5758348Z env:
+> ci-run-19693877764.log:47:build-and-smoke	Checkout	2025-11-26T05:46:13.5759114Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19693877764.log:48:build-and-smoke	Checkout	2025-11-26T05:46:13.5759598Z ##[endgroup]
+> ci-run-19693877764.log:49:build-and-smoke	Checkout	2025-11-26T05:46:13.6842747Z Syncing repository: opsvantagedigi/my-smart-wallets-app
+> ci-run-19693877764.log:50:build-and-smoke	Checkout	2025-11-26T05:46:13.6844780Z ##[group]Getting Git version info
+> ci-run-19693877764.log:51:build-and-smoke	Checkout	2025-11-26T05:46:13.6846258Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+> ci-run-19693877764.log:52:build-and-smoke	Checkout	2025-11-26T05:46:13.6847467Z [command]/usr/bin/git version
+> ci-run-19693877764.log:53:build-and-smoke	Checkout	2025-11-26T05:46:13.6918035Z git version 2.51.2
+> ci-run-19693877764.log:54:build-and-smoke	Checkout	2025-11-26T05:46:13.6944407Z ##[endgroup]
+> ci-run-19693877764.log:55:build-and-smoke	Checkout	2025-11-26T05:46:13.6960050Z Temporarily overriding HOME='/home/runner/work/_temp/e0cdbb56-f5d5-4fbc-bb67-668aa339f386' before making global git config changes
+> ci-run-19693877764.log:56:build-and-smoke	Checkout	2025-11-26T05:46:13.6961579Z Adding repository directory to the temporary git global config as a safe directory
+> ci-run-19693877764.log:57:build-and-smoke	Checkout	2025-11-26T05:46:13.6973044Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+> ci-run-19693877764.log:58:build-and-smoke	Checkout	2025-11-26T05:46:13.7008398Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+> ci-run-19693877764.log:59:build-and-smoke	Checkout	2025-11-26T05:46:13.7011636Z ##[group]Initializing the repository
+> ci-run-19693877764.log:60:build-and-smoke	Checkout	2025-11-26T05:46:13.7016492Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+> ci-run-19693877764.log:61:build-and-smoke	Checkout	2025-11-26T05:46:13.7114510Z hint: Using 'master' as the name for the initial branch. This default branch name
+> ci-run-19693877764.log:62:build-and-smoke	Checkout	2025-11-26T05:46:13.7116454Z hint: is subject to change. To configure the initial branch name to use in all
+> ci-run-19693877764.log:63:build-and-smoke	Checkout	2025-11-26T05:46:13.7118378Z hint: of your new repositories, which will suppress this warning, call:
+> ci-run-19693877764.log:64:build-and-smoke	Checkout	2025-11-26T05:46:13.7119506Z hint:
+> ci-run-19693877764.log:65:build-and-smoke	Checkout	2025-11-26T05:46:13.7120336Z hint: 	git config --global init.defaultBranch <name>
+> ci-run-19693877764.log:66:build-and-smoke	Checkout	2025-11-26T05:46:13.7121592Z hint:
+> ci-run-19693877764.log:67:build-and-smoke	Checkout	2025-11-26T05:46:13.7122798Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+> ci-run-19693877764.log:68:build-and-smoke	Checkout	2025-11-26T05:46:13.7124680Z hint: 'development'. The just-created branch can be renamed via this command:
+> ci-run-19693877764.log:69:build-and-smoke	Checkout	2025-11-26T05:46:13.7126427Z hint:
+> ci-run-19693877764.log:70:build-and-smoke	Checkout	2025-11-26T05:46:13.7127217Z hint: 	git branch -m <name>
+> ci-run-19693877764.log:71:build-and-smoke	Checkout	2025-11-26T05:46:13.7128085Z hint:
+> ci-run-19693877764.log:72:build-and-smoke	Checkout	2025-11-26T05:46:13.7129233Z hint: Disable this message with "git config set advice.defaultBranchName false"
+> ci-run-19693877764.log:73:build-and-smoke	Checkout	2025-11-26T05:46:13.7131595Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
+> ci-run-19693877764.log:74:build-and-smoke	Checkout	2025-11-26T05:46:13.7135370Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
+> ci-run-19693877764.log:75:build-and-smoke	Checkout	2025-11-26T05:46:13.7168655Z ##[endgroup]
+> ci-run-19693877764.log:76:build-and-smoke	Checkout	2025-11-26T05:46:13.7170112Z ##[group]Disabling automatic garbage collection
+> ci-run-19693877764.log:77:build-and-smoke	Checkout	2025-11-26T05:46:13.7173596Z [command]/usr/bin/git config --local gc.auto 0
+> ci-run-19693877764.log:78:build-and-smoke	Checkout	2025-11-26T05:46:13.7202582Z ##[endgroup]
+> ci-run-19693877764.log:79:build-and-smoke	Checkout	2025-11-26T05:46:13.7204002Z ##[group]Setting up auth
+> ci-run-19693877764.log:80:build-and-smoke	Checkout	2025-11-26T05:46:13.7210564Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+> ci-run-19693877764.log:81:build-and-smoke	Checkout	2025-11-26T05:46:13.7243295Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+> ci-run-19693877764.log:82:build-and-smoke	Checkout	2025-11-26T05:46:13.7598239Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+> ci-run-19693877764.log:83:build-and-smoke	Checkout	2025-11-26T05:46:13.7629793Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+> ci-run-19693877764.log:84:build-and-smoke	Checkout	2025-11-26T05:46:13.7853113Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+> ci-run-19693877764.log:85:build-and-smoke	Checkout	2025-11-26T05:46:13.7883891Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+> ci-run-19693877764.log:86:build-and-smoke	Checkout	2025-11-26T05:46:13.8120667Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+> ci-run-19693877764.log:87:build-and-smoke	Checkout	2025-11-26T05:46:13.8155234Z ##[endgroup]
+> ci-run-19693877764.log:88:build-and-smoke	Checkout	2025-11-26T05:46:13.8163865Z ##[group]Fetching the repository
+> ci-run-19693877764.log:89:build-and-smoke	Checkout	2025-11-26T05:46:13.8167015Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c979b12b1bf529e16c1aff72282a4c426ac426d9:refs/remotes/origin/cleanup/cloudflare-deploy
+> ci-run-19693877764.log:90:build-and-smoke	Checkout	2025-11-26T05:46:14.5583962Z From https://github.com/opsvantagedigi/my-smart-wallets-app
+> ci-run-19693877764.log:91:build-and-smoke	Checkout	2025-11-26T05:46:14.5586232Z  * [new ref]         c979b12b1bf529e16c1aff72282a4c426ac426d9 -> origin/cleanup/cloudflare-deploy
+> ci-run-19693877764.log:92:build-and-smoke	Checkout	2025-11-26T05:46:14.5626468Z ##[endgroup]
+> ci-run-19693877764.log:93:build-and-smoke	Checkout	2025-11-26T05:46:14.5628467Z ##[group]Determining the checkout info
+> ci-run-19693877764.log:94:build-and-smoke	Checkout	2025-11-26T05:46:14.5630763Z ##[endgroup]
+> ci-run-19693877764.log:95:build-and-smoke	Checkout	2025-11-26T05:46:14.5633674Z [command]/usr/bin/git sparse-checkout disable
+> ci-run-19693877764.log:96:build-and-smoke	Checkout	2025-11-26T05:46:14.5681451Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+> ci-run-19693877764.log:97:build-and-smoke	Checkout	2025-11-26T05:46:14.5711718Z ##[group]Checking out the ref
+> ci-run-19693877764.log:98:build-and-smoke	Checkout	2025-11-26T05:46:14.5716846Z [command]/usr/bin/git checkout --progress --force -B cleanup/cloudflare-deploy refs/remotes/origin/cleanup/cloudflare-deploy
+> ci-run-19693877764.log:99:build-and-smoke	Checkout	2025-11-26T05:46:14.6017433Z Switched to a new branch 'cleanup/cloudflare-deploy'
+> ci-run-19693877764.log:100:build-and-smoke	Checkout	2025-11-26T05:46:14.6019648Z branch 'cleanup/cloudflare-deploy' set up to track 'origin/cleanup/cloudflare-deploy'.
+> ci-run-19693877764.log:101:build-and-smoke	Checkout	2025-11-26T05:46:14.6028836Z ##[endgroup]
+> ci-run-19693877764.log:102:build-and-smoke	Checkout	2025-11-26T05:46:14.6067502Z [command]/usr/bin/git log -1 --format=%H
+> ci-run-19693877764.log:103:build-and-smoke	Checkout	2025-11-26T05:46:14.6090045Z c979b12b1bf529e16c1aff72282a4c426ac426d9
+> ci-run-19693877764.log:104:build-and-smoke	Setup Node 20	﻿2025-11-26T05:46:14.6382078Z ##[group]Run actions/setup-node@v4
+> ci-run-19693877764.log:105:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6383251Z with:
+> ci-run-19693877764.log:106:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6384061Z   node-version: 20
+> ci-run-19693877764.log:107:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6385009Z   always-auth: false
+> ci-run-19693877764.log:108:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6386112Z   check-latest: false
+> ci-run-19693877764.log:109:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6387364Z   token: ***
+> ci-run-19693877764.log:110:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6388494Z env:
+> ci-run-19693877764.log:111:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6390027Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19693877764.log:112:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.6391023Z ##[endgroup]
+> ci-run-19693877764.log:113:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.8306985Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+> ci-run-19693877764.log:114:build-and-smoke	Setup Node 20	2025-11-26T05:46:14.8312932Z ##[group]Environment details
+> ci-run-19693877764.log:115:build-and-smoke	Setup Node 20	2025-11-26T05:46:16.2116087Z node: v20.19.5
+> ci-run-19693877764.log:116:build-and-smoke	Setup Node 20	2025-11-26T05:46:16.2116699Z npm: 10.8.2
+> ci-run-19693877764.log:117:build-and-smoke	Setup Node 20	2025-11-26T05:46:16.2117088Z yarn: 1.22.22
+> ci-run-19693877764.log:118:build-and-smoke	Setup Node 20	2025-11-26T05:46:16.2119288Z ##[endgroup]
+> ci-run-19693877764.log:119:build-and-smoke	Install dependencies	﻿2025-11-26T05:46:16.2222532Z ##[group]Run npm ci
+> ci-run-19693877764.log:120:build-and-smoke	Install dependencies	2025-11-26T05:46:16.2222886Z npm ci
+> ci-run-19693877764.log:121:build-and-smoke	Install dependencies	2025-11-26T05:46:16.2270851Z shell: /usr/bin/bash -e {0}
+> ci-run-19693877764.log:122:build-and-smoke	Install dependencies	2025-11-26T05:46:16.2271161Z env:
+> ci-run-19693877764.log:123:build-and-smoke	Install dependencies	2025-11-26T05:46:16.2271762Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19693877764.log:124:build-and-smoke	Install dependencies	2025-11-26T05:46:16.2272033Z ##[endgroup]
+> ci-run-19693877764.log:125:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5914505Z npm warn ERESOLVE overriding peer dependency
+> ci-run-19693877764.log:126:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5915547Z npm warn While resolving: qrcode.react@1.0.1
+> ci-run-19693877764.log:127:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5916560Z npm warn Found: react@18.3.1
+> ci-run-19693877764.log:128:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5917092Z npm warn node_modules/react
+> ci-run-19693877764.log:129:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5917698Z npm warn   react@"18.3.1" from the root project
+> ci-run-19693877764.log:130:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5918557Z npm warn   99 more (@account-kit/react, zustand, zustand, ...)
+> ci-run-19693877764.log:131:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5919201Z npm warn
+> ci-run-19693877764.log:132:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5919679Z npm warn Could not resolve dependency:
+> ci-run-19693877764.log:133:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5920466Z npm warn peer react@"^15.5.3 || ^16.0.0 || ^17.0.0" from qrcode.react@1.0.1
+> ci-run-19693877764.log:134:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5921338Z npm warn node_modules/@keystonehq/sdk/node_modules/qrcode.react
+> ci-run-19693877764.log:135:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5922127Z npm warn   qrcode.react@"^1.0.1" from @keystonehq/sdk@0.19.2
+> ci-run-19693877764.log:136:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5922831Z npm warn   node_modules/@keystonehq/sdk
+> ci-run-19693877764.log:137:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5923288Z npm warn
+> ci-run-19693877764.log:138:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5923807Z npm warn Conflicting peer dependency: react@17.0.2
+> ci-run-19693877764.log:139:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5924370Z npm warn node_modules/react
+> ci-run-19693877764.log:140:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5925084Z npm warn   peer react@"^15.5.3 || ^16.0.0 || ^17.0.0" from qrcode.react@1.0.1
+> ci-run-19693877764.log:141:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5926272Z npm warn   node_modules/@keystonehq/sdk/node_modules/qrcode.react
+> ci-run-19693877764.log:142:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5927128Z npm warn     qrcode.react@"^1.0.1" from @keystonehq/sdk@0.19.2
+> ci-run-19693877764.log:143:build-and-smoke	Install dependencies	2025-11-26T05:46:19.5927829Z npm warn     node_modules/@keystonehq/sdk
+> ci-run-19693877764.log:144:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8879671Z npm warn ERESOLVE overriding peer dependency
+> ci-run-19693877764.log:145:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8880704Z npm warn While resolving: react-qr-reader@2.2.1
+> ci-run-19693877764.log:146:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8881248Z npm warn Found: react@18.3.1
+> ci-run-19693877764.log:147:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8881744Z npm warn node_modules/react
+> ci-run-19693877764.log:148:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8882315Z npm warn   react@"18.3.1" from the root project
+> ci-run-19693877764.log:149:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8883097Z npm warn   99 more (@account-kit/react, zustand, zustand, ...)
+> ci-run-19693877764.log:150:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8883635Z npm warn
+> ci-run-19693877764.log:151:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8886001Z npm warn Could not resolve dependency:
+> ci-run-19693877764.log:152:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8886645Z npm warn peer react@"~16" from react-qr-reader@2.2.1
+> ci-run-19693877764.log:153:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8887410Z npm warn node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+> ci-run-19693877764.log:154:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8888190Z npm warn   react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+> ci-run-19693877764.log:155:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8888793Z npm warn   node_modules/@keystonehq/sdk
+> ci-run-19693877764.log:156:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8889185Z npm warn
+> ci-run-19693877764.log:157:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8889663Z npm warn Conflicting peer dependency: react@16.14.0
+> ci-run-19693877764.log:158:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8890152Z npm warn node_modules/react
+> ci-run-19693877764.log:159:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8890711Z npm warn   peer react@"~16" from react-qr-reader@2.2.1
+> ci-run-19693877764.log:160:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8891490Z npm warn   node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+> ci-run-19693877764.log:161:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8892282Z npm warn     react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+> ci-run-19693877764.log:162:build-and-smoke	Install dependencies	2025-11-26T05:46:19.8892923Z npm warn     node_modules/@keystonehq/sdk
+> ci-run-19693877764.log:163:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9085243Z npm warn ERESOLVE overriding peer dependency
+> ci-run-19693877764.log:164:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9090070Z npm warn While resolving: react-qr-reader@2.2.1
+> ci-run-19693877764.log:165:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9090718Z npm warn Found: react-dom@18.3.1
+> ci-run-19693877764.log:166:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9091237Z npm warn node_modules/react-dom
+> ci-run-19693877764.log:167:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9091809Z npm warn   react-dom@"18.3.1" from the root project
+> ci-run-19693877764.log:168:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9092519Z npm warn   31 more (@account-kit/react, @dnd-kit/core, ...)
+> ci-run-19693877764.log:169:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9093033Z npm warn
+> ci-run-19693877764.log:170:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9093453Z npm warn Could not resolve dependency:
+> ci-run-19693877764.log:171:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9094535Z npm warn peer react-dom@"~16" from react-qr-reader@2.2.1
+> ci-run-19693877764.log:172:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9095326Z npm warn node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+> ci-run-19693877764.log:173:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9096457Z npm warn   react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+> ci-run-19693877764.log:174:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9097098Z npm warn   node_modules/@keystonehq/sdk
+> ci-run-19693877764.log:175:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9097504Z npm warn
+> ci-run-19693877764.log:176:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9098007Z npm warn Conflicting peer dependency: react-dom@16.14.0
+> ci-run-19693877764.log:177:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9098915Z npm warn node_modules/react-dom
+> ci-run-19693877764.log:178:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9099511Z npm warn   peer react-dom@"~16" from react-qr-reader@2.2.1
+> ci-run-19693877764.log:179:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9100305Z npm warn   node_modules/@keystonehq/sdk/node_modules/react-qr-reader
+> ci-run-19693877764.log:180:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9101114Z npm warn     react-qr-reader@"^2.2.1" from @keystonehq/sdk@0.19.2
+> ci-run-19693877764.log:181:build-and-smoke	Install dependencies	2025-11-26T05:46:19.9101789Z npm warn     node_modules/@keystonehq/sdk
+> ci-run-19693877764.log:182:build-and-smoke	Install dependencies	2025-11-26T05:46:24.1208097Z npm warn deprecated yaeti@0.0.6: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+> ci-run-19693877764.log:183:build-and-smoke	Install dependencies	2025-11-26T05:46:24.5136297Z npm warn deprecated uuidv4@6.2.13: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+> ci-run-19693877764.log:184:build-and-smoke	Install dependencies	2025-11-26T05:46:25.7572405Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+> ci-run-19693877764.log:185:build-and-smoke	Install dependencies	2025-11-26T05:46:27.0110733Z npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+> ci-run-19693877764.log:186:build-and-smoke	Install dependencies	2025-11-26T05:46:27.8022293Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+> ci-run-19693877764.log:187:build-and-smoke	Install dependencies	2025-11-26T05:46:28.1626541Z npm warn deprecated get-random-values-esm@1.0.2: use crypto.getRandomValues() instead
+> ci-run-19693877764.log:188:build-and-smoke	Install dependencies	2025-11-26T05:46:34.3224350Z npm warn deprecated @toruslabs/solana-embed@2.1.0: This sdk is now deprecated. Please use @web3auth/ws-embed instead
+> ci-run-19693877764.log:189:build-and-smoke	Install dependencies	2025-11-26T05:46:35.0095929Z npm warn deprecated @paulmillr/qr@0.2.1: The package is now available as "qr": npm install qr
+> ci-run-19693877764.log:190:build-and-smoke	Install dependencies	2025-11-26T05:46:35.2831238Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+> ci-run-19693877764.log:191:build-and-smoke	Install dependencies	2025-11-26T05:46:35.3616375Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+> ci-run-19693877764.log:192:build-and-smoke	Install dependencies	2025-11-26T05:46:37.9546080Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:193:build-and-smoke	Install dependencies	2025-11-26T05:46:38.2603458Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:194:build-and-smoke	Install dependencies	2025-11-26T05:46:39.0765501Z npm warn deprecated @walletconnect/sign-client@2.21.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:195:build-and-smoke	Install dependencies	2025-11-26T05:46:40.2155920Z npm warn deprecated @walletconnect/universal-provider@2.21.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:196:build-and-smoke	Install dependencies	2025-11-26T05:46:41.3327429Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:197:build-and-smoke	Install dependencies	2025-11-26T05:46:42.0862710Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:198:build-and-smoke	Install dependencies	2025-11-26T05:46:42.3349674Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:199:build-and-smoke	Install dependencies	2025-11-26T05:46:42.5954783Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:200:build-and-smoke	Install dependencies	2025-11-26T05:46:44.3208663Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:201:build-and-smoke	Install dependencies	2025-11-26T05:46:46.5883318Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+> ci-run-19693877764.log:202:build-and-smoke	Install dependencies	2025-11-26T05:46:49.2671353Z npm warn deprecated @walletconnect/ethereum-provider@2.21.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:203:build-and-smoke	Install dependencies	2025-11-26T05:46:52.1274580Z npm warn deprecated @walletconnect/sign-client@2.19.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:204:build-and-smoke	Install dependencies	2025-11-26T05:46:52.1288079Z npm warn deprecated @walletconnect/sign-client@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:205:build-and-smoke	Install dependencies	2025-11-26T05:46:52.2000878Z npm warn deprecated @walletconnect/sign-client@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:206:build-and-smoke	Install dependencies	2025-11-26T05:46:52.2689752Z npm warn deprecated @walletconnect/sign-client@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:207:build-and-smoke	Install dependencies	2025-11-26T05:46:52.3534499Z npm warn deprecated @walletconnect/sign-client@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:208:build-and-smoke	Install dependencies	2025-11-26T05:46:52.5047890Z npm warn deprecated @walletconnect/sign-client@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:209:build-and-smoke	Install dependencies	2025-11-26T05:46:52.6422019Z npm warn deprecated @walletconnect/sign-client@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:210:build-and-smoke	Install dependencies	2025-11-26T05:46:52.7672180Z npm warn deprecated @walletconnect/universal-provider@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:211:build-and-smoke	Install dependencies	2025-11-26T05:46:52.8437338Z npm warn deprecated @walletconnect/universal-provider@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:212:build-and-smoke	Install dependencies	2025-11-26T05:46:52.8439721Z npm warn deprecated @walletconnect/universal-provider@2.19.1: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:213:build-and-smoke	Install dependencies	2025-11-26T05:46:53.0111055Z npm warn deprecated @walletconnect/universal-provider@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:214:build-and-smoke	Install dependencies	2025-11-26T05:46:53.0855125Z npm warn deprecated @walletconnect/universal-provider@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:215:build-and-smoke	Install dependencies	2025-11-26T05:46:53.0857986Z npm warn deprecated @walletconnect/universal-provider@2.21.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:216:build-and-smoke	Install dependencies	2025-11-26T05:46:53.1663424Z npm warn deprecated @walletconnect/universal-provider@2.19.0: Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases
+> ci-run-19693877764.log:217:build-and-smoke	Install dependencies	2025-11-26T05:46:54.7427775Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+> ci-run-19693877764.log:218:build-and-smoke	Install dependencies	2025-11-26T05:48:10.5979123Z 
+> ci-run-19693877764.log:219:build-and-smoke	Install dependencies	2025-11-26T05:48:10.5979950Z added 2839 packages, and audited 2840 packages in 2m
+> ci-run-19693877764.log:220:build-and-smoke	Install dependencies	2025-11-26T05:48:10.5981860Z 
+> ci-run-19693877764.log:221:build-and-smoke	Install dependencies	2025-11-26T05:48:10.5982729Z 400 packages are looking for funding
+> ci-run-19693877764.log:222:build-and-smoke	Install dependencies	2025-11-26T05:48:10.5983303Z   run `npm fund` for details
+> ci-run-19693877764.log:223:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7178465Z 
+> ci-run-19693877764.log:224:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7179463Z 14 high severity vulnerabilities
+> ci-run-19693877764.log:225:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7179868Z 
+> ci-run-19693877764.log:226:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7180219Z To address issues that do not require attention, run:
+> ci-run-19693877764.log:227:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7180736Z   npm audit fix
+> ci-run-19693877764.log:228:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7180930Z 
+> ci-run-19693877764.log:229:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7181355Z To address all issues possible (including breaking changes), run:
+> ci-run-19693877764.log:230:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7181968Z   npm audit fix --force
+> ci-run-19693877764.log:231:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7182209Z 
+> ci-run-19693877764.log:232:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7182524Z Some issues need review, and may require choosing
+> ci-run-19693877764.log:233:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7183088Z a different dependency.
+> ci-run-19693877764.log:234:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7183337Z 
+> ci-run-19693877764.log:235:build-and-smoke	Install dependencies	2025-11-26T05:48:10.7183523Z Run `npm audit` for details.
+> ci-run-19693877764.log:236:build-and-smoke	Build	﻿2025-11-26T05:48:10.8154357Z ##[group]Run npm run build
+> ci-run-19693877764.log:237:build-and-smoke	Build	2025-11-26T05:48:10.8154629Z npm run build
+> ci-run-19693877764.log:238:build-and-smoke	Build	2025-11-26T05:48:10.8190833Z shell: /usr/bin/bash -e {0}
+> ci-run-19693877764.log:239:build-and-smoke	Build	2025-11-26T05:48:10.8191183Z env:
+> ci-run-19693877764.log:240:build-and-smoke	Build	2025-11-26T05:48:10.8191828Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19693877764.log:241:build-and-smoke	Build	2025-11-26T05:48:10.8192156Z ##[endgroup]
+> ci-run-19693877764.log:242:build-and-smoke	Build	2025-11-26T05:48:10.9359841Z 
+> ci-run-19693877764.log:243:build-and-smoke	Build	2025-11-26T05:48:10.9360495Z > ui-components-qs-nextjs@0.1.0 build
+> ci-run-19693877764.log:244:build-and-smoke	Build	2025-11-26T05:48:10.9361035Z > next build
+> ci-run-19693877764.log:245:build-and-smoke	Build	2025-11-26T05:48:10.9361545Z 
+> ci-run-19693877764.log:246:build-and-smoke	Build	2025-11-26T05:48:11.4928779Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+> ci-run-19693877764.log:247:build-and-smoke	Build	2025-11-26T05:48:11.5043524Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+> ci-run-19693877764.log:248:build-and-smoke	Build	2025-11-26T05:48:11.5044581Z This information is used to shape Next.js' roadmap and prioritize features.
+> ci-run-19693877764.log:249:build-and-smoke	Build	2025-11-26T05:48:11.5046242Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+> ci-run-19693877764.log:250:build-and-smoke	Build	2025-11-26T05:48:11.5047235Z https://nextjs.org/telemetry
+> ci-run-19693877764.log:251:build-and-smoke	Build	2025-11-26T05:48:11.5047636Z 
+> ci-run-19693877764.log:252:build-and-smoke	Build	2025-11-26T05:48:11.5360593Z    ▲ Next.js 16.0.4 (Turbopack)
+> ci-run-19693877764.log:253:build-and-smoke	Build	2025-11-26T05:48:11.5361051Z 
+> ci-run-19693877764.log:254:build-and-smoke	Build	2025-11-26T05:48:11.6206129Z    Creating an optimized production build ...
+> ci-run-19693877764.log:255:build-and-smoke	Build	2025-11-26T05:48:18.2673436Z  ✓ Compiled successfully in 6.3s
+> ci-run-19693877764.log:256:build-and-smoke	Build	2025-11-26T05:48:18.2816796Z    Running TypeScript ...
+> ci-run-19693877764.log:257:build-and-smoke	Build	2025-11-26T05:48:27.1899972Z    Collecting page data using 3 workers ...
+> ci-run-19693877764.log:258:build-and-smoke	Build	2025-11-26T05:48:27.6614689Z    Generating static pages using 3 workers (0/5) ...
+> ci-run-19693877764.log:259:build-and-smoke	Build	2025-11-26T05:48:28.1610282Z    Generating static pages using 3 workers (1/5) 
+> ci-run-19693877764.log:260:build-and-smoke	Build	2025-11-26T05:48:28.1623988Z    Generating static pages using 3 workers (2/5) 
+> ci-run-19693877764.log:261:build-and-smoke	Build	2025-11-26T05:48:28.1626444Z    Generating static pages using 3 workers (3/5) 
+> ci-run-19693877764.log:262:build-and-smoke	Build	2025-11-26T05:48:28.1628744Z  ✓ Generating static pages using 3 workers (5/5) in 501.5ms
+> ci-run-19693877764.log:263:build-and-smoke	Build	2025-11-26T05:48:28.1749456Z    Finalizing page optimization ...
+> ci-run-19693877764.log:264:build-and-smoke	Build	2025-11-26T05:48:28.4510220Z 
+> ci-run-19693877764.log:265:build-and-smoke	Build	2025-11-26T05:48:28.4529727Z Route (app)
+> ci-run-19693877764.log:266:build-and-smoke	Build	2025-11-26T05:48:28.4530467Z ┌ ○ /
+> ci-run-19693877764.log:267:build-and-smoke	Build	2025-11-26T05:48:28.4530929Z ├ ○ /_not-found
+> ci-run-19693877764.log:268:build-and-smoke	Build	2025-11-26T05:48:28.4531369Z └ ○ /contact
+> ci-run-19693877764.log:269:build-and-smoke	Build	2025-11-26T05:48:28.4531562Z 
+> ci-run-19693877764.log:270:build-and-smoke	Build	2025-11-26T05:48:28.4531576Z 
+> ci-run-19693877764.log:271:build-and-smoke	Build	2025-11-26T05:48:28.4531966Z ○  (Static)  prerendered as static content
+> ci-run-19693877764.log:272:build-and-smoke	Build	2025-11-26T05:48:28.4532332Z 
+> ci-run-19693877764.log:273:build-and-smoke	Start CI mock server	﻿2025-11-26T05:48:28.4930061Z ##[group]Run nohup npm run ci-mock > ci-mock.log 2>&1 &
+> ci-run-19693877764.log:274:build-and-smoke	Start CI mock server	2025-11-26T05:48:28.4930670Z nohup npm run ci-mock > ci-mock.log 2>&1 &
+> ci-run-19693877764.log:275:build-and-smoke	Start CI mock server	2025-11-26T05:48:28.4931117Z sleep 3
+> ci-run-19693877764.log:276:build-and-smoke	Start CI mock server	2025-11-26T05:48:28.4969319Z shell: /usr/bin/bash -e {0}
+> ci-run-19693877764.log:277:build-and-smoke	Start CI mock server	2025-11-26T05:48:28.4969552Z env:
+> ci-run-19693877764.log:278:build-and-smoke	Start CI mock server	2025-11-26T05:48:28.4970023Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19693877764.log:279:build-and-smoke	Start CI mock server	2025-11-26T05:48:28.4970238Z ##[endgroup]
+> ci-run-19693877764.log:280:build-and-smoke	Run smoke test	﻿2025-11-26T05:48:31.5102971Z ##[group]Run npm run smoke
+> ci-run-19693877764.log:281:build-and-smoke	Run smoke test	2025-11-26T05:48:31.5103246Z npm run smoke
+> ci-run-19693877764.log:282:build-and-smoke	Run smoke test	2025-11-26T05:48:31.5136252Z shell: /usr/bin/bash -e {0}
+> ci-run-19693877764.log:283:build-and-smoke	Run smoke test	2025-11-26T05:48:31.5136472Z env:
+> ci-run-19693877764.log:284:build-and-smoke	Run smoke test	2025-11-26T05:48:31.5137041Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19693877764.log:285:build-and-smoke	Run smoke test	2025-11-26T05:48:31.5137253Z ##[endgroup]
+> ci-run-19693877764.log:286:build-and-smoke	Run smoke test	2025-11-26T05:48:31.6246216Z 
+> ci-run-19693877764.log:287:build-and-smoke	Run smoke test	2025-11-26T05:48:31.6246808Z > ui-components-qs-nextjs@0.1.0 smoke
+> ci-run-19693877764.log:288:build-and-smoke	Run smoke test	2025-11-26T05:48:31.6247396Z > node scripts/smoke-check.js
+> ci-run-19693877764.log:289:build-and-smoke	Run smoke test	2025-11-26T05:48:31.6247679Z 
+> ci-run-19693877764.log:290:build-and-smoke	Run smoke test	2025-11-26T05:48:31.6986964Z tier: 200 { tier: 'free' }
+> ci-run-19693877764.log:291:build-and-smoke	Run smoke test	2025-11-26T05:48:32.3408322Z rpc status: 503 no-json
+> ci-run-19693877764.log:292:build-and-smoke	Stop CI mock server	﻿2025-11-26T05:48:32.3536163Z ##[group]Run npm run ci-mock-stop || true
+> ci-run-19693877764.log:293:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.3536499Z npm run ci-mock-stop || true
+> ci-run-19693877764.log:294:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.3568709Z shell: /usr/bin/bash -e {0}
+> ci-run-19693877764.log:295:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.3568948Z env:
+> ci-run-19693877764.log:296:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.3569394Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19693877764.log:297:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.3569603Z ##[endgroup]
+> ci-run-19693877764.log:298:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.4665035Z 
+> ci-run-19693877764.log:299:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.4665838Z > ui-components-qs-nextjs@0.1.0 ci-mock-stop
+> ci-run-19693877764.log:300:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.4666584Z > pkill -f 'node ci/mock-server.js' || true
+> ci-run-19693877764.log:301:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.4666941Z 
+> ci-run-19693877764.log:302:build-and-smoke	Stop CI mock server	2025-11-26T05:48:32.4974234Z Terminated
+> ci-run-19693877764.log:303:build-and-smoke	Post Setup Node 20	﻿2025-11-26T05:48:32.5037884Z Post job cleanup.
+> ci-run-19693877764.log:304:build-and-smoke	Post Checkout	﻿2025-11-26T05:48:32.6704930Z Post job cleanup.
+> ci-run-19693877764.log:305:build-and-smoke	Post Checkout	2025-11-26T05:48:32.7739716Z [command]/usr/bin/git version
+> ci-run-19693877764.log:306:build-and-smoke	Post Checkout	2025-11-26T05:48:32.7782963Z git version 2.51.2
+> ci-run-19693877764.log:307:build-and-smoke	Post Checkout	2025-11-26T05:48:32.7830715Z Temporarily overriding HOME='/home/runner/work/_temp/f4b77286-724b-4c57-8be8-b8c3ebb75840' before making global git config changes
+> ci-run-19693877764.log:308:build-and-smoke	Post Checkout	2025-11-26T05:48:32.7831627Z Adding repository directory to the temporary git global config as a safe directory
+> ci-run-19693877764.log:309:build-and-smoke	Post Checkout	2025-11-26T05:48:32.7844667Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+> ci-run-19693877764.log:310:build-and-smoke	Post Checkout	2025-11-26T05:48:32.7881252Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+> ci-run-19693877764.log:311:build-and-smoke	Post Checkout	2025-11-26T05:48:32.7916049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+> ci-run-19693877764.log:312:build-and-smoke	Post Checkout	2025-11-26T05:48:32.8152425Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+> ci-run-19693877764.log:313:build-and-smoke	Post Checkout	2025-11-26T05:48:32.8174717Z http.https://github.com/.extraheader
+> ci-run-19693877764.log:314:build-and-smoke	Post Checkout	2025-11-26T05:48:32.8187869Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+> ci-run-19693877764.log:315:build-and-smoke	Post Checkout	2025-11-26T05:48:32.8220321Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+> ci-run-19693877764.log:316:build-and-smoke	Post Checkout	2025-11-26T05:48:32.8452332Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+> ci-run-19693877764.log:317:build-and-smoke	Post Checkout	2025-11-26T05:48:32.8486161Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+> ci-run-19693877764.log:318:build-and-smoke	Complete job	﻿2025-11-26T05:48:32.8833634Z Cleaning up orphan processes
+

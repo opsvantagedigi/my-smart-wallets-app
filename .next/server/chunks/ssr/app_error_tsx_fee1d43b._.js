@@ -1,0 +1,3 @@
+module.exports=[78141,a=>{"use strict";var b=a.i(87924);function c({error:a,reset:c}){return(0,b.jsx)("html",{children:(0,b.jsxs)("body",{style:{textAlign:"center",marginTop:"20vh"},children:[(0,b.jsx)("h2",{children:"Something went wrong!"}),(0,b.jsx)("pre",{children:a.message}),(0,b.jsx)("button",{onClick:()=>c(),children:"Try again"})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=app_error_tsx_fee1d43b._.js.map

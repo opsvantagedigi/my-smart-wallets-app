@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   async redirects() {
     return [
       {
@@ -12,7 +11,18 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['res.cloudinary.com', 'opsvantagedigital.online'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'opsvantagedigital.online',
+        pathname: '/**',
+      },
+    ],
   },
   env: {
     NEXT_PUBLIC_APP_URL: 'https://marz.opsvantagedigital.online',

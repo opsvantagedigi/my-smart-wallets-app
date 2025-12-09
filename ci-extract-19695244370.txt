@@ -1,0 +1,46 @@
+
+  ci-run-19695244370.log:276:build-and-smoke	Export RPC URL for smoke	2025-11-26T07:00:19.7963567Z   CI_RPC_URL: ***
+  ci-run-19695244370.log:277:build-and-smoke	Export RPC URL for smoke	2025-11-26T07:00:19.7963745Z ##[endgroup]
+  ci-run-19695244370.log:278:build-and-smoke	Export RPC URL for smoke	2025-11-26T07:00:19.8016044Z Using CI_RPC_URL secret
+> ci-run-19695244370.log:279:build-and-smoke	Start CI mock server	﻿2025-11-26T07:00:19.8042907Z ##[group]Run nohup npm run ci-mock > ci-mock.log 2>&1 &
+> ci-run-19695244370.log:280:build-and-smoke	Start CI mock server	2025-11-26T07:00:19.8043303Z nohup npm run ci-mock > ci-mock.log 2>&1 &
+  ci-run-19695244370.log:281:build-and-smoke	Start CI mock server	2025-11-26T07:00:19.8043581Z sleep 3
+  ci-run-19695244370.log:282:build-and-smoke	Start CI mock server	2025-11-26T07:00:19.8073090Z shell: /usr/bin/bash -e {0}
+  ci-run-19695244370.log:283:build-and-smoke	Start CI mock server	2025-11-26T07:00:19.8073329Z env:
+  ci-run-19695244370.log:295:build-and-smoke	Run smoke test	2025-11-26T07:00:22.9289013Z 
+  ci-run-19695244370.log:296:build-and-smoke	Run smoke test	2025-11-26T07:00:23.0013309Z tier: 200 { tier: 'free' }
+  ci-run-19695244370.log:297:build-and-smoke	Run smoke test	2025-11-26T07:00:23.0020473Z rpc health check failed (non-fatal): Failed to parse URL from ***
+> ci-run-19695244370.log:298:build-and-smoke	Upload mock server log	﻿2025-11-26T07:00:23.0969353Z ##[group]Run actions/upload-artifact@v4
+> ci-run-19695244370.log:299:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0969655Z with:
+> ci-run-19695244370.log:300:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0969826Z   name: ci-mock-log
+> ci-run-19695244370.log:301:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0970013Z   path: ci-mock.log
+> ci-run-19695244370.log:302:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0970205Z   if-no-files-found: warn
+> ci-run-19695244370.log:303:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0970414Z   compression-level: 6
+> ci-run-19695244370.log:304:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0970611Z   overwrite: false
+> ci-run-19695244370.log:305:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0970803Z   include-hidden-files: false
+> ci-run-19695244370.log:306:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0971317Z env:
+> ci-run-19695244370.log:307:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0971620Z   NEXT_PUBLIC_RPC_URL: ***
+> ci-run-19695244370.log:308:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.0971833Z ##[endgroup]
+> ci-run-19695244370.log:309:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.3201563Z With the provided path, there will be 1 file uploaded
+> ci-run-19695244370.log:310:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.3206816Z Artifact name is valid!
+> ci-run-19695244370.log:311:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.3208394Z Root directory input is valid!
+> ci-run-19695244370.log:312:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.4310478Z Beginning upload of artifact content to blob storage
+> ci-run-19695244370.log:313:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.4973680Z Uploaded bytes 224
+> ci-run-19695244370.log:314:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.5162545Z Finished uploading artifact content to blob storage!
+> ci-run-19695244370.log:315:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.5166112Z SHA256 digest of uploaded artifact zip is b3a0544df0204290a37a0c72530822c3a1963c6d79b405e85f2993221c5714af
+> ci-run-19695244370.log:316:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.5167899Z Finalizing artifact upload
+> ci-run-19695244370.log:317:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.6170661Z Artifact ci-mock-log.zip successfully finalized. Artifact ID 4682686108
+> ci-run-19695244370.log:318:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.6174408Z Artifact ci-mock-log has been successfully uploaded! Final size is 224 bytes. Artifact ID is 4682686108
+> ci-run-19695244370.log:319:build-and-smoke	Upload mock server log	2025-11-26T07:00:23.6180323Z Artifact download URL: https://github.com/opsvantagedigi/my-smart-wallets-app/actions/runs/19695244370/artifacts/4682686108
+> ci-run-19695244370.log:320:build-and-smoke	Stop CI mock server	﻿2025-11-26T07:00:23.6290495Z ##[group]Run npm run ci-mock-stop || true
+> ci-run-19695244370.log:321:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.6291256Z npm run ci-mock-stop || true
+  ci-run-19695244370.log:322:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.6337714Z shell: /usr/bin/bash -e {0}
+  ci-run-19695244370.log:323:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.6338099Z env:
+  ci-run-19695244370.log:324:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.6338571Z   NEXT_PUBLIC_RPC_URL: ***
+  ci-run-19695244370.log:325:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.6338975Z ##[endgroup]
+  ci-run-19695244370.log:326:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.7470910Z 
+> ci-run-19695244370.log:327:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.7471739Z > ui-components-qs-nextjs@0.1.0 ci-mock-stop
+  ci-run-19695244370.log:328:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.7472393Z > pkill -f 'node ci/mock-server.js' || true
+  ci-run-19695244370.log:329:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.7472706Z 
+  ci-run-19695244370.log:330:build-and-smoke	Stop CI mock server	2025-11-26T07:00:23.7946801Z Terminated
+
