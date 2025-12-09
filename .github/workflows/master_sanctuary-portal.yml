@@ -7,4 +7,8 @@ jobs:
   noop:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Workflow archived; deployment moved to Vercel."
+      - name: Archive Notice
+        run: |
+          echo "Sanctuary Portal Azure deployment is deprecated."
+          echo "This repository now deploys via Vercel."
+          echo "No Azure steps are executed by this workflow."
