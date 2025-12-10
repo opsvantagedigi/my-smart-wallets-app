@@ -32,6 +32,18 @@
 				"$tsc"
 			],
 			"group": "build"
+		},
+		{
+			"label": "🧹 Clean Build Cache (pwsh)",
+			"type": "shell",
+			"command": "Remove-Item -Recurse -Force .next; Remove-Item -Recurse -Force node_modules",
+			"group": "build"
+		},
+		{
+			"label": "📦 Install Dependencies (pwsh)",
+			"type": "shell",
+			"command": "npm install",
+			"group": "build"
 		}
 	]
 }

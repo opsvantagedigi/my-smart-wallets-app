@@ -1,7 +1,7 @@
 import React from 'react';
-import { ShieldCheckIcon } from './icons/ShieldCheckIcon';
-import { CoinsIcon } from './icons/CoinsIcon';
-import { Web3Icon } from './icons/Web3Icon';
+import { ShieldCheckIcon } from '../app/components/icons/ShieldCheckIcon';
+import { CoinsIcon } from '../app/components/icons/CoinsIcon';
+import { Web3Icon } from '../app/components/icons/Web3Icon';
 
 interface BenefitCardProps {
   icon: React.ReactNode;

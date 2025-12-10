@@ -1,9 +1,9 @@
 import React from 'react';
-import { NoCustodyIcon } from './icons/NoCustodyIcon';
-import { MultiChainIcon } from './icons/MultiChainIcon';
-import { AlertsIcon } from './icons/AlertsIcon';
-import { DashboardIcon } from './icons/DashboardIcon';
-import { HardwareIcon } from './icons/HardwareIcon';
+import { NoCustodyIcon } from '../app/components/icons/NoCustodyIcon';
+import { MultiChainIcon } from '../app/components/icons/MultiChainIcon';
+import { AlertsIcon } from '../app/components/icons/AlertsIcon';
+import { DashboardIcon } from '../app/components/icons/DashboardIcon';
+import { HardwareIcon } from '../app/components/icons/HardwareIcon';
 
 interface FeatureItemProps {
   icon: React.ReactNode;

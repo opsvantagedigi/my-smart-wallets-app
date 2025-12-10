@@ -27,11 +27,48 @@ CI lint verification is enabled on `vercel_deploy` and runs `npm run lint:ci` be
 	- `NEXT_PUBLIC_ALCHEMY_RPC_URL`
 	- `NEXT_PUBLIC_EMBEDDED_WALLET_ENABLED`
 	- `NEXT_PUBLIC_APP_URL` = `https://marz.opsvantagedigital.online`
+	- NEXT_PUBLIC_ALCHEMY_API_KEY
+	- NEXT_PUBLIC_ALCHEMY_POLICY_ID
+	- NEXT_PUBLIC_CHAIN_ID (11155111 for Sepolia)
+	- NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID
+	- NEXT_PUBLIC_EMBEDDED_WALLET_ENABLED
+	- JWT_SECRET
+	- NEXTAUTH_URL (if using NextAuth/OAuth)
+	- DATABASE_URL (if persisting users)
+	- CORS_ORIGIN (set to production domain for APIs)
 
 - Local Env Sync:
 	- Pull to local dev: `vercel env pull .env.development.local`
 	- Keep `.env.local` untracked; use Vercel dashboard for prod vars.
 
+### Quick Start (Local)
+
+Create `.env.local` with:
+
+```
+NEXT_PUBLIC_ALCHEMY_API_KEY=c4YUdaSKyJjyNxSM8EOoO
+NEXT_PUBLIC_ALCHEMY_POLICY_ID=e42cf63e-a5ed-45b9-aa02-45334e47ba52
+NEXT_PUBLIC_CHAIN_ID=11155111
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=30e7ffaff99063e68cc9870c105d905b
+NEXT_PUBLIC_EMBEDDED_WALLET_ENABLED=true
+JWT_SECRET=replace_with_strong_secret
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+CORS_ORIGIN=http://localhost:3000
+```
+
+Install and run:
+
+```pwsh
+npm install
+npm run dev
+```
+
+### Production Tips
+
+- Use a strong `JWT_SECRET`. In production, cookies are set with `secure: true` and `sameSite: "strict"`.
+- Keep Vercel envs in sync with `.env.local`.
+- Verify WalletConnect projectId in WalletConnect Cloud.
+- Add OAuth client IDs/secrets if enabling social login.
 - Next.js Config:
 	- Redirect `/` → `/landing` in `next.config.mjs`.
 	- Fonts: Inter (body), Orbitron (headings) via `app/layout.tsx`.
