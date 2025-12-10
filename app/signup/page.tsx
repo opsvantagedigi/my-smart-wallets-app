@@ -51,7 +51,8 @@ export default function SignupPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button
-          type="submit"
+          type="button"
+          onClick={() => handleSignup(email, password)}
           className="bg-black text-white rounded p-2"
           disabled={loading}
         >
