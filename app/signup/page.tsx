@@ -6,18 +6,28 @@ export default function SignupPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const handleSignup = async (email: string, password: string) => {
+    const res = await fetch("/api/auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (res.ok) {
+      // Redirect or show success
+      window.location.href = "/wallet"; // adjust to /dashboard if that route exists
+    } else {
+      const err = await res.json();
+      alert(err.error || "Signup failed");
+    }
+  };
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await res.json();
-      alert(res.ok ? `Signed up as ${data.email}` : data.error);
+      await handleSignup(email, password);
     } finally {
       setLoading(false);
     }
