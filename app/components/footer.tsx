@@ -3,7 +3,7 @@ import { TwitterIcon, LinkedinIcon, GithubIcon } from './icons/SocialIcons';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black/30 backdrop-blur-lg border-t border-white/10 mt-20">
+    <footer className="bg-white/60 dark:bg-black/30 backdrop-blur-lg border-t border-black/10 dark:border-white/10 mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4">
@@ -17,37 +17,37 @@ const Footer: React.FC = () => {
                 OpsVantage Digital
               </span>
             </a>
-            <p className="text-gray-400 text-sm">The future of digital asset management. Secure, smart, and built for you.</p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">The future of digital asset management. Secure, smart, and built for you.</p>
             <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors" title="Twitter"><TwitterIcon /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors" title="LinkedIn"><LinkedinIcon /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors" title="GitHub"><GithubIcon /></a>
+              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" title="Twitter"><TwitterIcon /></a>
+              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" title="LinkedIn"><LinkedinIcon /></a>
+              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" title="GitHub"><GithubIcon /></a>
             </div>
           </div>
 
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Product</h5>
+              <h5 className="font-orbitron font-semibold text-[#1A1A1A] dark:text-white tracking-wider mb-4">Product</h5>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Features</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Security</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Download</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
               </ul>
             </div>
             <div>
-              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Company</h5>
+              <h5 className="font-orbitron font-semibold text-[#1A1A1A] dark:text-white tracking-wider mb-4">Company</h5>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">About Us</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Press</a></li>
               </ul>
             </div>
             <div>
-              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Resources</h5>
+              <h5 className="font-orbitron font-semibold text-[#1A1A1A] dark:text-white tracking-wider mb-4">Resources</h5>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Help Center</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">API Docs</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Status</a></li>
               </ul>
@@ -65,12 +65,12 @@ const Footer: React.FC = () => {
                     <input 
                       type="email" 
                       placeholder="Enter your email" 
-                      className="w-full bg-white/10 border border-white/20 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ffe600] focus:border-[#ffe600]/50 focus:outline-none transition-all duration-300"
+                      className="w-full bg-white/60 dark:bg-white/10 border border-black/20 dark:border-white/20 rounded-lg py-2.5 pl-10 pr-4 text-[#1A1A1A] dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow/50 focus:outline-none transition-all duration-300"
                     />
                   </div>
                   <button 
                     type="submit" 
-                    className="bg-gradient-to-r from-[#0030ff] to-blue-600 hover:scale-105 transform transition-all duration-300 text-white font-semibold py-2.5 px-6 rounded-lg whitespace-nowrap shadow-lg shadow-blue-500/20"
+                    className="bg-brand-yellow hover:bg-yellow-600 hover:scale-105 transform transition-all duration-300 text-black font-bold py-2.5 px-6 rounded-lg whitespace-nowrap shadow backdrop-blur-md"
                   >
                     Subscribe
                   </button>
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-gray-500">
+        <div className="mt-12 border-t border-black/10 dark:border-white/10 pt-8 text-center text-sm text-gray-600 dark:text-gray-500">
           <p>&copy; {new Date().getFullYear()} OpsVantage Digital. All rights reserved.</p>
         </div>
       </div>

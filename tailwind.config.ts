@@ -2,6 +2,7 @@ import { withAccountKitUi, createColorSet } from "@account-kit/react/tailwind";
 
 export default withAccountKitUi(
   {
+    darkMode: "class",
     content: [
       "./src/**/*.{js,ts,jsx,tsx,mdx}",
       "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,6 +14,13 @@ export default withAccountKitUi(
         fontFamily: {
           orbitron: ['"Orbitron"', 'sans-serif'],
           inter: ['"Inter"', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            blue: "#0A1F44",
+            green: "#0F4C5C",
+            yellow: "#FFD700",
+          },
         },
       },
     },

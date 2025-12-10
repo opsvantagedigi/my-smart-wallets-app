@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
+import ThemeToggle from './ThemeToggle';
 // This component previously used @account-kit/react, which is not compatible with Next.js Turbopack in client code.
 // TODO: Refactor to use server-side logic or API routes for authentication and wallet status.
 const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/60 dark:bg-black/30 backdrop-blur-lg border-b border-black/10 dark:border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
@@ -20,24 +21,15 @@ const Header: React.FC = () => {
             </a>
           </div>
           <nav className="hidden md:flex md:items-center md:space-x-8">
-            <a href="/" className="text-gray-200 hover:text-white font-medium transition">Home</a>
-            <a href="/contact" className="text-gray-200 hover:text-white font-medium transition">Contact Us</a>
+            <a href="/" className="text-[#1A1A1A] dark:text-gray-200 hover:text-black dark:hover:text-white font-medium transition">Home</a>
+            <a href="/contact" className="text-[#1A1A1A] dark:text-gray-200 hover:text-black dark:hover:text-white font-medium transition">Contact Us</a>
           </nav>
-          <div className="hidden md:block">
-            <span className="px-5 py-2.5 text-sm font-medium text-black bg-[#ffe600] rounded-md opacity-50 cursor-not-allowed whitespace-nowrap">
-              Sign Up (Unavailable)
-            </span>
+          <div className="hidden md:flex items-center gap-3">
+            <a href="/signup" className="px-5 py-2.5 text-sm font-bold text-black bg-brand-yellow rounded-md hover:bg-yellow-600 shadow backdrop-blur-md whitespace-nowrap">Sign Up</a>
+            <ThemeToggle />
           </div>
           <div className="md:hidden flex items-center">
-            <button
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 bg-gray-700 opacity-50 cursor-not-allowed"
-              disabled
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+            <ThemeToggle />
           </div>
         </div>
       </div>
