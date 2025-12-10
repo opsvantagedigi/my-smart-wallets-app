@@ -1,29 +1,32 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-
-const JWT_SECRET = process.env.JWT_SECRET;
+import { getUser, setUser } from "../../../../lib/db";
+import { sign } from "../../../../lib/jwt";
 
 export async function POST(req: Request) {
-  if (!JWT_SECRET) return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+  try {
+    const { email, password } = await req.json();
+    if (!email || !password)
+      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
 
-  const { email, password } = await req.json();
-  if (!email || !password)
-    return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    const exists = getUser(email);
+    if (exists) return NextResponse.json({ error: "User already exists" }, { status: 409 });
 
-  const hashed = await bcrypt.hash(password, 10);
+    const passwordHash = await bcrypt.hash(password, 10);
+    setUser({ email, passwordHash, walletAddress: null });
 
-  // TODO: persist user to DB
-  // await db.user.create({ data: { email, password: hashed } });
-
-  const token = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
-  const res = NextResponse.json({ success: true });
-  res.cookies.set("token", token, {
-    httpOnly: true,
-    secure: true,
-    sameSite: "strict",
-    path: "/",
-    maxAge: 60 * 60,
-  });
-  return res;
+    const token = sign({ email }, process.env.JWT_SECRET as string);
+    const res = NextResponse.json({ email });
+    const isProd = process.env.NODE_ENV === "production";
+    res.cookies.set("token", token, {
+      httpOnly: true,
+      sameSite: isProd ? "strict" : "lax",
+      secure: isProd,
+      path: "/",
+      maxAge: 60 * 60,
+    });
+    return res;
+  } catch (err: any) {
+    return NextResponse.json({ error: err?.message || "Signup failed" }, { status: 400 });
+  }
 }
