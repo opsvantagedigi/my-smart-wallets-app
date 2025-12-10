@@ -21,7 +21,8 @@ export default function WalletPage() {
         } else {
           setMe({});
         }
-      } catch {
+      } catch (err) {
+        console.error("/api/auth/user fetch error:", err);
         setMe({});
       } finally {
         setLoading(false);
