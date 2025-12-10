@@ -2,26 +2,9 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Clean",
+			"label": "Clear .next and node_modules",
 			"type": "shell",
-			"command": "npm",
-			"args": [
-				"run",
-				"clean"
-			],
-			"problemMatcher": []
-		},
-		{
-			"label": "Deploy to Cloudflare",
-			"type": "shell",
-			"command": "wrangler publish",
-			"group": "build"
-		},
-		{
-			"label": "Cloudflare Dev",
-			"type": "shell",
-			"command": "wrangler dev",
-			"group": "test"
+			"command": "rm -rf .next node_modules"
 		},
 		{
 			"label": "🚀 Build App",

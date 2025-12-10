@@ -1,20 +1,14 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "ignorePatterns": [
-    ".next/**",
-    "dist/**",
-    "out/**",
-    "node_modules/**"
-  ],
+  "extends": "next/core-web-vitals",
   "rules": {
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      { "argsIgnorePattern": "^_" }
-    ]
-  }
+    "max-len": ["warn", { "code": 200, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreUrls": true }]
+  },
+  "overrides": [
+    {
+      "files": ["components/ui/**/*.{ts,tsx}"],
+      "rules": {
+        "max-len": "off"
+      }
+    }
+  ]
 }

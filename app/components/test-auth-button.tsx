@@ -1,11 +1,13 @@
 "use client";
 
-// This component previously used @account-kit/react, which is not compatible with Next.js Turbopack in client code.
-// TODO: Refactor to use server-side logic or API routes for authentication.
+import { useAuthModal } from "@account-kit/react";
+
 export function TestAuthButton() {
+  const { openAuthModal } = useAuthModal();
+  
   return (
-    <button className="akui-btn akui-btn-primary" disabled>
-      Test Auth Modal (Unavailable)
+    <button className="akui-btn akui-btn-primary" onClick={openAuthModal}>
+      Test Auth Modal
     </button>
   );
 }

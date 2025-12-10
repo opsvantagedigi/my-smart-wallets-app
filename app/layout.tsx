@@ -3,11 +3,11 @@ import { config } from "../config.js";
 // import { cookieToInitialState } from "@account-kit/core";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
-import Providers from "./providers";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import { ClientLayout } from "./ClientLayout";
+import { Providers } from "./providers.js";
+import Footer from "./components/footer.js";
+import { ClientLayout } from "./ClientLayout.js";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -53,18 +53,14 @@ export default async function RootLayout({
   // );
 
   return (
-    <html lang="en">
-      <head />
-      <body>
-        <Providers>
-          <Header />
-          <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased pt-20 pb-24`}>
-            {children}
-            <ClientLayout />
-          </div>
-        </Providers>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Providers>
+        <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
+          {children}
+          <ClientLayout />
+        </div>
+      </Providers>
+      <Footer />
+    </>
   );
 }

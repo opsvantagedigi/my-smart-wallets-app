@@ -4,7 +4,7 @@ import {
   createConfig,
 } from "@account-kit/react";
 import { QueryClient } from "@tanstack/react-query";
-import { chainNFTMintContractData } from "./lib/chains";
+import { chainNFTMintContractData } from "./lib/chains.js";
 import { alchemy } from "@account-kit/infra";
 
 const API_KEY = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
@@ -17,14 +17,14 @@ if (!SPONSORSHIP_POLICY_ID) {
   throw new Error("NEXT_PUBLIC_ALCHEMY_POLICY_ID is not set");
 }
 
-const CHAIN_ID = parseInt(process.env.NEXT_PUBLIC_CHAIN_ID ?? '') || 11155111; // default to Sepolia
+const CHAIN_ID = parseInt(process.env.NEXT_PUBLIC_CHAIN_ID ?? '') || 421614;
 const chain = chainNFTMintContractData[CHAIN_ID]?.chain;
 if (!chain) {
     throw new Error("Invalid chain ID")
 }
 
 const uiConfig: AlchemyAccountsUIConfig = {
-  illustrationStyle: "outline",
+  illustrationStyle: "flat",
   auth: {
     header: "/assets/brand-logo.png",
     sections: [
@@ -66,7 +66,7 @@ const uiConfig: AlchemyAccountsUIConfig = {
         },
       ],
     ],
-    addPasskeyOnSignup: false,
+    addPasskeyOnSignup: true,
   },
   supportUrl: "support@opsvantagedigital.online",
 };

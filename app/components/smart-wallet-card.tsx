@@ -1,80 +1,115 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { Button } from "../../components/ui/button";
+'use client';
 
-export default function SmartWalletCard() {
-  const router = useRouter();
-  const EMBEDDED_WALLET_ENABLED =
-    process.env.NEXT_PUBLIC_EMBEDDED_WALLET_ENABLED === "true";
-  const CHAIN_ID = process.env.NEXT_PUBLIC_CHAIN_ID || "11155111"; // default Sepolia
+import { useEffect } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card.js';
+import { Button } from '../../components/ui/button.js';
+import { Badge } from '../../components/ui/badge.js';
+import { useSmartWallet } from '../hooks/useSmartWallet.js';
+import { useUser } from '@account-kit/react';
 
-  const connect = async () => {
-    // Require embedded wallet flag to proceed with onboarding
-    if (!EMBEDDED_WALLET_ENABLED) {
-      alert("Embedded wallet is disabled. Please enable it to continue.");
-      return;
+export function SmartWalletCard() {
+  const user = useUser();
+  const { wallet, loading, error, ensureWallet, refreshWallet } = useSmartWallet();
+
+  // Automatically ensure wallet on mount if user is authenticated
+  useEffect(() => {
+    if (user?.userId && !wallet && !loading) {
+      ensureWallet();
     }
-    try {
-      const anyWindow = window as any;
-      if (!anyWindow.ethereum) {
-        alert("No wallet provider detected. If using embedded wallet, refresh after enabling; otherwise install MetaMask or a supported wallet.");
-        return;
-      }
-      // Ensure we are on the expected chain (Sepolia by default)
-      try {
-        const currentChain = await anyWindow.ethereum.request({ method: "eth_chainId" });
-        const desiredHex = "0x" + parseInt(CHAIN_ID, 10).toString(16);
-        if (currentChain && currentChain.toLowerCase() !== desiredHex.toLowerCase()) {
-          await anyWindow.ethereum.request({
-            method: "wallet_switchEthereumChain",
-            params: [{ chainId: desiredHex }],
-          }).catch(async (err: any) => {
-            // If chain is not added, attempt to add Sepolia using public RPC env
-            if (err?.code === 4902) {
-              const rpcUrl = process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL;
-              await anyWindow.ethereum.request({
-                method: "wallet_addEthereumChain",
-                params: [{
-                  chainId: desiredHex,
-                  chainName: "Sepolia Test Network",
-                  nativeCurrency: { name: "SepoliaETH", symbol: "SEP", decimals: 18 },
-                  rpcUrls: rpcUrl ? [rpcUrl] : ["https://rpc.sepolia.org"],
-                  blockExplorerUrls: ["https://sepolia.etherscan.io"],
-                }],
-              });
-            } else {
-              throw err;
-            }
-          });
-        }
-      } catch (chainErr) {
-        console.warn("Chain check/switch skipped or failed:", chainErr);
-      }
+  }, [user?.userId, wallet, loading, ensureWallet]);
 
-      const accounts = await anyWindow.ethereum.request({ method: "eth_requestAccounts" });
-      const addr = accounts?.[0];
-      if (!addr) return;
-      await fetch("/api/wallet/connect", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ address: addr }),
-      });
-      router.push("/wallet");
-    } catch (e) {
-      console.error(e);
-      alert("Wallet connection failed.");
-    }
-  };
+  if (!user) {
+    return (
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle className="font-orbitron">Smart Wallet</CardTitle>
+          <CardDescription>Please log in to view your smart wallet</CardDescription>
+        </CardHeader>
+      </Card>
+    );
+  }
 
   return (
-    <div className="p-4 border rounded bg-white/20 backdrop-blur-md shadow-lg">
-      <Button onClick={connect} className="bg-black text-white">
-        {EMBEDDED_WALLET_ENABLED ? "Connect Wallet" : "Enable Embedded Wallets"}
-      </Button>
-      <div className="mt-3 text-sm">
-        Ensure envs are set: NEXT_PUBLIC_EMBEDDED_WALLET_ENABLED=true, NEXT_PUBLIC_CHAIN_ID, RPC/API keys.
-      </div>
-    </div>
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle className="font-orbitron flex items-center justify-between">
+          Smart Wallet
+          {wallet && (
+            <Badge variant="default" className="bg-gradient-brand">
+              Active
+            </Badge>
+          )}
+        </CardTitle>
+        <CardDescription>
+          {wallet ? 'Your Marz Network smart wallet' : 'Create your smart wallet to get started'}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        {error && (
+          <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+            {error.message}
+          </div>
+        )}
+
+        {loading ? (
+          <div className="flex items-center justify-center py-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-green"></div>
+          </div>
+        ) : wallet ? (
+          <div className="space-y-3">
+            <div className="space-y-1">
+              <label className="text-xs text-gray-400 font-medium">Wallet Address</label>
+              <div className="p-3 rounded-lg bg-gray-800 border border-gray-700">
+                <code className="text-sm text-brand-green break-all">
+                  {wallet.address}
+                </code>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1">
+                <label className="text-xs text-gray-400 font-medium">Chain ID</label>
+                <div className="p-2 rounded-lg bg-gray-800 border border-gray-700 text-sm">
+                  {wallet.chainId}
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs text-gray-400 font-medium">Created</label>
+                <div className="p-2 rounded-lg bg-gray-800 border border-gray-700 text-sm">
+                  {new Date(wallet.createdAt).toLocaleDateString()}
+                </div>
+              </div>
+            </div>
+
+            {wallet.balance && (
+              <div className="space-y-1">
+                <label className="text-xs text-gray-400 font-medium">Balance</label>
+                <div className="p-3 rounded-lg bg-gray-800 border border-gray-700">
+                  <span className="text-lg font-semibold text-gradient-brand">
+                    {wallet.balance} ETH
+                  </span>
+                </div>
+              </div>
+            )}
+
+            <Button
+              onClick={refreshWallet}
+              variant="outline"
+              className="w-full"
+            >
+              Refresh Wallet
+            </Button>
+          </div>
+        ) : (
+          <Button
+            onClick={ensureWallet}
+            className="w-full bg-gradient-brand hover:opacity-90"
+          >
+            Create Smart Wallet
+          </Button>
+        )}
+      </CardContent>
+    </Card>
   );
 }

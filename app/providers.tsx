@@ -1,7 +1,11 @@
+"use client";
+import { config, queryClient } from "../config.js";
+// import { AlchemyClientState } from "@account-kit/core";
+// import { AlchemyAccountProvider } from "@account-kit/react";
+// import { QueryClientProvider } from "@tanstack/react-query";
+import { PropsWithChildren } from "react";
 
-// SERVER COMPONENT: Providers
-// This component will eventually wrap children with context from the server (or API data)
-// For now, it simply renders children directly, as AccountKit context must be provided server-side or via API
-export default function Providers({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
-}
+export const Providers = (props: any) => {
+  // Minimal provider for deployment
+  return <>{props.children}</>;
+};
