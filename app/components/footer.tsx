@@ -1,90 +1,35 @@
-import React from 'react';
-import { TwitterIcon, LinkedinIcon, GithubIcon } from './icons/SocialIcons';
-
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <footer className="bg-white/60 dark:bg-black/30 backdrop-blur-lg border-t border-black/10 dark:border-white/10 mt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-4">
-            <a href="#" className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#0030ff] via-green-400 to-[#ffe600] flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <span className="font-orbitron text-xl font-bold tracking-wider bg-gradient-to-r from-[#0030ff] via-green-400 to-[#ffe600] text-transparent bg-clip-text">
-                OpsVantage Digital
-              </span>
-            </a>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">The future of digital asset management. Secure, smart, and built for you.</p>
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" title="Twitter"><TwitterIcon /></a>
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" title="LinkedIn"><LinkedinIcon /></a>
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" title="GitHub"><GithubIcon /></a>
-            </div>
-          </div>
-
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <h5 className="font-orbitron font-semibold text-[#1A1A1A] dark:text-white tracking-wider mb-4">Product</h5>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Security</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Download</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-orbitron font-semibold text-[#1A1A1A] dark:text-white tracking-wider mb-4">Company</h5>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Press</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-orbitron font-semibold text-[#1A1A1A] dark:text-white tracking-wider mb-4">Resources</h5>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">API Docs</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Status</a></li>
-              </ul>
-            </div>
-            <div className="col-span-2 md:col-span-1">
-              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Stay Updated</h5>
-              <form>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <div className="relative flex-grow">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email" 
-                      className="w-full bg-white/60 dark:bg-white/10 border border-black/20 dark:border-white/20 rounded-lg py-2.5 pl-10 pr-4 text-[#1A1A1A] dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow/50 focus:outline-none transition-all duration-300"
-                    />
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="bg-brand-yellow hover:bg-yellow-600 hover:scale-105 transform transition-all duration-300 text-black font-bold py-2.5 px-6 rounded-lg whitespace-nowrap shadow backdrop-blur-md"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+    <footer className="bg-black text-white py-12 px-6 md:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 className="font-orbitron text-lg mb-2">OpsVantage Digital</h3>
+          <p className="text-sm text-gray-400">© {new Date().getFullYear()} OpsVantage Digital. All rights reserved.</p>
         </div>
-        <div className="mt-12 border-t border-black/10 dark:border-white/10 pt-8 text-center text-sm text-gray-600 dark:text-gray-500">
-          <p>&copy; {new Date().getFullYear()} OpsVantage Digital. All rights reserved.</p>
+        <div>
+          <h4 className="text-yellow-500 font-semibold mb-2">Company</h4>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-yellow-500 font-semibold mb-2">Legal</h4>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-yellow-500 font-semibold mb-2">Connect</h4>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li><a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          </ul>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
