@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import jwt, { JwtPayload } from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -11,13 +12,14 @@ function decodeToken(token: string): JwtPayload | null {
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET(req: Request) {
   if (!JWT_SECRET) {
     return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
   }
 
   // Prefer cookie (HttpOnly) but allow Authorization: Bearer as fallback
-  const cookieToken = req.cookies.get("token")?.value ?? null;
+  const cookieStore = await cookies();
+  const cookieToken = cookieStore.get("token")?.value ?? null;
   const authHeader = req.headers.get("authorization");
   const headerToken =
     authHeader && authHeader.startsWith("Bearer ") ? authHeader.slice(7) : null;

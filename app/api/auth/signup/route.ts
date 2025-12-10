@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   if (!JWT_SECRET) return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
 
   const { email, password } = await req.json();

@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     if (!valid) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
     }
-    const token = sign({ email }, process.env.JWT_SECRET);
+    const token = sign({ email }, process.env.JWT_SECRET as string);
     const res = NextResponse.json({ email, walletAddress: user.walletAddress });
     const isProd = process.env.NODE_ENV === "production";
     res.cookies.set("token", token, {
