@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "engines": {
-    "node": "20.x"
+    "node": ">=20.19.5"
   },
   "scripts": {
     "dev": "next dev",
@@ -78,6 +78,12 @@
   },
   "overrides": {
     "@tanstack/form-core": "0.42.1",
-    "glob": "^10.2.7"
+    "glob": "^10.2.7",
+    "typescript": "^5.8.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "wagmi": "2.19.2",
+    "@wagmi/core": "2.21.2",
+    "viem": "2.39.3"
   }
 }
