@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import LoginCard from "../../components/login-card";
-import UserInfo from "../../components/user-info-card";
-import { TestAuthButton } from "../../components/test-auth-button";
-import AIAvatar from "../../components/AIAvatar";
+import LoginCard from "../components/login-card";
+import UserInfo from "../components/user-info-card";
+import { TestAuthButton } from "../components/test-auth-button";
+import AIAvatar from "../components/AIAvatar";
 
 type Me = { user?: { email?: string; walletAddress?: string | null } };
 
