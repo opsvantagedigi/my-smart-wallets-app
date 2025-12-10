@@ -7,9 +7,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { email, password } = body || {};
-    if (!email || !password) {
-      return NextResponse.json({ error: "Missing email or password" }, { status: 400 });
-    }
+    if (!email || !password) return NextResponse.json({ error: "Missing email or password" }, { status: 400 });
     const user = getUser(email);
     if (!user) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
@@ -18,7 +16,7 @@ export async function POST(request: Request) {
     if (!valid) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
     }
-    const token = sign({ email }, process.env.JWT_SECRET || "dev_secret");
+    const token = sign({ email }, process.env.JWT_SECRET);
     const res = NextResponse.json({ email, walletAddress: user.walletAddress });
     const isProd = process.env.NODE_ENV === "production";
     res.cookies.set("token", token, {

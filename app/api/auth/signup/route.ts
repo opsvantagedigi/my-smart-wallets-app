@@ -1,32 +1,29 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { getUser, setUser } from "../../../../lib/db";
-import { sign } from "../../../../lib/jwt";
+import jwt from "jsonwebtoken";
 
-export async function POST(request: Request) {
-  try {
-    const body = await request.json();
-    const { email, password } = body || {};
-    if (!email || !password) {
-      return NextResponse.json({ error: "Missing email or password" }, { status: 400 });
-    }
-    const exists = getUser(email);
-    if (exists) {
-      return NextResponse.json({ error: "User already exists" }, { status: 400 });
-    }
-    const passwordHash = await bcrypt.hash(password, 10);
-    setUser({ email, passwordHash, walletAddress: null });
-    const token = sign({ email }, process.env.JWT_SECRET || "dev_secret");
-    const res = NextResponse.json({ email });
-    const isProd = process.env.NODE_ENV === "production";
-    res.cookies.set("token", token, {
-      httpOnly: true,
-      sameSite: isProd ? "strict" : "lax",
-      secure: isProd,
-      path: "/",
-    });
-    return res;
-  } catch (err: any) {
-    return NextResponse.json({ error: err?.message || "Signup failed" }, { status: 400 });
-  }
+const JWT_SECRET = process.env.JWT_SECRET;
+
+export async function POST(req: NextRequest) {
+  if (!JWT_SECRET) return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+
+  const { email, password } = await req.json();
+  if (!email || !password)
+    return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+
+  const hashed = await bcrypt.hash(password, 10);
+
+  // TODO: persist user to DB
+  // await db.user.create({ data: { email, password: hashed } });
+
+  const token = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
+  const res = NextResponse.json({ success: true });
+  res.cookies.set("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "strict",
+    path: "/",
+    maxAge: 60 * 60,
+  });
+  return res;
 }
