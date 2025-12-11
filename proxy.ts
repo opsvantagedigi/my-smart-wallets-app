@@ -5,6 +5,12 @@ const PUBLIC_PATHS = new Set<string>([
   '/about',
   '/contact',
   '/api/health',
+  // Auth endpoints should be accessible without a prior JWT
+  '/api/auth/login',
+  '/api/auth/signup',
+  '/api/auth/logout',
+  '/api/auth/me',
+  '/api/auth/user',
 ])
 
 export default function proxy(req: NextRequest) {
@@ -28,6 +34,6 @@ export default function proxy(req: NextRequest) {
 }
 
 export const config = {
-  // Apply to all paths except static assets
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|assets|images).*)'],
+  // Apply to API routes only; exclude static assets
+  matcher: ['/api/:path*'],
 }
