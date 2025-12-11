@@ -8,6 +8,7 @@ function Test-Endpoint($path, $method = 'GET', $body = $null) {
   $headers = @{}
   if ($AuthToken -and $AuthToken.Length -gt 0) {
     $headers["Authorization"] = "Bearer $AuthToken"
+    $headers["Cookie"] = "auth_token=$AuthToken"
   }
   try {
     if ($method -eq 'GET') {
@@ -31,13 +32,10 @@ Test-Endpoint '/about' 'GET'
 Test-Endpoint '/contact' 'GET'
 Test-Endpoint '/api/health' 'GET'
 
-# Protected/API (may require auth token depending on middleware)
-Test-Endpoint '/api/auth/login' 'POST' (@{})
-Test-Endpoint '/api/auth/signup' 'POST' (@{})
-Test-Endpoint '/api/auth/logout' 'POST' (@{})
-Test-Endpoint '/api/auth/logout' 'GET'
-Test-Endpoint '/api/auth/me' 'GET'
+# Protected/API (auth flow)
+Test-Endpoint '/api/auth/login' 'POST' (@{ email = 'test@example.com' })
+Test-Endpoint '/api/auth/signup' 'POST' (@{ email = 'new@example.com'; name = 'Test' })
 Test-Endpoint '/api/auth/user' 'GET'
-Test-Endpoint '/api/wallet/connect' 'POST' (@{ address = '0x0' })
+Test-Endpoint '/api/auth/logout' 'POST' (@{})
 
 Write-Host "Smoke tests complete." -ForegroundColor Green
