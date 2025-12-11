@@ -1,5 +1,4 @@
 import React from "react";
-import { config } from "../config.js";
 // import { cookieToInitialState } from "@account-kit/core";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
@@ -46,11 +45,6 @@ export default async function RootLayout({
 }>) {
   // Persist state across pages
   // https://www.alchemy.com/docs/wallets/react/ssr#persisting-the-account-state
-  // const headersList = await headers();
-  // const initialState = cookieToInitialState(
-  //   config,
-  //   headersList.get("cookie") ?? undefined
-  // );
 
   return (
     <>
