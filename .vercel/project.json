@@ -1,1 +1,16 @@
-{"projectId":"prj_FSHxOB0dXSFFBXeZAtkFcY60OdNt","orgId":"team_fIgjxP2pdphZhE932RziMLJf","projectName":"my-smart-wallets-app"}
+{
+  "projectId": "prj_FSHxOB0dXSFFBXeZAtkFcY60OdNt",
+  "orgId": "team_fIgjxP2pdphZhE932RziMLJf",
+  "projectName": "my-smart-wallets-app",
+  "settings": {
+    "createdAt": 1765298339252,
+    "framework": "nextjs",
+    "devCommand": "npm run dev",
+    "installCommand": null,
+    "buildCommand": "npm run build",
+    "outputDirectory": ".next",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}
