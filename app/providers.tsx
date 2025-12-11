@@ -1,11 +1,12 @@
 "use client";
 import { config, queryClient } from "../config.js";
-// import { AlchemyClientState } from "@account-kit/core";
-// import { AlchemyAccountProvider } from "@account-kit/react";
-// import { QueryClientProvider } from "@tanstack/react-query";
-import { PropsWithChildren } from "react";
+import { AlchemyAccountProvider } from "@account-kit/react";
+import { QueryClientProvider } from "@tanstack/react-query";
 
 export const Providers = (props: any) => {
-  // Minimal provider for deployment
-  return <>{props.children}</>;
+  return (
+    <AlchemyAccountProvider config={config}>
+      <QueryClientProvider client={queryClient}>{props.children}</QueryClientProvider>
+    </AlchemyAccountProvider>
+  );
 };
