@@ -9,8 +9,6 @@ const PUBLIC_PATHS = new Set<string>([
   '/api/auth/login',
   '/api/auth/signup',
   '/api/auth/logout',
-  '/api/auth/me',
-  '/api/auth/user',
 ])
 
 export default function proxy(req: NextRequest) {
