@@ -11,7 +11,20 @@ const nextConfig = {
     ],
   },
   experimental: {
+    // Prefer disabling Turbopack entirely for production builds
     turbo: false,
+    // If enabling turbo later, ensure problematic packages are externalized
+    // turbo: {
+    //   rules: {
+    //     "*.js": {
+    //       externalPackages: [
+    //         "@walletconnect/*",
+    //         "pino",
+    //         "thread-stream",
+    //       ],
+    //     },
+    //   },
+    // },
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -23,6 +36,7 @@ const nextConfig = {
         crypto: false,
       };
     }
+    // Ensure node-only logging/test packages are not bundled into client
     config.externals.push('pino-pretty', 'encoding', 'pino', 'thread-stream');
     return config;
   },
