@@ -4,6 +4,7 @@ import { config } from "../config.js";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import { headers } from "next/headers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Providers } from "./providers.js";
 import Footer from "./components/footer.js";
@@ -59,6 +60,7 @@ export default async function RootLayout({
           {children}
           <ClientLayout />
         </div>
+        <SpeedInsights />
       </Providers>
       <Footer />
     </>
