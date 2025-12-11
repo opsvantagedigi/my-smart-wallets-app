@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env NEXT_BUILDER=webpack next build",
+    "build": "cross-env NEXT_BUILDER=webpack next build --no-turbo",
     "start": "next start",
     "lint": "next lint"
   },
