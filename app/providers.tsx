@@ -1,5 +1,5 @@
 "use client";
-import { config, queryClient } from "../config.js";
+import { config, queryClient } from "../config";
 import { AlchemyAccountProvider } from "@account-kit/react";
 import { QueryClientProvider } from "@tanstack/react-query";
 
