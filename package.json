@@ -65,6 +65,9 @@
     "node": ">=20.19.5"
   },
   "overrides": {
-    "jsdom": "27.3.0"
+    "jsdom": "27.3.0",
+    "undici": ">=5.28.6",
+    "path-to-regexp": ">=6.2.3",
+    "esbuild": ">=0.24.4"
   }
 }
