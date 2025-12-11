@@ -1,7 +1,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
-import heroContent from './schemas/heroContent'
+import { default as heroContent } from './schemas/heroContent'
 
 export default defineConfig({
   name: 'default',
