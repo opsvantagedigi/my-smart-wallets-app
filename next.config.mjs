@@ -10,10 +10,21 @@ const nextConfig = {
       },
     ],
   },
-  turbopack: {
-    resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
-    // Explicitly set root to avoid workspace root inference warnings due to multiple lockfiles
-    root: process.cwd(),
+  experimental: {
+    turbo: {
+      resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
+      // Explicitly set root to avoid workspace root inference warnings due to multiple lockfiles
+      root: process.cwd(),
+      rules: {
+        "*.js": {
+          externalPackages: [
+            "@walletconnect/*",
+            "pino",
+            "thread-stream"
+          ],
+        },
+      },
+    },
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -25,7 +36,7 @@ const nextConfig = {
         crypto: false,
       };
     }
-    config.externals.push('pino-pretty', 'encoding');
+    config.externals.push('pino-pretty', 'encoding', 'pino', 'thread-stream');
     return config;
   },
 };
