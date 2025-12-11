@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { defineConfig } from 'next'
+
+export default defineConfig({
   images: {
     remotePatterns: [
       {
@@ -11,9 +12,9 @@ const nextConfig = {
     ],
   },
   experimental: {
-    // Prefer disabling Turbopack entirely for production builds
+    // Disable Turbopack to prevent bundling node_modules tests/README
     turbo: false,
-    // If enabling turbo later, ensure problematic packages are externalized
+    // If enabling turbo later, uncomment to externalize problematic packages
     // turbo: {
     //   rules: {
     //     "*.js": {
@@ -40,6 +41,4 @@ const nextConfig = {
     config.externals.push('pino-pretty', 'encoding', 'pino', 'thread-stream');
     return config;
   },
-};
-
-export default nextConfig;
+})
