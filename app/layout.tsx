@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
-import { Providers } from "./providers.js";
-import Footer from "./components/footer.js";
-import { ClientLayout } from "./ClientLayout.js";
+import { Providers } from "./providers";
+import Footer from "./components/footer";
+import { ClientLayout } from "./ClientLayout";
 
 const inter = Inter({ 
   subsets: ["latin"],

@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from 'react';
 import { useSignerStatus } from '@account-kit/react';
-import LoginCard from './login-card.js';
-import { fetchHeroContent } from '../lib/sanity';
-import { ShieldCheckIcon } from './icons/ShieldCheckIcon.js';
-import { CoinsIcon } from './icons/CoinsIcon.js';
-import { Web3Icon } from './icons/Web3Icon.js';
+import LoginCard from './login-card';
+import { ShieldCheckIcon } from './icons/ShieldCheckIcon';
+import { CoinsIcon } from './icons/CoinsIcon';
+import { Web3Icon } from './icons/Web3Icon';
 import { NoCustodyIcon } from './icons/NoCustodyIcon.js';
 import { MultiChainIcon } from './icons/MultiChainIcon.js';
 import { AlertsIcon } from './icons/AlertsIcon.js';
@@ -13,12 +12,15 @@ import { DashboardIcon } from './icons/DashboardIcon.js';
 import { HardwareIcon } from './icons/HardwareIcon.js';
 import Image from 'next/image';
 
-export async function getStaticProps() {
-  const hero = await fetchHeroContent();
-  return { props: { hero } };
-}
+const heroDefault = {
+  headline: 'Take control of your crypto.',
+  subtext: 'Secure. Smart. Scam-proof.',
+  ctaLink: '#',
+  ctaLabel: 'Get Started',
+  backgroundImage: { asset: { url: '' } },
+};
 
-const Landing: React.FC<{ hero: any }> = ({ hero }) => {
+const Landing: React.FC<{ hero?: any }> = ({ hero = heroDefault }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isConnected } = useSignerStatus();
   const [showLogin, setShowLogin] = useState(false);

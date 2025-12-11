@@ -1,6 +1,6 @@
 "use client";
 
-import AIAvatar from "./components/AIAvatar.js";
+import AIAvatar from "./components/AIAvatar";
 
 export function ClientLayout() {
   return <AIAvatar />;
