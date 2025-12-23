@@ -47,14 +47,16 @@ export default async function RootLayout({
   // https://www.alchemy.com/docs/wallets/react/ssr#persisting-the-account-state
 
   return (
-    <>
-      <Providers>
-        <div className={`${inter.variable} ${orbitron.variable} font-inter antialiased`}>
-          {children}
-          <ClientLayout />
-        </div>
-      </Providers>
-      <Footer />
-    </>
+    <html lang="en" className={`${inter.variable} ${orbitron.variable}`}>
+      <body className="font-inter antialiased">
+        <Providers>
+          <div>
+            {children}
+            <ClientLayout />
+          </div>
+        </Providers>
+        <Footer />
+      </body>
+    </html>
   );
 }
