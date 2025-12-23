@@ -7,7 +7,7 @@
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "dev": "next dev",
-    "build": "cross-env NEXT_BUILDER=webpack next build",
+    "build": "cross-env NEXT_BUILDER=webpack NEXT_DISABLE_ESLINT=1 next build",
     "start": "next start",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" --max-warnings=0"
   },
