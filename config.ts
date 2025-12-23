@@ -4,7 +4,7 @@ import {
   createConfig,
 } from "@account-kit/react";
 import { QueryClient } from "@tanstack/react-query";
-import { chainNFTMintContractData } from "./lib/chains.js";
+import { chainNFTMintContractData } from "./lib/chains";
 import { alchemy } from "@account-kit/infra";
 
 const API_KEY = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
@@ -54,17 +54,18 @@ const uiConfig: AlchemyAccountsUIConfig = {
           scope: "openid profile",
         },
       ],
-      [
-        {
-          type: "external_wallets",
-          walletConnect: { projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "30e7ffaff99063e68cc9870c105d905b" },
-          wallets: ["wallet_connect", "coinbase_wallet"],
-          chainType: ["svm", "evm"],
-          moreButtonText: "More wallets",
-          hideMoreButton: false,
-          numFeaturedWallets: 1,
-        },
-      ],
+      // Temporarily disable external wallets to avoid WalletConnect bundling issues
+      // [
+      //   {
+      //     type: "external_wallets",
+      //     walletConnect: { projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "30e7ffaff99063e68cc9870c105d905b" },
+      //     wallets: ["wallet_connect", "coinbase_wallet"],
+      //     chainType: ["svm", "evm"],
+      //     moreButtonText: "More wallets",
+      //     hideMoreButton: false,
+      //     numFeaturedWallets: 1,
+      //   },
+      // ],
     ],
     addPasskeyOnSignup: true,
   },

@@ -1,0 +1,5 @@
+
+> ui-components-qs-nextjs@0.1.0 ci-mock
+> node ci/mock-server.js
+
+CI mock server listening on 3000

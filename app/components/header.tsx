@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useSignerStatus } from '@account-kit/react';
 import LoginCard from './login-card.js';
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,12 +46,13 @@ const Header: React.FC = () => {
                 </a>
               ))}
             </div>
-            <div className="hidden md:block">
+            <div className="hidden md:flex items-center">
               {!isConnected && (
                 <a href="#" onClick={handleSignUpClick} className="px-5 py-2.5 text-sm font-medium text-black bg-[#ffe600] hover:bg-yellow-400 rounded-md transition-all duration-300 shadow-lg shadow-yellow-500/20 whitespace-nowrap">
                   Sign Up
                 </a>
               )}
+              <ThemeToggle />
             </div>
             <div className="md:hidden flex items-center">
               <button

@@ -1,48 +1,32 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "🧹 Clean Build Cache",
-      "type": "shell",
-      "command": "rm -rf .next node_modules",
-      "problemMatcher": []
-    },
-    {
-      "label": "📦 Install Dependencies",
-      "type": "shell",
-      "command": "npm install",
-      "dependsOn": ["🧹 Clean Build Cache"],
-      "problemMatcher": []
-    },
-    {
-      "label": "🛡️ Install Type Declarations",
-      "type": "shell",
-      "command": "npm install --save-dev @types/react @types/node",
-      "dependsOn": ["📦 Install Dependencies"],
-      "problemMatcher": []
-    },
-    {
-      "label": "🧠 ESLint Auto-Fix",
-      "type": "shell",
-      "command": "npx eslint . --fix",
-      "dependsOn": ["🛡️ Install Type Declarations"],
-      "problemMatcher": []
-    },
-    {
-      "label": "🚀 Build App",
-      "type": "shell",
-      "command": "npm run build",
-      "dependsOn": ["🧠 ESLint Auto-Fix"],
-      "problemMatcher": []
-    },
-    {
-      "label": "🧼 Delete _document.tsx",
-      "type": "shell",
-      "command": "rm ./app/_document.tsx",
-      "problemMatcher": [],
-      "runOptions": {
-        "runOn": "folderOpen"
-      }
-    }
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Clear .next and node_modules",
+			"type": "shell",
+			"command": "rm -rf .next node_modules"
+		},
+		{
+			"label": "🚀 Build App",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "🧹 Clean Build Cache (pwsh)",
+			"type": "shell",
+			"command": "Remove-Item -Recurse -Force .next; Remove-Item -Recurse -Force node_modules",
+			"group": "build"
+		},
+		{
+			"label": "📦 Install Dependencies (pwsh)",
+			"type": "shell",
+			"command": "npm install",
+			"group": "build"
+		}
+	]
 }

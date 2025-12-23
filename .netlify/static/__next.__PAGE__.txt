@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[52804,["/_next/static/chunks/3687260b33578b93.js","/_next/static/chunks/5e7c7040cdd4f0c3.js","/_next/static/chunks/620da0d74d55a8f2.js","/_next/static/chunks/74301a1ebba76190.js","/_next/static/chunks/e681dabd79e6eb21.js","/_next/static/chunks/47f4832722f83da4.js","/_next/static/chunks/2151b39d877a3e2f.js"],"default"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/70664662258bdba2.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"4hiFueNxjs7UfziTVp2Bh","rsc":["$","$1","c",{"children":[["$","$L2",null,{"hero":{"backgroundImage":{"asset":{"url":"https://cdn.sanity.io/images/ny9kxnq1/production/4c624ea852f4b76aa90da9837a6740fc2f99b872-1024x1536.png"}},"ctaLabel":"Get Started","ctaLink":"#features","headline":"Take control of your crypto.","subtext":"Secure. Smart. Scam-proof."}}],[["$","script","script-0",{"src":"/_next/static/chunks/2151b39d877a3e2f.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

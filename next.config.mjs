@@ -1,5 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { defineConfig } from "next";
+
+export default defineConfig({
+  experimental: {
+    // Prefer Webpack for production builds to avoid Turbopack bundling test files
+    turbo: false,
+  },
   images: {
     remotePatterns: [
       {
@@ -10,7 +15,17 @@ const nextConfig = {
       },
     ],
   },
+  },
   webpack: (config, { isServer }) => {
+    // Alias problematic WalletConnect/logging packages to an empty stub
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@walletconnect/universal-provider': require('path').resolve(__dirname, 'lib/stubs/empty.js'),
+      '@walletconnect/ethereum-provider': require('path').resolve(__dirname, 'lib/stubs/empty.js'),
+      '@walletconnect/logger': require('path').resolve(__dirname, 'lib/stubs/empty.js'),
+      'pino': require('path').resolve(__dirname, 'lib/stubs/empty.js'),
+      'thread-stream': require('path').resolve(__dirname, 'lib/stubs/empty.js'),
+    };
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -20,9 +35,8 @@ const nextConfig = {
         crypto: false,
       };
     }
-    config.externals.push('pino-pretty', 'encoding');
+    // Ensure node-only logging/test packages are not bundled into client builds
+    config.externals.push("pino-pretty", "encoding", "pino", "thread-stream");
     return config;
   },
-};
-
-export default nextConfig;
+});

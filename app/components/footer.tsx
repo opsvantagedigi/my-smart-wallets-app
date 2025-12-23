@@ -27,55 +27,40 @@ const Footer: React.FC = () => {
 
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Product</h5>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Security</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Download</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-              </ul>
-            </div>
-            <div>
               <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Company</h5>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Press</a></li>
               </ul>
             </div>
             <div>
-              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Resources</h5>
+              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Legal</h5>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">API Docs</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Security</a></li>
               </ul>
             </div>
-            <div className="col-span-2 md:col-span-1">
-              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Stay Updated</h5>
-              <form>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <div className="relative flex-grow">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email" 
-                      className="w-full bg-white/10 border border-white/20 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#ffe600] focus:border-[#ffe600]/50 focus:outline-none transition-all duration-300"
-                    />
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="bg-gradient-to-r from-[#0030ff] to-blue-600 hover:scale-105 transform transition-all duration-300 text-white font-semibold py-2.5 px-6 rounded-lg whitespace-nowrap shadow-lg shadow-blue-500/20"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
+            <div>
+              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Connect</h5>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                <li className="flex items-center gap-3">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors" title="Twitter"><TwitterIcon /></a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors" title="LinkedIn"><LinkedinIcon /></a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors" title="GitHub"><GithubIcon /></a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-orbitron font-semibold text-white tracking-wider mb-4">Brand</h5>
+              <p className="text-gray-400 text-sm">Built with security-first architecture. Powered by Account Kit and Alchemy.</p>
+              <div className="mt-4 w-full h-10 rounded-lg gradient-brand animate-sweep" />
             </div>
           </div>
         </div>

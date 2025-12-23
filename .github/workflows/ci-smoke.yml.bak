@@ -1,0 +1,58 @@
+name: CI placeholder - smoke workflow removed
+
+on:
+  workflow_dispatch:
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: No-op placeholder
+        run: echo "CI smoke workflow removed; placeholder to clear editor diagnostics"
+name: CI — Build and Smoke Test
+
+on:
+  pull_request:
+    branches: [ main, cleanup/cloudflare-deploy ]
+  push:
+    branches: [ cleanup/cloudflare-deploy ]
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Export RPC URL for smoke
+        env:
+          CI_RPC_URL: ${{ secrets.CI_RPC_URL }}
+        run: |
+          if [ -n "$CI_RPC_URL" ]; then
+            echo "NEXT_PUBLIC_RPC_URL=$CI_RPC_URL" >> $GITHUB_ENV
+          else
+            echo "CI_RPC_URL not set; RPC check will be logged but non-fatal"
+          fi
+
+      - name: Start CI mock server
+        run: |
+          nohup npm run ci-mock > ci-mock.log 2>&1 &
+          sleep 3
+
+      - name: Run smoke test
+        run: npm run smoke
+
+      - name: Stop CI mock server
+        if: always()
+        run: npm run ci-mock-stop || true

@@ -1,0 +1,226 @@
+Deploy Pages (Cloudflare)	Set up job	﻿2025-11-29T01:37:33.0657685Z Current runner version: '2.329.0'
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0681714Z ##[group]Runner Image Provisioner
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0682622Z Hosted Compute Agent
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0683140Z Version: 20251016.436
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0683758Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0684559Z Build Date: 2025-10-15T20:44:12Z
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0685131Z ##[endgroup]
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0685666Z ##[group]Operating System
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0686291Z Ubuntu
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0687030Z 24.04.3
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0687525Z LTS
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0688045Z ##[endgroup]
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0688573Z ##[group]Runner Image
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0689112Z Image: ubuntu-24.04
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0689715Z Version: 20251112.124.1
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0690773Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0692156Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0693404Z ##[endgroup]
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0694538Z ##[group]GITHUB_TOKEN Permissions
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0697072Z Contents: read
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0697621Z Metadata: read
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0698275Z Packages: read
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0698763Z ##[endgroup]
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0701231Z Secret source: Actions
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.0702390Z Prepare workflow directory
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.1018681Z Prepare all required actions
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.1056156Z Getting action download info
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.4059765Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.6643998Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:33.8063579Z Download action repository 'cloudflare/pages-action@v1' (SHA:f0a1cd58cd66095dee69bfa18fa5efd1dde93bca)
+Deploy Pages (Cloudflare)	Set up job	2025-11-29T01:37:34.0330842Z Complete job name: Deploy Pages (Cloudflare)
+Deploy Pages (Cloudflare)	Checkout	﻿2025-11-29T01:37:34.1015491Z ##[group]Run actions/checkout@v4
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1016465Z with:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1017203Z   repository: opsvantagedigi/my-smart-wallets-app
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1017934Z   token: ***
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1018314Z   ssh-strict: true
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1018709Z   ssh-user: git
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1019103Z   persist-credentials: true
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1019546Z   clean: true
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1019935Z   sparse-checkout-cone-mode: true
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1020421Z   fetch-depth: 1
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1020802Z   fetch-tags: false
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1021190Z   show-progress: true
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1021592Z   lfs: false
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1021952Z   submodules: false
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1022365Z   set-safe-directory: true
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.1023126Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2087296Z Syncing repository: opsvantagedigi/my-smart-wallets-app
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2089161Z ##[group]Getting Git version info
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2089993Z Working directory is '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2091198Z [command]/usr/bin/git version
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2199911Z git version 2.51.2
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2225468Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2239514Z Temporarily overriding HOME='/home/runner/work/_temp/224e2e2a-9d84-4a08-8eef-1c52446f5dfe' before making global git config changes
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2241660Z Adding repository directory to the temporary git global config as a safe directory
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2251371Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2286228Z Deleting the contents of '/home/runner/work/my-smart-wallets-app/my-smart-wallets-app'
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2289686Z ##[group]Initializing the repository
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2293652Z [command]/usr/bin/git init /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2388298Z hint: Using 'master' as the name for the initial branch. This default branch name
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2389583Z hint: is subject to change. To configure the initial branch name to use in all
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2391046Z hint: of your new repositories, which will suppress this warning, call:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2392352Z hint:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2392979Z hint: 	git config --global init.defaultBranch <name>
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2393798Z hint:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2394444Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2395508Z hint: 'development'. The just-created branch can be renamed via this command:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2396521Z hint:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2397280Z hint: 	git branch -m <name>
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2397813Z hint:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2398506Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2399730Z Initialized empty Git repository in /home/runner/work/my-smart-wallets-app/my-smart-wallets-app/.git/
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2402289Z [command]/usr/bin/git remote add origin https://github.com/opsvantagedigi/my-smart-wallets-app
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2435530Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2437008Z ##[group]Disabling automatic garbage collection
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2440772Z [command]/usr/bin/git config --local gc.auto 0
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2469626Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2470931Z ##[group]Setting up auth
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2476478Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2507152Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2811904Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.2841831Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.3055357Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.3086962Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.3321680Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.3356863Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.3357745Z ##[group]Fetching the repository
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.3365294Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4cc711b54b8bc339bd0104426074f92841979e7f:refs/remotes/origin/chore/remediate-sanity-secrets
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.5914691Z From https://github.com/opsvantagedigi/my-smart-wallets-app
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.5918479Z  * [new ref]         4cc711b54b8bc339bd0104426074f92841979e7f -> origin/chore/remediate-sanity-secrets
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.5948618Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.5950440Z ##[group]Determining the checkout info
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.5952443Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.5956729Z [command]/usr/bin/git sparse-checkout disable
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.5995817Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.6020377Z ##[group]Checking out the ref
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.6024052Z [command]/usr/bin/git checkout --progress --force -B chore/remediate-sanity-secrets refs/remotes/origin/chore/remediate-sanity-secrets
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.6349234Z Switched to a new branch 'chore/remediate-sanity-secrets'
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.6351861Z branch 'chore/remediate-sanity-secrets' set up to track 'origin/chore/remediate-sanity-secrets'.
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.6363102Z ##[endgroup]
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.6399017Z [command]/usr/bin/git log -1 --format=%H
+Deploy Pages (Cloudflare)	Checkout	2025-11-29T01:37:34.6420717Z 4cc711b54b8bc339bd0104426074f92841979e7f
+Deploy Pages (Cloudflare)	Setup Node	﻿2025-11-29T01:37:34.6720500Z ##[group]Run actions/setup-node@v4
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.6721651Z with:
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.6722458Z   node-version: 20
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.6723379Z   always-auth: false
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.6724536Z   check-latest: false
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.6725764Z   token: ***
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.6726763Z ##[endgroup]
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.8472306Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:34.8478612Z ##[group]Environment details
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:35.1973455Z node: v20.19.5
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:35.1974669Z npm: 10.8.2
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:35.1975696Z yarn: 1.22.22
+Deploy Pages (Cloudflare)	Setup Node	2025-11-29T01:37:35.1978220Z ##[endgroup]
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	﻿2025-11-29T01:37:35.2104901Z ##[group]Run npm ci --prefix opsvantage-web
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:35.2106157Z [36;1mnpm ci --prefix opsvantage-web[0m
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:35.2152523Z shell: /usr/bin/bash -e {0}
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:35.2153430Z ##[endgroup]
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:37.7249840Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:37.9773696Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:38.4503407Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.3892252Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.6153266Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.6594410Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.9049843Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.9548198Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.9549704Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.9565669Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:39.9923653Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:41.2705986Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.3714748Z 
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.3715737Z added 619 packages, and audited 620 packages in 16s
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.3716790Z 
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.3717174Z 173 packages are looking for funding
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.3717710Z   run `npm fund` for details
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.4819470Z 
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.4820205Z 4 vulnerabilities (3 high, 1 critical)
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.4820659Z 
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.4821127Z To address all issues (including breaking changes), run:
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.4821821Z   npm audit fix --force
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.4822190Z 
+Deploy Pages (Cloudflare)	Install deps for opsvantage-web	2025-11-29T01:37:51.5185390Z Run `npm audit` for details.
+Deploy Pages (Cloudflare)	Build opsvantage-web	﻿2025-11-29T01:37:51.5223341Z ##[group]Run npm run build --prefix opsvantage-web
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:51.5223835Z [36;1mnpm run build --prefix opsvantage-web[0m
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:51.5255947Z shell: /usr/bin/bash -e {0}
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:51.5256191Z ##[endgroup]
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:51.6357621Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:51.6431296Z > opsvantage-web@0.1.0 build
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:51.6431798Z > next build
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:51.6431968Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.1333508Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.1423762Z Attention: Next.js now collects completely anonymous telemetry regarding usage.
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.1425116Z This information is used to shape Next.js' roadmap and prioritize features.
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.1427070Z You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.1428750Z https://nextjs.org/telemetry
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.1429138Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.2341801Z   ▲ Next.js 14.2.4
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.2342598Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:52.2346974Z    Linting and checking validity of types ...
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:54.8875171Z    Creating an optimized production build ...
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3289799Z Found 1 warning while optimizing generated CSS:
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3290338Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3291190Z [2m│   opacity: 90%;[22m
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3291782Z [2m│ }[22m
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3293122Z [2m│[22m @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap');
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3294834Z [2m┆[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer statements[39m
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3295636Z [2m┆[22m
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3296018Z [2m│ :root {[22m
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3297228Z [2m│   --brand-gradient: linear-gradient(90deg,#0f172a 0%,#10b981 50%,#fbbf24 100%);[22m
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:37:59.3297880Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:02.2887063Z  ✓ Compiled successfully
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:02.2896397Z    Collecting page data ...
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:02.9242850Z    Generating static pages (0/6) ...
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:03.1545175Z    Generating static pages (1/6) 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:03.1546381Z    Generating static pages (2/6) 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:03.1880188Z    Generating static pages (4/6) 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:03.2340011Z  ✓ Generating static pages (6/6)
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:03.5489755Z    Finalizing page optimization ...
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:03.5490319Z    Collecting build traces ...
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.3659135Z  ⚠ Statically exporting a Next.js application via `next export` disables API routes and middleware.
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.3660416Z This command is meant for static-only hosts, and is not necessary to make your application static.
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.3662070Z Pages in your application without server-side data dependencies will be automatically statically exported by `next build`, including pages powered by `getStaticProps`.
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.3663299Z Learn more: https://nextjs.org/docs/messages/api-routes-static-export
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5676028Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5785596Z Route (pages)                             Size     First Load JS
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5786982Z ┌ ○ /                                     3.09 kB        81.4 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5787841Z ├   /_app                                 0 B            78.3 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5788636Z ├ ○ /404                                  180 B          78.5 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5789329Z ├ ○ /about                                543 B          78.8 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5790153Z ├ ƒ /api/activity                         0 B            78.3 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5791043Z ├ ƒ /api/balance                          0 B            78.3 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5792094Z ├ ƒ /api/mint                             0 B            78.3 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5792979Z ├ ○ /dashboard                            1.31 kB         171 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5793927Z └ ○ /mint                                 1.27 kB         171 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5794998Z + First Load JS shared by all             79.1 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5795773Z   ├ chunks/framework-ecc4130bc7a58a64.js  45.2 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5796445Z   ├ chunks/main-be89c515900796e7.js       32 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5797294Z   └ other shared chunks (total)           1.94 kB
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5797634Z 
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5798027Z ○  (Static)   prerendered as static content
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5798655Z ƒ  (Dynamic)  server-rendered on demand
+Deploy Pages (Cloudflare)	Build opsvantage-web	2025-11-29T01:38:09.5798943Z 
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	﻿2025-11-29T01:38:09.6159907Z ##[group]Run cloudflare/pages-action@v1
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	2025-11-29T01:38:09.6160200Z with:
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	2025-11-29T01:38:09.6160569Z   apiToken: ***
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	2025-11-29T01:38:09.6160788Z   projectName: my-smartwallets-web3-app
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	2025-11-29T01:38:09.6161045Z   directory: .next
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	2025-11-29T01:38:09.6161228Z   wranglerVersion: 2
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	2025-11-29T01:38:09.6161422Z ##[endgroup]
+Deploy Pages (Cloudflare)	Deploy to Cloudflare Pages	2025-11-29T01:38:09.6886484Z ##[error]Input required and not supplied: accountId
+Deploy Pages (Cloudflare)	Post Checkout	﻿2025-11-29T01:38:09.7018272Z Post job cleanup.
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.7955708Z [command]/usr/bin/git version
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.7991202Z git version 2.51.2
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8034639Z Temporarily overriding HOME='/home/runner/work/_temp/62f807cd-6e34-479b-aaa0-477d33d535a5' before making global git config changes
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8036169Z Adding repository directory to the temporary git global config as a safe directory
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8041407Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/my-smart-wallets-app/my-smart-wallets-app
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8075762Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8107827Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8359016Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8383131Z http.https://github.com/.extraheader
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8397048Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8430184Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8669008Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy Pages (Cloudflare)	Post Checkout	2025-11-29T01:38:09.8701544Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy Pages (Cloudflare)	Complete job	﻿2025-11-29T01:38:09.9052019Z Cleaning up orphan processes
