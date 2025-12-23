@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'My Smart Wallets App',
 
-  projectId: 'ny9kxnq1',
-  dataset: 'production',
+  projectId: 'ayo78gin',
+  dataset: 'public',
 
   plugins: [structureTool(), visionTool()],
 

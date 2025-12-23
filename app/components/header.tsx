@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useSignerStatus } from '@account-kit/react';
-import LoginCard from './login-card.js';
+import LoginCard from './login-card';
 import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
