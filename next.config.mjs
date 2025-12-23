@@ -5,6 +5,17 @@ export default defineConfig({
     // Prefer Webpack for production builds to avoid Turbopack bundling test files
     turbo: false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "static.alchemyapi.io",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
+  },
   webpack: (config, { isServer }) => {
     // Alias problematic WalletConnect/logging packages to an empty stub
     config.resolve.alias = {

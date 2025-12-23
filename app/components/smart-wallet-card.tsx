@@ -35,7 +35,7 @@ export function SmartWalletCard() {
         <CardTitle className="font-orbitron flex items-center justify-between">
           Smart Wallet
           {wallet && (
-            <Badge variant="default" className="bg-gradient-brand">
+            <Badge className="bg-gradient-brand">
               Active
             </Badge>
           )}
@@ -95,7 +95,6 @@ export function SmartWalletCard() {
 
             <Button
               onClick={refreshWallet}
-              variant="outline"
               className="w-full"
             >
               Refresh Wallet
