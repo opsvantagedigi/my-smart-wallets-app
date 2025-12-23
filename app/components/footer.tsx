@@ -3,7 +3,7 @@ import { TwitterIcon, LinkedinIcon, GithubIcon } from './icons/SocialIcons';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black/30 backdrop-blur-lg border-t border-white/10 mt-20">
+    <footer className="fixed bottom-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4">
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                 </svg>
               </div>
               <span className="font-orbitron text-xl font-bold tracking-wider bg-gradient-to-r from-[#0030ff] via-green-400 to-[#ffe600] text-transparent bg-clip-text">
-                OpsVantage Digital
+                Marz Smart Wallets
               </span>
             </a>
             <p className="text-gray-400 text-sm">The future of digital asset management. Secure, smart, and built for you.</p>

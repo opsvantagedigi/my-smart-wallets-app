@@ -35,7 +35,7 @@ const Header: React.FC = () => {
                   </svg>
                 </div>
                 <span className="font-orbitron text-xl font-bold tracking-wider bg-gradient-to-r from-[#0030ff] via-green-400 to-[#ffe600] text-transparent bg-clip-text whitespace-nowrap">
-                  OpsVantage Digital
+                  Marz Smart Wallets
                 </span>
               </a>
             </div>
